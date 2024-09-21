@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "140857082904",
+    "project_id": "sawwah-y37evl",
+    "storage_bucket": "sawwah-y37evl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140857082904:android:3262f00b20c6e521d0ef6d",
+        "android_client_info": {
+          "package_name": "com.mycompany.sawwah"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBuG6s3gboVR_5Xb8m2skibIeQfkOowPE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
