@@ -27,6 +27,8 @@ class _ResendemailWidgetState extends State<ResendemailWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ResendemailModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

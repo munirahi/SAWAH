@@ -148,9 +148,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'availableexperiencesCopy',
           path: '/availableexperiencesCopy',
+          builder: (context, params) => const AvailableexperiencesCopyWidget(),
+        ),
+        FFRoute(
+          name: 'profile_Settings_host',
+          path: '/profileSettingsHost',
+          builder: (context, params) => const ProfileSettingsHostWidget(),
+        ),
+        FFRoute(
+          name: 'auth2_profile',
+          path: '/auth2Profile',
+          builder: (context, params) => const Auth2ProfileWidget(),
+        ),
+        FFRoute(
+          name: 'AuthEDITED',
+          path: '/authEDITED',
+          builder: (context, params) => const AuthEDITEDWidget(),
+        ),
+        FFRoute(
+          name: 'availableexperiencesMwork',
+          path: '/availableexperiencesMwork',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'availableexperiencesCopy')
-              : const AvailableexperiencesCopyWidget(),
+              ? const NavBarPage(initialPage: 'availableexperiencesMwork')
+              : const AvailableexperiencesMworkWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

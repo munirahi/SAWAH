@@ -47,6 +47,8 @@ class _MyAppState extends State<MyApp> {
 
   late Stream<BaseAuthUser> userStream;
 
+  final authUserSub = authenticatedUserStream.listen((_) {});
+
   @override
   void initState() {
     super.initState();
@@ -62,6 +64,13 @@ class _MyAppState extends State<MyApp> {
       const Duration(milliseconds: 1000),
       () => _appStateNotifier.stopShowingSplashImage(),
     );
+  }
+
+  @override
+  void dispose() {
+    authUserSub.cancel();
+
+    super.dispose();
   }
 
   void setThemeMode(ThemeMode mode) => safeSetState(() {
@@ -120,7 +129,7 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'profile_Settings': const ProfileSettingsWidget(),
       'availableexperiences': const AvailableexperiencesWidget(),
-      'availableexperiencesCopy': const AvailableexperiencesCopyWidget(),
+      'availableexperiencesMwork': const AvailableexperiencesMworkWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 

@@ -215,6 +215,8 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
         ],
       ),
     });
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -597,7 +599,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                             16.0, 12.0, 16.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('Auth1');
+                            context.pushNamed('AuthEDITED');
                           },
                           text: 'Next',
                           options: FFButtonOptions(
