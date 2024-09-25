@@ -27,8 +27,8 @@ class _Payment2WidgetState extends State<Payment2Widget> {
     super.initState();
     _model = createModel(context, () => Payment2Model());
 
-    _model.emailAddressTextController ??= TextEditingController();
-    _model.emailAddressFocusNode ??= FocusNode();
+    _model.emailAddressGuestTextController ??= TextEditingController();
+    _model.emailAddressGuestFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -121,9 +121,10 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                                     child: SizedBox(
                                       width: double.infinity,
                                       child: TextFormField(
-                                        controller:
-                                            _model.emailAddressTextController,
-                                        focusNode: _model.emailAddressFocusNode,
+                                        controller: _model
+                                            .emailAddressGuestTextController,
+                                        focusNode:
+                                            _model.emailAddressGuestFocusNode,
                                         autofocus: true,
                                         autofillHints: const [AutofillHints.email],
                                         textInputAction: TextInputAction.next,
@@ -196,7 +197,7 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                                             FlutterFlowTheme.of(context)
                                                 .primary,
                                         validator: _model
-                                            .emailAddressTextControllerValidator
+                                            .emailAddressGuestTextControllerValidator
                                             .asValidator(context),
                                       ),
                                     ),

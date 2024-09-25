@@ -6,10 +6,11 @@ import 'package:flutter/material.dart';
 class Payment2Model extends FlutterFlowModel<Payment2Widget> {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for emailAddress widget.
-  FocusNode? emailAddressFocusNode;
-  TextEditingController? emailAddressTextController;
-  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
+  // State field(s) for emailAddressGuest widget.
+  FocusNode? emailAddressGuestFocusNode;
+  TextEditingController? emailAddressGuestTextController;
+  String? Function(BuildContext, String?)?
+      emailAddressGuestTextControllerValidator;
   // State field(s) for CreditCardForm2 widget.
   final creditCardFormKey = GlobalKey<FormState>();
   CreditCardModel creditCardInfo = emptyCreditCard();
@@ -19,7 +20,7 @@ class Payment2Model extends FlutterFlowModel<Payment2Widget> {
 
   @override
   void dispose() {
-    emailAddressFocusNode?.dispose();
-    emailAddressTextController?.dispose();
+    emailAddressGuestFocusNode?.dispose();
+    emailAddressGuestTextController?.dispose();
   }
 }

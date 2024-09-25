@@ -111,6 +111,11 @@ class ExperiencesRecord extends FirestoreRecord {
   String get bookingTime => _bookingTime ?? '';
   bool hasBookingTime() => _bookingTime != null;
 
+  // "emailAddressGuest" field.
+  String? _emailAddressGuest;
+  String get emailAddressGuest => _emailAddressGuest ?? '';
+  bool hasEmailAddressGuest() => _emailAddressGuest != null;
+
   void _initializeFields() {
     _dropDown = getDataList(snapshotData['DropDown']);
     _countController1 = castToType<int>(snapshotData['CountController1']);
@@ -131,6 +136,7 @@ class ExperiencesRecord extends FirestoreRecord {
     _users = getDataList(snapshotData['users']);
     _bookingDate = snapshotData['BookingDate'] as String?;
     _bookingTime = snapshotData['BookingTime'] as String?;
+    _emailAddressGuest = snapshotData['emailAddressGuest'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -185,6 +191,7 @@ Map<String, dynamic> createExperiencesRecordData({
   DocumentReference? creator,
   String? bookingDate,
   String? bookingTime,
+  String? emailAddressGuest,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -205,6 +212,7 @@ Map<String, dynamic> createExperiencesRecordData({
       'creator': creator,
       'BookingDate': bookingDate,
       'BookingTime': bookingTime,
+      'emailAddressGuest': emailAddressGuest,
     }.withoutNulls,
   );
 
@@ -235,7 +243,8 @@ class ExperiencesRecordDocumentEquality implements Equality<ExperiencesRecord> {
         e1?.creator == e2?.creator &&
         listEquality.equals(e1?.users, e2?.users) &&
         e1?.bookingDate == e2?.bookingDate &&
-        e1?.bookingTime == e2?.bookingTime;
+        e1?.bookingTime == e2?.bookingTime &&
+        e1?.emailAddressGuest == e2?.emailAddressGuest;
   }
 
   @override
@@ -258,7 +267,8 @@ class ExperiencesRecordDocumentEquality implements Equality<ExperiencesRecord> {
         e?.creator,
         e?.users,
         e?.bookingDate,
-        e?.bookingTime
+        e?.bookingTime,
+        e?.emailAddressGuest
       ]);
 
   @override
