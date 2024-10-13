@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 class Payment2Model extends FlutterFlowModel<Payment2Widget> {
   ///  State fields for stateful widgets in this page.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for emailAddressGuest widget.
   FocusNode? emailAddressGuestFocusNode;
   TextEditingController? emailAddressGuestTextController;

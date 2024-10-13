@@ -599,7 +599,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                             16.0, 12.0, 16.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('AuthEDITED');
+                            context.pushNamed('AuthNew');
                           },
                           text: 'Next',
                           options: FFButtonOptions(
@@ -634,7 +634,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                             16.0, 12.0, 16.0, 44.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('Auth1');
+                            context.pushNamed('AuthNew');
                           },
                           text: 'Skip',
                           options: FFButtonOptions(

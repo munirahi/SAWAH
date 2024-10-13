@@ -1,53 +1,99 @@
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/pages/host_pages/navbar_forhost/navbar_forhost_widget.dart';
+import '/pages/navbar_forhost/navbar_forhost_widget.dart';
 import 'create_new_experience_widget.dart' show CreateNewExperienceWidget;
 import 'package:flutter/material.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
 class CreateNewExperienceModel
     extends FlutterFlowModel<CreateNewExperienceWidget> {
   ///  State fields for stateful widgets in this page.
 
+  final formKey1 = GlobalKey<FormState>();
+  final formKey3 = GlobalKey<FormState>();
+  final formKey2 = GlobalKey<FormState>();
+  final formKey4 = GlobalKey<FormState>();
+  final formKey5 = GlobalKey<FormState>();
   // State field(s) for Experiencename1 widget.
   FocusNode? experiencename1FocusNode;
   TextEditingController? experiencename1TextController;
   String? Function(BuildContext, String?)?
       experiencename1TextControllerValidator;
-  // State field(s) for PlacePicker widget.
-  FFPlace placePickerValue = const FFPlace();
+  String? _experiencename1TextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'This field is required';
+    }
+
+    if (val.length < 3) {
+      return 'Enter at least 3 characters';
+    }
+
+    return null;
+  }
+
+  // State field(s) for Location widget.
+  FFPlace locationValue = const FFPlace();
   // State field(s) for Experience_about1 widget.
   FocusNode? experienceAbout1FocusNode;
   TextEditingController? experienceAbout1TextController;
   String? Function(BuildContext, String?)?
       experienceAbout1TextControllerValidator;
-  // State field(s) for CountController widget.
-  int? countControllerValue;
+  String? _experienceAbout1TextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'This field is required';
+    }
+
+    if (val.length < 3) {
+      return 'Description should be at least 3 characters';
+    }
+
+    return null;
+  }
+
+  bool isDataUploading = false;
+  FFUploadedFile uploadedLocalFile =
+      FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
+
+  // State field(s) for SeatLimit widget.
+  int? seatLimitValue;
   // State field(s) for AgeField1 widget.
-  FocusNode? ageField1FocusNode;
-  TextEditingController? ageField1TextController;
-  final ageField1Mask = MaskTextInputFormatter(mask: '###');
-  String? Function(BuildContext, String?)? ageField1TextControllerValidator;
-  // State field(s) for AgeField2 widget.
-  FocusNode? ageField2FocusNode;
-  TextEditingController? ageField2TextController;
-  final ageField2Mask = MaskTextInputFormatter(mask: '###');
-  String? Function(BuildContext, String?)? ageField2TextControllerValidator;
+  FormFieldController<String>? ageField1ValueController;
+  // State field(s) for Gender widget.
+  FormFieldController<String>? genderValueController;
   // State field(s) for PriceField1 widget.
   FocusNode? priceField1FocusNode;
   TextEditingController? priceField1TextController;
   String? Function(BuildContext, String?)? priceField1TextControllerValidator;
-  // State field(s) for RadioButton1 widget.
-  FormFieldController<String>? radioButton1ValueController;
-  // State field(s) for TimeField1 widget.
-  FocusNode? timeField1FocusNode;
-  TextEditingController? timeField1TextController;
-  String? Function(BuildContext, String?)? timeField1TextControllerValidator;
+  String? _priceField1TextControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'This field is required ';
+    }
+
+    if (val.isEmpty) {
+      return 'Enter at least 1 character';
+    }
+    if (val.length > 8) {
+      return 'Enter less than 8 characters';
+    }
+
+    return null;
+  }
+
+  DateTime? datePicked1;
+  DateTime? datePicked2;
   // Model for navbarForhost component.
   late NavbarForhostModel navbarForhostModel;
 
   @override
   void initState(BuildContext context) {
+    experiencename1TextControllerValidator =
+        _experiencename1TextControllerValidator;
+    experienceAbout1TextControllerValidator =
+        _experienceAbout1TextControllerValidator;
+    priceField1TextControllerValidator = _priceField1TextControllerValidator;
     navbarForhostModel = createModel(context, () => NavbarForhostModel());
   }
 
@@ -59,21 +105,13 @@ class CreateNewExperienceModel
     experienceAbout1FocusNode?.dispose();
     experienceAbout1TextController?.dispose();
 
-    ageField1FocusNode?.dispose();
-    ageField1TextController?.dispose();
-
-    ageField2FocusNode?.dispose();
-    ageField2TextController?.dispose();
-
     priceField1FocusNode?.dispose();
     priceField1TextController?.dispose();
-
-    timeField1FocusNode?.dispose();
-    timeField1TextController?.dispose();
 
     navbarForhostModel.dispose();
   }
 
   /// Additional helper methods.
-  String? get radioButton1Value => radioButton1ValueController?.value;
+  String? get ageField1Value => ageField1ValueController?.value;
+  String? get genderValue => genderValueController?.value;
 }

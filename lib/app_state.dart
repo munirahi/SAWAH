@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'flutter_flow/request_manager.dart';
+import '/backend/backend.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class FFAppState extends ChangeNotifier {
@@ -21,6 +23,11 @@ class FFAppState extends ChangeNotifier {
     });
     _safeInit(() {
       _isThisUser = prefs.getBool('ff_isThisUser') ?? _isThisUser;
+    });
+    _safeInit(() {
+      _CurrentDate = prefs.containsKey('ff_CurrentDate')
+          ? DateTime.fromMillisecondsSinceEpoch(prefs.getInt('ff_CurrentDate')!)
+          : _CurrentDate;
     });
   }
 
@@ -62,6 +69,89 @@ class FFAppState extends ChangeNotifier {
   set phoneNumber(String value) {
     _phoneNumber = value;
   }
+
+  bool _searchActive = false;
+  bool get searchActive => _searchActive;
+  set searchActive(bool value) {
+    _searchActive = value;
+  }
+
+  bool _verfiyEmail = false;
+  bool get verfiyEmail => _verfiyEmail;
+  set verfiyEmail(bool value) {
+    _verfiyEmail = value;
+  }
+
+  DateTime? _CurrentDate = DateTime.fromMillisecondsSinceEpoch(1728516660000);
+  DateTime? get CurrentDate => _CurrentDate;
+  set CurrentDate(DateTime? value) {
+    _CurrentDate = value;
+    value != null
+        ? prefs.setInt('ff_CurrentDate', value.millisecondsSinceEpoch)
+        : prefs.remove('ff_CurrentDate');
+  }
+
+  List<SitesDatatypeStruct> _siteAppstate = [];
+  List<SitesDatatypeStruct> get siteAppstate => _siteAppstate;
+  set siteAppstate(List<SitesDatatypeStruct> value) {
+    _siteAppstate = value;
+  }
+
+  void addToSiteAppstate(SitesDatatypeStruct value) {
+    siteAppstate.add(value);
+  }
+
+  void removeFromSiteAppstate(SitesDatatypeStruct value) {
+    siteAppstate.remove(value);
+  }
+
+  void removeAtIndexFromSiteAppstate(int index) {
+    siteAppstate.removeAt(index);
+  }
+
+  void updateSiteAppstateAtIndex(
+    int index,
+    SitesDatatypeStruct Function(SitesDatatypeStruct) updateFn,
+  ) {
+    siteAppstate[index] = updateFn(_siteAppstate[index]);
+  }
+
+  void insertAtIndexInSiteAppstate(int index, SitesDatatypeStruct value) {
+    siteAppstate.insert(index, value);
+  }
+
+  double _userlat = 0.0;
+  double get userlat => _userlat;
+  set userlat(double value) {
+    _userlat = value;
+  }
+
+  double _userLong = 0.0;
+  double get userLong => _userLong;
+  set userLong(double value) {
+    _userLong = value;
+  }
+
+  LatLng? _location = const LatLng(24.7222078, 46.6258804);
+  LatLng? get location => _location;
+  set location(LatLng? value) {
+    _location = value;
+  }
+
+  final _exDetailsManager = StreamRequestManager<List<ExperiencesRecord>>();
+  Stream<List<ExperiencesRecord>> exDetails({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Stream<List<ExperiencesRecord>> Function() requestFn,
+  }) =>
+      _exDetailsManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearExDetailsCache() => _exDetailsManager.clear();
+  void clearExDetailsCacheKey(String? uniqueKey) =>
+      _exDetailsManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {

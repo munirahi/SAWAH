@@ -7,7 +7,8 @@ import 'schema/util/firestore_util.dart';
 
 import 'schema/users_record.dart';
 import 'schema/experiences_record.dart';
-import 'schema/sample_experiences_record.dart';
+import 'schema/booked_exp_record.dart';
+import 'schema/markers_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -18,7 +19,8 @@ export 'schema/util/schema_util.dart';
 
 export 'schema/users_record.dart';
 export 'schema/experiences_record.dart';
-export 'schema/sample_experiences_record.dart';
+export 'schema/booked_exp_record.dart';
+export 'schema/markers_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -94,38 +96,75 @@ Future<List<ExperiencesRecord>> queryExperiencesRecordOnce({
       singleRecord: singleRecord,
     );
 
-/// Functions to query SampleExperiencesRecords (as a Stream and as a Future).
-Future<int> querySampleExperiencesRecordCount({
+/// Functions to query BookedExpRecords (as a Stream and as a Future).
+Future<int> queryBookedExpRecordCount({
   Query Function(Query)? queryBuilder,
   int limit = -1,
 }) =>
     queryCollectionCount(
-      SampleExperiencesRecord.collection,
+      BookedExpRecord.collection,
       queryBuilder: queryBuilder,
       limit: limit,
     );
 
-Stream<List<SampleExperiencesRecord>> querySampleExperiencesRecord({
+Stream<List<BookedExpRecord>> queryBookedExpRecord({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollection(
-      SampleExperiencesRecord.collection,
-      SampleExperiencesRecord.fromSnapshot,
+      BookedExpRecord.collection,
+      BookedExpRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
     );
 
-Future<List<SampleExperiencesRecord>> querySampleExperiencesRecordOnce({
+Future<List<BookedExpRecord>> queryBookedExpRecordOnce({
   Query Function(Query)? queryBuilder,
   int limit = -1,
   bool singleRecord = false,
 }) =>
     queryCollectionOnce(
-      SampleExperiencesRecord.collection,
-      SampleExperiencesRecord.fromSnapshot,
+      BookedExpRecord.collection,
+      BookedExpRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query MarkersRecords (as a Stream and as a Future).
+Future<int> queryMarkersRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      MarkersRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<MarkersRecord>> queryMarkersRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      MarkersRecord.collection,
+      MarkersRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<MarkersRecord>> queryMarkersRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      MarkersRecord.collection,
+      MarkersRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

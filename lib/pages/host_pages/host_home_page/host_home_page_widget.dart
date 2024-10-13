@@ -1,8 +1,12 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/pages/host_pages/navbar_forhost/navbar_forhost_widget.dart';
+import '/pages/host_pages/delete_exp_alert/delete_exp_alert_widget.dart';
+import '/pages/navbar_forhost/navbar_forhost_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'host_home_page_model.dart';
 export 'host_home_page_model.dart';
 
@@ -41,29 +45,34 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
-          automaticallyImplyLeading: false,
-          title: Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
-            child: Text(
-              'My Experiences',
-              style: FlutterFlowTheme.of(context).headlineMedium.override(
-                    fontFamily: 'Inter Tight',
-                    color: Colors.white,
-                    fontSize: 22.0,
-                    letterSpacing: 0.0,
-                  ),
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(70.0),
+          child: AppBar(
+            backgroundColor: FlutterFlowTheme.of(context).primary,
+            automaticallyImplyLeading: false,
+            title: Align(
+              alignment: const AlignmentDirectional(0.0, 0.0),
+              child: Text(
+                'My Experiences',
+                style: FlutterFlowTheme.of(context).headlineMedium.override(
+                      fontFamily: 'Inter Tight',
+                      color: Colors.white,
+                      fontSize: 26.0,
+                      letterSpacing: 0.0,
+                    ),
+              ),
             ),
+            actions: const [],
+            centerTitle: false,
+            elevation: 2.0,
           ),
-          actions: const [],
-          centerTitle: false,
-          elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
@@ -80,6 +89,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                       labelStyle:
                           FlutterFlowTheme.of(context).titleMedium.override(
                                 fontFamily: 'Inter Tight',
+                                fontSize: 18.0,
                                 letterSpacing: 0.0,
                               ),
                       unselectedLabelStyle:
@@ -90,10 +100,10 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                       indicatorColor: FlutterFlowTheme.of(context).primary,
                       tabs: const [
                         Tab(
-                          text: 'Current',
+                          text: 'Future ',
                         ),
                         Tab(
-                          text: 'Past',
+                          text: 'Current and Past ',
                         ),
                       ],
                       controller: _model.tabBarController,
@@ -107,335 +117,59 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                       controller: _model.tabBarController,
                       children: [
                         SingleChildScrollView(
+                          primary: false,
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Align(
-                                        alignment:
-                                            const AlignmentDirectional(0.0, -1.0),
-                                        child: FFButtonWidget(
-                                          onPressed: () async {
-                                            context.pushNamed(
-                                                'CreateNewExperience');
-                                          },
-                                          text: '+',
-                                          options: FFButtonOptions(
-                                            height: 53.0,
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 0.0, 16.0, 0.0),
-                                            iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily: 'Inter Tight',
-                                                      color: Colors.white,
-                                                      fontSize: 30.0,
-                                                      letterSpacing: 0.0,
-                                                    ),
-                                            elevation: 0.0,
-                                            borderSide: const BorderSide(
-                                              color: Colors.black,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(24.0),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Divider(
-                                thickness: 2.0,
-                                color: FlutterFlowTheme.of(context).alternate,
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 1.0, 1.0, 1.0),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(6.0),
-                                        child: Image.asset(
-                                          'assets/images/Kaleeja.jpeg',
-                                          width: double.infinity,
-                                          height: 150.0,
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 8.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Making Kaleeja!',
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              fontFamily: 'Inter Tight',
-                                              color: const Color(0xFF176490),
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 5.0, 0.0),
-                                            child: FFButtonWidget(
-                                              onPressed: () {
-                                                print('Button pressed ...');
-                                              },
-                                              text: 'Details',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Inter Tight',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                            ),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () async {
-                                              context.pushNamed(
-                                                  'CreateNewExperience');
-                                            },
-                                            text: 'Recreate',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 0.0, 16.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Inter Tight',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              elevation: 0.0,
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Divider(
-                                thickness: 2.0,
-                                color: FlutterFlowTheme.of(context).alternate,
-                              ),
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 8.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 3.0,
-                                        color: Color(0x411D2429),
-                                        offset: Offset(
-                                          0.0,
-                                          1.0,
-                                        ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: Column(
+                                    0.0, 12.0, 0.0, 12.0),
+                                child: Row(
                                   mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 1.0, 1.0, 1.0),
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(6.0),
-                                        child: Image.asset(
-                                          'assets/images/IMG_2051.JPG',
-                                          width: double.infinity,
-                                          height: 150.0,
-                                          fit: BoxFit.cover,
+                                    Align(
+                                      alignment:
+                                          const AlignmentDirectional(0.0, -1.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          context
+                                              .pushNamed('CreateNewExperience');
+                                        },
+                                        text: '+',
+                                        options: FFButtonOptions(
+                                          height: 53.0,
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  16.0, 16.0, 16.0, 16.0),
+                                          iconPadding: const EdgeInsets.all(0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Inter Tight',
+                                                    color: Colors.white,
+                                                    fontSize: 30.0,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          elevation: 0.0,
+                                          borderSide: const BorderSide(
+                                            color: Colors.black,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(24.0),
                                         ),
                                       ),
                                     ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 8.0, 0.0, 0.0),
-                                      child: Text(
-                                        'Pottery',
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineSmall
-                                            .override(
-                                              fontFamily: 'Inter Tight',
-                                              color: const Color(0xFF176490),
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 0.0, 16.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 5.0, 0.0),
-                                            child: FFButtonWidget(
-                                              onPressed: () {
-                                                print('Button pressed ...');
-                                              },
-                                              text: 'Details',
-                                              options: FFButtonOptions(
-                                                height: 40.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        16.0, 0.0, 16.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .titleSmall
-                                                        .override(
-                                                          fontFamily:
-                                                              'Inter Tight',
-                                                          color: Colors.white,
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                            ),
-                                          ),
-                                          FFButtonWidget(
-                                            onPressed: () {
-                                              print('Button pressed ...');
-                                            },
-                                            text: 'Recreate',
-                                            options: FFButtonOptions(
-                                              height: 40.0,
-                                              padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 0.0, 16.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .titleSmall
-                                                      .override(
-                                                        fontFamily:
-                                                            'Inter Tight',
-                                                        color: Colors.white,
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                              elevation: 0.0,
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Align(
-                                    alignment: const AlignmentDirectional(0.0, -1.0),
-                                    child: FFButtonWidget(
+                                    FFButtonWidget(
                                       onPressed: () async {
-                                        context
-                                            .pushNamed('CreateNewExperience');
+                                        context.pushNamed('Location');
                                       },
-                                      text: '+',
+                                      text: 'location test',
                                       options: FFButtonOptions(
-                                        height: 53.0,
+                                        height: 40.0,
                                         padding: const EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 0.0),
                                         iconPadding:
@@ -448,131 +182,728 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                             .override(
                                               fontFamily: 'Inter Tight',
                                               color: Colors.white,
-                                              fontSize: 30.0,
                                               letterSpacing: 0.0,
                                             ),
                                         elevation: 0.0,
-                                        borderSide: const BorderSide(
-                                          color: Colors.black,
-                                        ),
                                         borderRadius:
-                                            BorderRadius.circular(24.0),
+                                            BorderRadius.circular(8.0),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                              Divider(
-                                thickness: 2.0,
-                                color: FlutterFlowTheme.of(context).alternate,
-                              ),
-                              Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 8.0),
-                                child: Container(
-                                  width: double.infinity,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        blurRadius: 3.0,
-                                        color: Color(0x411D2429),
-                                        offset: Offset(
-                                          0.0,
-                                          1.0,
+                              StreamBuilder<List<ExperiencesRecord>>(
+                                stream: queryExperiencesRecord(
+                                  queryBuilder: (experiencesRecord) =>
+                                      experiencesRecord
+                                          .where(
+                                            'creator',
+                                            isEqualTo: currentUserReference,
+                                          )
+                                          .where(
+                                            'Date',
+                                            isGreaterThanOrEqualTo:
+                                                FFAppState().CurrentDate,
+                                          ),
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
                                         ),
-                                      )
-                                    ],
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(4.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 1.0, 1.0, 1.0),
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(6.0),
-                                            child: Image.asset(
-                                              'assets/images/IMG_2049.JPG',
+                                      ),
+                                    );
+                                  }
+                                  List<ExperiencesRecord>
+                                      listViewExperiencesRecordList =
+                                      snapshot.data!;
+
+                                  return ListView.builder(
+                                    padding: EdgeInsets.zero,
+                                    shrinkWrap: true,
+                                    scrollDirection: Axis.vertical,
+                                    itemCount:
+                                        listViewExperiencesRecordList.length,
+                                    itemBuilder: (context, listViewIndex) {
+                                      final listViewExperiencesRecord =
+                                          listViewExperiencesRecordList[
+                                              listViewIndex];
+                                      return Column(
+                                        mainAxisSize: MainAxisSize.max,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    16.0, 0.0, 16.0, 8.0),
+                                            child: Container(
                                               width: double.infinity,
-                                              height: 150.0,
-                                              fit: BoxFit.cover,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                boxShadow: const [
+                                                  BoxShadow(
+                                                    blurRadius: 3.0,
+                                                    color: Color(0x411D2429),
+                                                    offset: Offset(
+                                                      0.0,
+                                                      1.0,
+                                                    ),
+                                                  )
+                                                ],
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsets.all(4.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  1.0,
+                                                                  1.0,
+                                                                  1.0),
+                                                      child: ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(6.0),
+                                                        child: Image.network(
+                                                          listViewExperiencesRecord
+                                                              .image,
+                                                          width:
+                                                              double.infinity,
+                                                          height: 150.0,
+                                                          fit: BoxFit.cover,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  8.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Text(
+                                                        listViewExperiencesRecord
+                                                            .experiencename1,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter Tight',
+                                                                  color: const Color(
+                                                                      0xFF176490),
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  16.0,
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceEvenly,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        5.0,
+                                                                        0.0),
+                                                            child:
+                                                                FFButtonWidget(
+                                                              onPressed:
+                                                                  () async {
+                                                                context
+                                                                    .pushNamed(
+                                                                  'Exp_DetailsFor_Creator',
+                                                                  queryParameters:
+                                                                      {
+                                                                    'experienceDetails':
+                                                                        serializeParam(
+                                                                      listViewExperiencesRecord
+                                                                          .reference,
+                                                                      ParamType
+                                                                          .DocumentReference,
+                                                                    ),
+                                                                  }.withoutNulls,
+                                                                );
+                                                              },
+                                                              text: 'Details',
+                                                              options:
+                                                                  FFButtonOptions(
+                                                                height: 40.0,
+                                                                padding: const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        16.0,
+                                                                        0.0),
+                                                                iconPadding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                textStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter Tight',
+                                                                      color: Colors
+                                                                          .white,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                                elevation: 0.0,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                              ),
+                                                            ),
+                                                          ),
+                                                          FFButtonWidget(
+                                                            onPressed:
+                                                                () async {
+                                                              context.pushNamed(
+                                                                'RecreateExp',
+                                                                queryParameters:
+                                                                    {
+                                                                  'expName':
+                                                                      serializeParam(
+                                                                    listViewExperiencesRecord
+                                                                        .experiencename1,
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                  'expDescription':
+                                                                      serializeParam(
+                                                                    listViewExperiencesRecord
+                                                                        .experienceAbout1,
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                  'expImage':
+                                                                      serializeParam(
+                                                                    listViewExperiencesRecord
+                                                                        .image,
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                  'expAge':
+                                                                      serializeParam(
+                                                                    listViewExperiencesRecord
+                                                                        .ageField1,
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                  'expGender':
+                                                                      serializeParam(
+                                                                    listViewExperiencesRecord
+                                                                        .gender,
+                                                                    ParamType
+                                                                        .String,
+                                                                  ),
+                                                                  'expPrice':
+                                                                      serializeParam(
+                                                                    listViewExperiencesRecord
+                                                                        .priceField1,
+                                                                    ParamType
+                                                                        .double,
+                                                                  ),
+                                                                  'expLocation':
+                                                                      serializeParam(
+                                                                    listViewExperiencesRecord
+                                                                        .location,
+                                                                    ParamType
+                                                                        .LatLng,
+                                                                  ),
+                                                                  'expRef':
+                                                                      serializeParam(
+                                                                    listViewExperiencesRecord
+                                                                        .reference,
+                                                                    ParamType
+                                                                        .DocumentReference,
+                                                                  ),
+                                                                  'creatorRef':
+                                                                      serializeParam(
+                                                                    listViewExperiencesRecord
+                                                                        .creator,
+                                                                    ParamType
+                                                                        .DocumentReference,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                              );
+                                                            },
+                                                            text: 'Recreate',
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 40.0,
+                                                              padding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          16.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Inter Tight',
+                                                                        color: Colors
+                                                                            .white,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                      ),
+                                                              elevation: 0.0,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
+                                                          if (valueOrDefault<
+                                                              bool>(
+                                                            listViewExperiencesRecord
+                                                                    .date! >=
+                                                                FFAppState()
+                                                                    .CurrentDate!,
+                                                            false,
+                                                          ))
+                                                            FFButtonWidget(
+                                                              onPressed:
+                                                                  () async {
+                                                                await showModalBottomSheet(
+                                                                  isScrollControlled:
+                                                                      true,
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  enableDrag:
+                                                                      false,
+                                                                  context:
+                                                                      context,
+                                                                  builder:
+                                                                      (context) {
+                                                                    return GestureDetector(
+                                                                      onTap: () =>
+                                                                          FocusScope.of(context)
+                                                                              .unfocus(),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding:
+                                                                            MediaQuery.viewInsetsOf(context),
+                                                                        child:
+                                                                            DeleteExpAlertWidget(
+                                                                          experienceRef:
+                                                                              listViewExperiencesRecord.reference,
+                                                                          expDate:
+                                                                              listViewExperiencesRecord.date!,
+                                                                          emailList: listViewExperiencesRecord
+                                                                              .emailsofUsers
+                                                                              .contains(listViewExperiencesRecord.hasEmailAddressGuest().toString())
+                                                                              .toString(),
+                                                                          expName:
+                                                                              listViewExperiencesRecord.experiencename1,
+                                                                        ),
+                                                                      ),
+                                                                    );
+                                                                  },
+                                                                ).then((value) =>
+                                                                    safeSetState(
+                                                                        () {}));
+                                                              },
+                                                              text: 'Cancel',
+                                                              options:
+                                                                  FFButtonOptions(
+                                                                height: 40.0,
+                                                                padding: const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        16.0,
+                                                                        0.0,
+                                                                        16.0,
+                                                                        0.0),
+                                                                iconPadding:
+                                                                    const EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                textStyle: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Inter Tight',
+                                                                      color: Colors
+                                                                          .white,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
+                                                                elevation: 0.0,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                              ),
+                                                            ),
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                        Padding(
+                                        ],
+                                      );
+                                    },
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                        SingleChildScrollView(
+                          primary: false,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 12.0, 0.0, 12.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Align(
+                                      alignment:
+                                          const AlignmentDirectional(0.0, -1.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          context
+                                              .pushNamed('CreateNewExperience');
+                                        },
+                                        text: '+',
+                                        options: FFButtonOptions(
+                                          height: 53.0,
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 8.0, 0.0, 0.0),
-                                          child: Text(
-                                            'Wicker industry',
-                                            style: FlutterFlowTheme.of(context)
-                                                .headlineSmall
-                                                .override(
-                                                  fontFamily: 'Inter Tight',
-                                                  color: const Color(0xFF176490),
-                                                  letterSpacing: 0.0,
-                                                ),
+                                                  16.0, 16.0, 16.0, 16.0),
+                                          iconPadding: const EdgeInsets.all(0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Inter Tight',
+                                                    color: Colors.white,
+                                                    fontSize: 30.0,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          elevation: 0.0,
+                                          borderSide: const BorderSide(
+                                            color: Colors.black,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(24.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              StreamBuilder<List<ExperiencesRecord>>(
+                                stream: queryExperiencesRecord(
+                                  queryBuilder: (experiencesRecord) =>
+                                      experiencesRecord
+                                          .where(
+                                            'creator',
+                                            isEqualTo: currentUserReference,
+                                          )
+                                          .where(
+                                            'Date',
+                                            isLessThan:
+                                                FFAppState().CurrentDate,
+                                          ),
+                                ),
+                                builder: (context, snapshot) {
+                                  // Customize what your widget looks like when it's loading.
+                                  if (!snapshot.hasData) {
+                                    return Center(
+                                      child: SizedBox(
+                                        width: 50.0,
+                                        height: 50.0,
+                                        child: CircularProgressIndicator(
+                                          valueColor:
+                                              AlwaysStoppedAnimation<Color>(
+                                            FlutterFlowTheme.of(context)
+                                                .primary,
                                           ),
                                         ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  16.0, 0.0, 16.0, 0.0),
-                                          child: Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.end,
-                                            children: [
-                                              FFButtonWidget(
-                                                onPressed: () async {
-                                                  context.pushNamed(
-                                                      'CreateNewExperience');
-                                                },
-                                                text: 'Recreate',
-                                                options: FFButtonOptions(
-                                                  height: 40.0,
+                                      ),
+                                    );
+                                  }
+                                  List<ExperiencesRecord>
+                                      listViewExperiencesRecordList =
+                                      snapshot.data!;
+
+                                  return ListView.builder(
+                                    padding: EdgeInsets.zero,
+                                    shrinkWrap: true,
+                                    scrollDirection: Axis.vertical,
+                                    itemCount:
+                                        listViewExperiencesRecordList.length,
+                                    itemBuilder: (context, listViewIndex) {
+                                      final listViewExperiencesRecord =
+                                          listViewExperiencesRecordList[
+                                              listViewIndex];
+                                      return Padding(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 0.0, 16.0, 8.0),
+                                        child: Container(
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            boxShadow: const [
+                                              BoxShadow(
+                                                blurRadius: 3.0,
+                                                color: Color(0x411D2429),
+                                                offset: Offset(
+                                                  0.0,
+                                                  1.0,
+                                                ),
+                                              )
+                                            ],
+                                            borderRadius:
+                                                BorderRadius.circular(8.0),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(4.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 1.0, 1.0, 1.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            6.0),
+                                                    child: Image.network(
+                                                      listViewExperiencesRecord
+                                                          .image,
+                                                      width: double.infinity,
+                                                      height: 150.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          16.0, 8.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    listViewExperiencesRecord
+                                                        .experiencename1,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Inter Tight',
+                                                          color:
+                                                              const Color(0xFF176490),
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                  ),
+                                                ),
+                                                Padding(
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 16.0, 0.0),
-                                                  iconPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(0.0, 0.0,
-                                                              0.0, 0.0),
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  textStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .titleSmall
-                                                          .override(
-                                                            fontFamily:
-                                                                'Inter Tight',
-                                                            color: Colors.white,
-                                                            letterSpacing: 0.0,
-                                                          ),
-                                                  elevation: 0.0,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          8.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment.end,
+                                                    children: [
+                                                      FFButtonWidget(
+                                                        onPressed: () async {
+                                                          context.pushNamed(
+                                                            'RecreateExp',
+                                                            queryParameters: {
+                                                              'expName':
+                                                                  serializeParam(
+                                                                listViewExperiencesRecord
+                                                                    .experiencename1,
+                                                                ParamType
+                                                                    .String,
+                                                              ),
+                                                              'expDescription':
+                                                                  serializeParam(
+                                                                listViewExperiencesRecord
+                                                                    .experienceAbout1,
+                                                                ParamType
+                                                                    .String,
+                                                              ),
+                                                              'expImage':
+                                                                  serializeParam(
+                                                                listViewExperiencesRecord
+                                                                    .image,
+                                                                ParamType
+                                                                    .String,
+                                                              ),
+                                                              'expAge':
+                                                                  serializeParam(
+                                                                listViewExperiencesRecord
+                                                                    .ageField1,
+                                                                ParamType
+                                                                    .String,
+                                                              ),
+                                                              'expGender':
+                                                                  serializeParam(
+                                                                listViewExperiencesRecord
+                                                                    .gender,
+                                                                ParamType
+                                                                    .String,
+                                                              ),
+                                                              'expPrice':
+                                                                  serializeParam(
+                                                                listViewExperiencesRecord
+                                                                    .priceField1,
+                                                                ParamType
+                                                                    .double,
+                                                              ),
+                                                              'expLocation':
+                                                                  serializeParam(
+                                                                listViewExperiencesRecord
+                                                                    .location,
+                                                                ParamType
+                                                                    .LatLng,
+                                                              ),
+                                                              'expRef':
+                                                                  serializeParam(
+                                                                listViewExperiencesRecord
+                                                                    .reference,
+                                                                ParamType
+                                                                    .DocumentReference,
+                                                              ),
+                                                            }.withoutNulls,
+                                                          );
+                                                        },
+                                                        text: 'Recreate',
+                                                        options:
+                                                            FFButtonOptions(
+                                                          height: 40.0,
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      16.0,
+                                                                      0.0,
+                                                                      16.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Inter Tight',
+                                                                    color: Colors
+                                                                        .white,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
+                                                          elevation: 0.0,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                         ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
+                                      );
+                                    },
+                                  );
+                                },
                               ),
                             ],
                           ),
@@ -582,10 +913,41 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                   ),
                 ],
               ),
-              wrapWithModel(
-                model: _model.navbarForhostModel,
-                updateCallback: () => safeSetState(() {}),
-                child: const NavbarForhostWidget(),
+              Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: StreamBuilder<List<ExperiencesRecord>>(
+                  stream: queryExperiencesRecord(
+                    queryBuilder: (experiencesRecord) =>
+                        experiencesRecord.where(
+                      'creator',
+                      isEqualTo: currentUserReference,
+                    ),
+                  ),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 50.0,
+                          height: 50.0,
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              FlutterFlowTheme.of(context).primary,
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                    List<ExperiencesRecord> navbarForhostExperiencesRecordList =
+                        snapshot.data!;
+
+                    return wrapWithModel(
+                      model: _model.navbarForhostModel,
+                      updateCallback: () => safeSetState(() {}),
+                      child: const NavbarForhostWidget(),
+                    );
+                  },
+                ),
               ),
             ],
           ),

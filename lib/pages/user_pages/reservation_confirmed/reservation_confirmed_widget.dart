@@ -332,10 +332,19 @@ class _ReservationConfirmedWidgetState extends State<ReservationConfirmedWidget>
                                 color: FlutterFlowTheme.of(context).alternate,
                               ),
                             ),
+                            Text(
+                              'We can’t wait to show you Saudi’s rich heritage!',
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Inter',
+                                    letterSpacing: 0.0,
+                                  ),
+                            ),
                             Align(
                               alignment: const AlignmentDirectional(0.0, -1.0),
                               child: Text(
-                                'We can’t wait to show you Saudi’s rich heritage.',
+                                'You will pay later at the property.',
                                 style: FlutterFlowTheme.of(context)
                                     .labelMedium
                                     .override(
@@ -355,8 +364,8 @@ class _ReservationConfirmedWidgetState extends State<ReservationConfirmedWidget>
                               ),
                             ),
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                context.pushNamed('availableexperiences');
                               },
                               text: 'Done',
                               options: FFButtonOptions(

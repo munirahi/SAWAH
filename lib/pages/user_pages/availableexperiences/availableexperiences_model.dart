@@ -7,8 +7,10 @@ class AvailableexperiencesModel
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for emailAddress widget.
+  final emailAddressKey = GlobalKey();
   FocusNode? emailAddressFocusNode;
   TextEditingController? emailAddressTextController;
+  String? emailAddressSelectedOption;
   String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
 
   @override
@@ -17,6 +19,5 @@ class AvailableexperiencesModel
   @override
   void dispose() {
     emailAddressFocusNode?.dispose();
-    emailAddressTextController?.dispose();
   }
 }

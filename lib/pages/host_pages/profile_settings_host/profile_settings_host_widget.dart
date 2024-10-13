@@ -3,7 +3,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/pages/host_pages/navbar_forhost/navbar_forhost_widget.dart';
+import '/pages/navbar_forhost/navbar_forhost_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'profile_settings_host_model.dart';
@@ -252,6 +252,63 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                           ),
                         ),
                       ),
+                      Container(
+                        width: 50.0,
+                        height: 49.0,
+                        decoration: BoxDecoration(
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  20.0, 0.0, 0.0, 0.0),
+                              child: Text(
+                                'Account Details',
+                                textAlign: TextAlign.end,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleLarge
+                                    .override(
+                                      fontFamily: 'Inter Tight',
+                                      letterSpacing: 0.0,
+                                    ),
+                              ),
+                            ),
+                            Align(
+                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    180.0, 0.0, 0.0, 0.0),
+                                child: FlutterFlowIconButton(
+                                  borderRadius: 8.0,
+                                  buttonSize: 40.0,
+                                  fillColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  icon: Icon(
+                                    Icons.keyboard_arrow_right,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                  onPressed: () async {
+                                    context.pushNamed(
+                                      'accounD',
+                                      queryParameters: {
+                                        'userData': serializeParam(
+                                          currentUserReference,
+                                          ParamType.DocumentReference,
+                                        ),
+                                      }.withoutNulls,
+                                    );
+                                  },
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                   Padding(
@@ -354,7 +411,7 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                         await authManager.signOut();
                         GoRouter.of(context).clearRedirectLocation();
 
-                        context.goNamedAuth('onbording', context.mounted);
+                        context.pushNamedAuth('AuthNew', context.mounted);
                       },
                       text: 'Log Out',
                       options: FFButtonOptions(
@@ -380,10 +437,13 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                   ),
                 ].addToEnd(const SizedBox(height: 64.0)),
               ),
-              wrapWithModel(
-                model: _model.navbarForhostModel,
-                updateCallback: () => safeSetState(() {}),
-                child: const NavbarForhostWidget(),
+              Align(
+                alignment: const AlignmentDirectional(0.0, 0.0),
+                child: wrapWithModel(
+                  model: _model.navbarForhostModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: const NavbarForhostWidget(),
+                ),
               ),
             ],
           ),

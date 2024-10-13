@@ -318,7 +318,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
                 child: Text(
-                  'v0.0.1',
+                  'v0.0.2',
                   style: FlutterFlowTheme.of(context).labelMedium.override(
                         fontFamily: 'Inter',
                         letterSpacing: 0.0,
@@ -333,7 +333,7 @@ class _ProfileSettingsWidgetState extends State<ProfileSettingsWidget> {
                     await authManager.signOut();
                     GoRouter.of(context).clearRedirectLocation();
 
-                    context.goNamedAuth('onbording', context.mounted);
+                    context.pushNamedAuth('AuthNew', context.mounted);
                   },
                   text: 'Log Out',
                   options: FFButtonOptions(

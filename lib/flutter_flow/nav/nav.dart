@@ -2,10 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
+import '/backend/backend.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
+import '/backend/push_notifications/push_notifications_handler.dart'
+    show PushNotificationsHandler;
 import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -89,11 +91,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               : const ProfileSettingsWidget(),
         ),
         FFRoute(
-          name: 'Auth1',
-          path: '/auth1',
-          builder: (context, params) => const Auth1Widget(),
-        ),
-        FFRoute(
           name: 'onbording',
           path: '/onbording',
           builder: (context, params) => const OnbordingWidget(),
@@ -108,12 +105,38 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'BookExperience',
           path: '/bookExperience',
-          builder: (context, params) => const BookExperienceWidget(),
+          asyncParams: {
+            'experienceRef':
+                getDoc(['Experiences'], ExperiencesRecord.fromSnapshot),
+          },
+          builder: (context, params) => BookExperienceWidget(
+            experienceRef: params.getParam(
+              'experienceRef',
+              ParamType.Document,
+            ),
+            userRef: params.getParam(
+              'userRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
+          ),
         ),
         FFRoute(
           name: 'payment1',
           path: '/payment1',
-          builder: (context, params) => const Payment1Widget(),
+          builder: (context, params) => Payment1Widget(
+            experienceRef: params.getParam(
+              'experienceRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['Experiences'],
+            ),
+            numberOfSeats: params.getParam(
+              'numberOfSeats',
+              ParamType.int,
+            ),
+          ),
         ),
         FFRoute(
           name: 'payment2',
@@ -131,11 +154,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const ReservationConfirmedWidget(),
         ),
         FFRoute(
-          name: 'Auth1Copy',
-          path: '/auth1Copy',
-          builder: (context, params) => const Auth1CopyWidget(),
-        ),
-        FFRoute(
           name: 'HostHomePage',
           path: '/hostHomePage',
           builder: (context, params) => const HostHomePageWidget(),
@@ -144,11 +162,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CreateExperienceConfirmation',
           path: '/createExperienceConfirmation',
           builder: (context, params) => const CreateExperienceConfirmationWidget(),
-        ),
-        FFRoute(
-          name: 'availableexperiencesCopy',
-          path: '/availableexperiencesCopy',
-          builder: (context, params) => const AvailableexperiencesCopyWidget(),
         ),
         FFRoute(
           name: 'profile_Settings_host',
@@ -166,11 +179,162 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const AuthEDITEDWidget(),
         ),
         FFRoute(
-          name: 'availableexperiencesMwork',
-          path: '/availableexperiencesMwork',
+          name: 'UserInfooo',
+          path: '/userInfooo',
+          builder: (context, params) => UserInfoooWidget(
+            nameee: params.getParam(
+              'nameee',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['Experiences'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'AuthNew',
+          path: '/authNew',
+          builder: (context, params) => const AuthNewWidget(),
+        ),
+        FFRoute(
+          name: 'Exp_Details',
+          path: '/expDetails',
+          builder: (context, params) => ExpDetailsWidget(
+            expDetails: params.getParam(
+              'expDetails',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['Experiences'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'Exp_DetailsFor_Creator',
+          path: '/expDetailsForCreator',
+          builder: (context, params) => ExpDetailsForCreatorWidget(
+            experienceDetails: params.getParam(
+              'experienceDetails',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['Experiences'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'accounD',
+          path: '/accounD',
+          builder: (context, params) => AccounDWidget(
+            userData: params.getParam(
+              'userData',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'resendEmailV',
+          path: '/resendEmailV',
+          builder: (context, params) => const ResendEmailVWidget(),
+        ),
+        FFRoute(
+          name: 'notificationsDrawer',
+          path: '/notificationsDrawer',
+          builder: (context, params) => const NotificationsDrawerWidget(),
+        ),
+        FFRoute(
+          name: 'users_booked_ex',
+          path: '/usersBookedEx',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'availableexperiencesMwork')
-              : const AvailableexperiencesMworkWidget(),
+              ? const NavBarPage(initialPage: 'users_booked_ex')
+              : const UsersBookedExWidget(),
+        ),
+        FFRoute(
+          name: 'Location',
+          path: '/location',
+          builder: (context, params) => LocationWidget(
+            locationParameter: params.getParam(
+              'locationParameter',
+              ParamType.LatLng,
+            ),
+            userLong: params.getParam(
+              'userLong',
+              ParamType.double,
+            ),
+            userlat: params.getParam(
+              'userlat',
+              ParamType.double,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'payment2Copy',
+          path: '/payment2Copy',
+          builder: (context, params) => Payment2CopyWidget(
+            countRef: params.getParam(
+              'countRef',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'RecreateExp',
+          path: '/recreateExp',
+          builder: (context, params) => RecreateExpWidget(
+            expName: params.getParam(
+              'expName',
+              ParamType.String,
+            ),
+            expDescription: params.getParam(
+              'expDescription',
+              ParamType.String,
+            ),
+            expImage: params.getParam(
+              'expImage',
+              ParamType.String,
+            ),
+            expAge: params.getParam(
+              'expAge',
+              ParamType.String,
+            ),
+            expGender: params.getParam(
+              'expGender',
+              ParamType.String,
+            ),
+            expPrice: params.getParam(
+              'expPrice',
+              ParamType.double,
+            ),
+            expLocation: params.getParam(
+              'expLocation',
+              ParamType.LatLng,
+            ),
+            expRef: params.getParam(
+              'expRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['Experiences'],
+            ),
+            creatorRef: params.getParam(
+              'creatorRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'map',
+          path: '/map',
+          builder: (context, params) => MapWidget(
+            userlat: params.getParam(
+              'userlat',
+              ParamType.double,
+            ),
+            userLong: params.getParam(
+              'userLong',
+              ParamType.double,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -290,6 +454,7 @@ class FFParameters {
     ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
+    StructBuilder<T>? structBuilder,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -308,6 +473,7 @@ class FFParameters {
       type,
       isList,
       collectionNamePath: collectionNamePath,
+      structBuilder: structBuilder,
     );
   }
 }
@@ -359,10 +525,10 @@ class FFRoute {
                   color: Colors.transparent,
                   child: Image.asset(
                     'assets/images/logo444.jpg',
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
                 )
-              : page;
+              : PushNotificationsHandler(child: page);
 
           final transitionInfo = state.transitionInfo;
           return transitionInfo.hasTransition

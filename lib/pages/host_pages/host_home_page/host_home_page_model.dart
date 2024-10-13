@@ -1,5 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/host_pages/navbar_forhost/navbar_forhost_widget.dart';
+import '/pages/navbar_forhost/navbar_forhost_widget.dart';
 import 'host_home_page_widget.dart' show HostHomePageWidget;
 import 'package:flutter/material.dart';
 

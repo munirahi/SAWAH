@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
-import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -16,16 +15,6 @@ class ExperiencesRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "DropDown" field.
-  List<int>? _dropDown;
-  List<int> get dropDown => _dropDown ?? const [];
-  bool hasDropDown() => _dropDown != null;
-
-  // "CountController1" field.
-  int? _countController1;
-  int get countController1 => _countController1 ?? 0;
-  bool hasCountController1() => _countController1 != null;
-
   // "Experiencename1" field.
   String? _experiencename1;
   String get experiencename1 => _experiencename1 ?? '';
@@ -36,60 +25,10 @@ class ExperiencesRecord extends FirestoreRecord {
   String get experienceAbout1 => _experienceAbout1 ?? '';
   bool hasExperienceAbout1() => _experienceAbout1 != null;
 
-  // "CountController" field.
-  int? _countController;
-  int get countController => _countController ?? 0;
-  bool hasCountController() => _countController != null;
-
-  // "AgeField1" field.
-  int? _ageField1;
-  int get ageField1 => _ageField1 ?? 0;
-  bool hasAgeField1() => _ageField1 != null;
-
-  // "AgeField2" field.
-  int? _ageField2;
-  int get ageField2 => _ageField2 ?? 0;
-  bool hasAgeField2() => _ageField2 != null;
-
-  // "PhoneNumberPicker" field.
-  int? _phoneNumberPicker;
-  int get phoneNumberPicker => _phoneNumberPicker ?? 0;
-  bool hasPhoneNumberPicker() => _phoneNumberPicker != null;
-
-  // "TimeField1" field.
-  String? _timeField1;
-  String get timeField1 => _timeField1 ?? '';
-  bool hasTimeField1() => _timeField1 != null;
-
-  // "TimeField2" field.
-  String? _timeField2;
-  String get timeField2 => _timeField2 ?? '';
-  bool hasTimeField2() => _timeField2 != null;
-
-  // "RadioButton1" field.
-  String? _radioButton1;
-  String get radioButton1 => _radioButton1 ?? '';
-  bool hasRadioButton1() => _radioButton1 != null;
-
-  // "event_date1" field.
-  String? _eventDate1;
-  String get eventDate1 => _eventDate1 ?? '';
-  bool hasEventDate1() => _eventDate1 != null;
-
-  // "event_date2" field.
-  String? _eventDate2;
-  String get eventDate2 => _eventDate2 ?? '';
-  bool hasEventDate2() => _eventDate2 != null;
-
   // "PriceField1" field.
   double? _priceField1;
   double get priceField1 => _priceField1 ?? 0.0;
   bool hasPriceField1() => _priceField1 != null;
-
-  // "PhotoButton" field.
-  String? _photoButton;
-  String get photoButton => _photoButton ?? '';
-  bool hasPhotoButton() => _photoButton != null;
 
   // "creator" field.
   DocumentReference? _creator;
@@ -101,42 +40,84 @@ class ExperiencesRecord extends FirestoreRecord {
   List<DocumentReference> get users => _users ?? const [];
   bool hasUsers() => _users != null;
 
-  // "BookingDate" field.
-  String? _bookingDate;
-  String get bookingDate => _bookingDate ?? '';
-  bool hasBookingDate() => _bookingDate != null;
+  // "PhoneNumberPicker" field.
+  int? _phoneNumberPicker;
+  int get phoneNumberPicker => _phoneNumberPicker ?? 0;
+  bool hasPhoneNumberPicker() => _phoneNumberPicker != null;
 
-  // "BookingTime" field.
-  String? _bookingTime;
-  String get bookingTime => _bookingTime ?? '';
-  bool hasBookingTime() => _bookingTime != null;
+  // "Image" field.
+  String? _image;
+  String get image => _image ?? '';
+  bool hasImage() => _image != null;
+
+  // "Gender" field.
+  String? _gender;
+  String get gender => _gender ?? '';
+  bool hasGender() => _gender != null;
+
+  // "SeatLimit" field.
+  int? _seatLimit;
+  int get seatLimit => _seatLimit ?? 0;
+  bool hasSeatLimit() => _seatLimit != null;
+
+  // "isFull" field.
+  bool? _isFull;
+  bool get isFull => _isFull ?? false;
+  bool hasIsFull() => _isFull != null;
+
+  // "remainingSeats" field.
+  int? _remainingSeats;
+  int get remainingSeats => _remainingSeats ?? 0;
+  bool hasRemainingSeats() => _remainingSeats != null;
+
+  // "AgeField1" field.
+  String? _ageField1;
+  String get ageField1 => _ageField1 ?? '';
+  bool hasAgeField1() => _ageField1 != null;
+
+  // "Date" field.
+  DateTime? _date;
+  DateTime? get date => _date;
+  bool hasDate() => _date != null;
+
+  // "Time" field.
+  DateTime? _time;
+  DateTime? get time => _time;
+  bool hasTime() => _time != null;
+
+  // "location" field.
+  LatLng? _location;
+  LatLng? get location => _location;
+  bool hasLocation() => _location != null;
 
   // "emailAddressGuest" field.
-  String? _emailAddressGuest;
-  String get emailAddressGuest => _emailAddressGuest ?? '';
+  List<String>? _emailAddressGuest;
+  List<String> get emailAddressGuest => _emailAddressGuest ?? const [];
   bool hasEmailAddressGuest() => _emailAddressGuest != null;
 
+  // "EmailsofUsers" field.
+  List<String>? _emailsofUsers;
+  List<String> get emailsofUsers => _emailsofUsers ?? const [];
+  bool hasEmailsofUsers() => _emailsofUsers != null;
+
   void _initializeFields() {
-    _dropDown = getDataList(snapshotData['DropDown']);
-    _countController1 = castToType<int>(snapshotData['CountController1']);
     _experiencename1 = snapshotData['Experiencename1'] as String?;
     _experienceAbout1 = snapshotData['Experience_about1'] as String?;
-    _countController = castToType<int>(snapshotData['CountController']);
-    _ageField1 = castToType<int>(snapshotData['AgeField1']);
-    _ageField2 = castToType<int>(snapshotData['AgeField2']);
-    _phoneNumberPicker = castToType<int>(snapshotData['PhoneNumberPicker']);
-    _timeField1 = snapshotData['TimeField1'] as String?;
-    _timeField2 = snapshotData['TimeField2'] as String?;
-    _radioButton1 = snapshotData['RadioButton1'] as String?;
-    _eventDate1 = snapshotData['event_date1'] as String?;
-    _eventDate2 = snapshotData['event_date2'] as String?;
     _priceField1 = castToType<double>(snapshotData['PriceField1']);
-    _photoButton = snapshotData['PhotoButton'] as String?;
     _creator = snapshotData['creator'] as DocumentReference?;
     _users = getDataList(snapshotData['users']);
-    _bookingDate = snapshotData['BookingDate'] as String?;
-    _bookingTime = snapshotData['BookingTime'] as String?;
-    _emailAddressGuest = snapshotData['emailAddressGuest'] as String?;
+    _phoneNumberPicker = castToType<int>(snapshotData['PhoneNumberPicker']);
+    _image = snapshotData['Image'] as String?;
+    _gender = snapshotData['Gender'] as String?;
+    _seatLimit = castToType<int>(snapshotData['SeatLimit']);
+    _isFull = snapshotData['isFull'] as bool?;
+    _remainingSeats = castToType<int>(snapshotData['remainingSeats']);
+    _ageField1 = snapshotData['AgeField1'] as String?;
+    _date = snapshotData['Date'] as DateTime?;
+    _time = snapshotData['Time'] as DateTime?;
+    _location = snapshotData['location'] as LatLng?;
+    _emailAddressGuest = getDataList(snapshotData['emailAddressGuest']);
+    _emailsofUsers = getDataList(snapshotData['EmailsofUsers']);
   }
 
   static CollectionReference get collection =>
@@ -174,45 +155,37 @@ class ExperiencesRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createExperiencesRecordData({
-  int? countController1,
   String? experiencename1,
   String? experienceAbout1,
-  int? countController,
-  int? ageField1,
-  int? ageField2,
-  int? phoneNumberPicker,
-  String? timeField1,
-  String? timeField2,
-  String? radioButton1,
-  String? eventDate1,
-  String? eventDate2,
   double? priceField1,
-  String? photoButton,
   DocumentReference? creator,
-  String? bookingDate,
-  String? bookingTime,
-  String? emailAddressGuest,
+  int? phoneNumberPicker,
+  String? image,
+  String? gender,
+  int? seatLimit,
+  bool? isFull,
+  int? remainingSeats,
+  String? ageField1,
+  DateTime? date,
+  DateTime? time,
+  LatLng? location,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'CountController1': countController1,
       'Experiencename1': experiencename1,
       'Experience_about1': experienceAbout1,
-      'CountController': countController,
-      'AgeField1': ageField1,
-      'AgeField2': ageField2,
-      'PhoneNumberPicker': phoneNumberPicker,
-      'TimeField1': timeField1,
-      'TimeField2': timeField2,
-      'RadioButton1': radioButton1,
-      'event_date1': eventDate1,
-      'event_date2': eventDate2,
       'PriceField1': priceField1,
-      'PhotoButton': photoButton,
       'creator': creator,
-      'BookingDate': bookingDate,
-      'BookingTime': bookingTime,
-      'emailAddressGuest': emailAddressGuest,
+      'PhoneNumberPicker': phoneNumberPicker,
+      'Image': image,
+      'Gender': gender,
+      'SeatLimit': seatLimit,
+      'isFull': isFull,
+      'remainingSeats': remainingSeats,
+      'AgeField1': ageField1,
+      'Date': date,
+      'Time': time,
+      'location': location,
     }.withoutNulls,
   );
 
@@ -225,50 +198,44 @@ class ExperiencesRecordDocumentEquality implements Equality<ExperiencesRecord> {
   @override
   bool equals(ExperiencesRecord? e1, ExperiencesRecord? e2) {
     const listEquality = ListEquality();
-    return listEquality.equals(e1?.dropDown, e2?.dropDown) &&
-        e1?.countController1 == e2?.countController1 &&
-        e1?.experiencename1 == e2?.experiencename1 &&
+    return e1?.experiencename1 == e2?.experiencename1 &&
         e1?.experienceAbout1 == e2?.experienceAbout1 &&
-        e1?.countController == e2?.countController &&
-        e1?.ageField1 == e2?.ageField1 &&
-        e1?.ageField2 == e2?.ageField2 &&
-        e1?.phoneNumberPicker == e2?.phoneNumberPicker &&
-        e1?.timeField1 == e2?.timeField1 &&
-        e1?.timeField2 == e2?.timeField2 &&
-        e1?.radioButton1 == e2?.radioButton1 &&
-        e1?.eventDate1 == e2?.eventDate1 &&
-        e1?.eventDate2 == e2?.eventDate2 &&
         e1?.priceField1 == e2?.priceField1 &&
-        e1?.photoButton == e2?.photoButton &&
         e1?.creator == e2?.creator &&
         listEquality.equals(e1?.users, e2?.users) &&
-        e1?.bookingDate == e2?.bookingDate &&
-        e1?.bookingTime == e2?.bookingTime &&
-        e1?.emailAddressGuest == e2?.emailAddressGuest;
+        e1?.phoneNumberPicker == e2?.phoneNumberPicker &&
+        e1?.image == e2?.image &&
+        e1?.gender == e2?.gender &&
+        e1?.seatLimit == e2?.seatLimit &&
+        e1?.isFull == e2?.isFull &&
+        e1?.remainingSeats == e2?.remainingSeats &&
+        e1?.ageField1 == e2?.ageField1 &&
+        e1?.date == e2?.date &&
+        e1?.time == e2?.time &&
+        e1?.location == e2?.location &&
+        listEquality.equals(e1?.emailAddressGuest, e2?.emailAddressGuest) &&
+        listEquality.equals(e1?.emailsofUsers, e2?.emailsofUsers);
   }
 
   @override
   int hash(ExperiencesRecord? e) => const ListEquality().hash([
-        e?.dropDown,
-        e?.countController1,
         e?.experiencename1,
         e?.experienceAbout1,
-        e?.countController,
-        e?.ageField1,
-        e?.ageField2,
-        e?.phoneNumberPicker,
-        e?.timeField1,
-        e?.timeField2,
-        e?.radioButton1,
-        e?.eventDate1,
-        e?.eventDate2,
         e?.priceField1,
-        e?.photoButton,
         e?.creator,
         e?.users,
-        e?.bookingDate,
-        e?.bookingTime,
-        e?.emailAddressGuest
+        e?.phoneNumberPicker,
+        e?.image,
+        e?.gender,
+        e?.seatLimit,
+        e?.isFull,
+        e?.remainingSeats,
+        e?.ageField1,
+        e?.date,
+        e?.time,
+        e?.location,
+        e?.emailAddressGuest,
+        e?.emailsofUsers
       ]);
 
   @override

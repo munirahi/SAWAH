@@ -70,7 +70,7 @@ class _ResendemailWidgetState extends State<ResendemailWidget> {
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                         child: Text(
-                          'E-mail Verfication Remindar',
+                          'E-mail Verfication Reminder',
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
