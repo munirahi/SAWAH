@@ -5,6 +5,12 @@ enum UserType {
   user,
 }
 
+enum CategoriesEnum {
+  Food,
+  Workshops,
+  Outdoors,
+}
+
 extension FFEnumExtensions<T extends Enum> on T {
   String serialize() => name;
 }
@@ -18,6 +24,8 @@ T? deserializeEnum<T>(String? value) {
   switch (T) {
     case (UserType):
       return UserType.values.deserialize(value) as T?;
+    case (CategoriesEnum):
+      return CategoriesEnum.values.deserialize(value) as T?;
     default:
       return null;
   }

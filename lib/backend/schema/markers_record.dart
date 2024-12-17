@@ -15,18 +15,12 @@ class MarkersRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "Longitude" field.
-  bool? _longitude;
-  bool get longitude => _longitude ?? false;
-  bool hasLongitude() => _longitude != null;
-
   // "latitude" field.
   bool? _latitude;
   bool get latitude => _latitude ?? false;
   bool hasLatitude() => _latitude != null;
 
   void _initializeFields() {
-    _longitude = snapshotData['Longitude'] as bool?;
     _latitude = snapshotData['latitude'] as bool?;
   }
 
@@ -65,12 +59,10 @@ class MarkersRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createMarkersRecordData({
-  bool? longitude,
   bool? latitude,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'Longitude': longitude,
       'latitude': latitude,
     }.withoutNulls,
   );
@@ -83,12 +75,11 @@ class MarkersRecordDocumentEquality implements Equality<MarkersRecord> {
 
   @override
   bool equals(MarkersRecord? e1, MarkersRecord? e2) {
-    return e1?.longitude == e2?.longitude && e1?.latitude == e2?.latitude;
+    return e1?.latitude == e2?.latitude;
   }
 
   @override
-  int hash(MarkersRecord? e) =>
-      const ListEquality().hash([e?.longitude, e?.latitude]);
+  int hash(MarkersRecord? e) => const ListEquality().hash([e?.latitude]);
 
   @override
   bool isValidKey(Object? o) => o is MarkersRecord;

@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbar_forhost/navbar_forhost_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'profile_settings_host_model.dart';
 export 'profile_settings_host_model.dart';
 
@@ -95,31 +96,52 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                       Padding(
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
-                        child: Container(
-                          width: double.infinity,
-                          decoration: const BoxDecoration(),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Getting Started',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Inter Tight',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                Icon(
-                                  Icons.chevron_right_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                              ],
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await launchUrl(Uri(
+                                scheme: 'mailto',
+                                path: 'sawwahteam@gmail.com',
+                                query: {
+                                  'subject': 'need help email',
+                                  'body':
+                                      'Dear Sawwah Team , I would like to get some help with',
+                                }
+                                    .entries
+                                    .map((MapEntry<String, String> e) =>
+                                        '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+                                    .join('&')));
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            decoration: const BoxDecoration(),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Help',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily: 'Inter Tight',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Icon(
+                                    Icons.chevron_right_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -127,127 +149,41 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                       Padding(
                         padding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
-                        child: Container(
-                          width: double.infinity,
-                          decoration: const BoxDecoration(),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'About Us',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Inter Tight',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                Icon(
-                                  Icons.chevron_right_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
-                        child: Container(
-                          width: double.infinity,
-                          decoration: const BoxDecoration(),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Help',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Inter Tight',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                Icon(
-                                  Icons.chevron_right_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
-                        child: Container(
-                          width: double.infinity,
-                          decoration: const BoxDecoration(),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Privacy Policy',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Inter Tight',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                Icon(
-                                  Icons.chevron_right_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
-                        child: Container(
-                          width: double.infinity,
-                          decoration: const BoxDecoration(),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  'Terms & Conditions',
-                                  style: FlutterFlowTheme.of(context)
-                                      .titleLarge
-                                      .override(
-                                        fontFamily: 'Inter Tight',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                Icon(
-                                  Icons.chevron_right_rounded,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryText,
-                                  size: 24.0,
-                                ),
-                              ],
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('TermsandConditions');
+                          },
+                          child: Container(
+                            width: double.infinity,
+                            decoration: const BoxDecoration(),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    'Terms & Conditions',
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleLarge
+                                        .override(
+                                          fontFamily: 'Inter Tight',
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  Icon(
+                                    Icons.chevron_right_rounded,
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    size: 24.0,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -340,8 +276,8 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                             color: FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
                           ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
+                          onPressed: () async {
+                            await launchURL('https://www.youtube.com/');
                           },
                         ),
                         FlutterFlowIconButton(
@@ -356,8 +292,9 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                             color: FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
                           ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
+                          onPressed: () async {
+                            await launchURL(
+                                'https://www.instagram.com/accounts/login/?hl=en');
                           },
                         ),
                         FlutterFlowIconButton(
@@ -372,8 +309,8 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                             color: FlutterFlowTheme.of(context).secondaryText,
                             size: 24.0,
                           ),
-                          onPressed: () {
-                            print('IconButton pressed ...');
+                          onPressed: () async {
+                            await launchURL('https://www.linkedin.com/');
                           },
                         ),
                       ].divide(const SizedBox(width: 8.0)),
@@ -395,7 +332,7 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
                     child: Text(
-                      'v0.0.1',
+                      'v4',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
                             fontFamily: 'Inter',
                             letterSpacing: 0.0,
@@ -442,7 +379,10 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                 child: wrapWithModel(
                   model: _model.navbarForhostModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: const NavbarForhostWidget(),
+                  updateOnChange: true,
+                  child: const NavbarForhostWidget(
+                    index: 2,
+                  ),
                 ),
               ),
             ],

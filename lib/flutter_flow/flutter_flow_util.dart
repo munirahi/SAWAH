@@ -12,6 +12,7 @@ import 'package:intl/intl.dart';
 import 'package:json_path/json_path.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:url_launcher/url_launcher.dart';
+import 'package:map_launcher/map_launcher.dart';
 
 import '../main.dart';
 
@@ -31,6 +32,8 @@ export 'package:cloud_firestore/cloud_firestore.dart'
     show DocumentReference, FirebaseFirestore;
 export 'package:page_transition/page_transition.dart';
 export 'nav/nav.dart';
+
+final RouteObserver<ModalRoute> routeObserver = RouteObserver<PageRoute>();
 
 T valueOrDefault<T>(T? value, T defaultValue) =>
     (value is String && value.isEmpty) || value == null ? defaultValue : value;
@@ -204,6 +207,34 @@ Color colorFromCssString(String color, {Color? defaultColor}) {
     return fromCssColor(color);
   } catch (_) {}
   return defaultColor ?? Colors.black;
+}
+
+Future launchMap({
+  MapType? mapType,
+  LatLng? location,
+  String? address,
+  required title,
+}) async {
+  final coords = location != null
+      ? Coords(location.latitude, location.longitude)
+      : Coords(0, 0);
+  final extraParams = address != null ? {'q': address} : null;
+  final noMap =
+      mapType == null || !(await MapLauncher.isMapAvailable(mapType) ?? false);
+  if (noMap) {
+    final installedMaps = await MapLauncher.installedMaps;
+    return installedMaps.first.showMarker(
+      coords: coords,
+      title: title,
+      extraParams: extraParams,
+    );
+  }
+  return MapLauncher.showMarker(
+    mapType: mapType,
+    coords: coords,
+    title: title,
+    extraParams: extraParams,
+  );
 }
 
 enum FormatType {

@@ -10,6 +10,7 @@ import 'backend/push_notifications/push_notifications_util.dart';
 import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'index.dart';
 
 void main() async {
@@ -117,7 +118,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPageName = 'availableexperiences';
+  String _currentPageName = 'userHome';
   late Widget? _currentPage;
 
   @override
@@ -130,8 +131,9 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'availableexperiences': const AvailableexperiencesWidget(),
-      'users_booked_ex': const UsersBookedExWidget(),
+      'userHome': const UserHomeWidget(),
+      'User_ReservedExperiences': const UserReservedExperiencesWidget(),
+      'map': const MapWidget(),
       'profile_Settings': const ProfileSettingsWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
@@ -154,7 +156,7 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home_outlined,
-              size: 24.0,
+              size: 28.0,
             ),
             label: 'Home',
             tooltip: '',
@@ -162,15 +164,23 @@ class _NavBarPageState extends State<NavBarPage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.calendar_month,
+              size: 28.0,
+            ),
+            label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.mapMarkedAlt,
               size: 24.0,
             ),
-            label: 'book',
+            label: 'Map',
             tooltip: '',
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.person_sharp,
-              size: 24.0,
+              size: 28.0,
             ),
             label: 'Home',
             tooltip: '',

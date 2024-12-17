@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -115,36 +116,94 @@ class _ResendemailWidgetState extends State<ResendemailWidget> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      FFButtonWidget(
-                        onPressed: () async {
-                          await authManager.sendEmailVerification();
-                        },
-                        text: 'Resend Email',
-                        options: FFButtonOptions(
-                          width: 138.0,
-                          height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primary,
-                          textStyle:
-                              FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Inter Tight',
-                                    color: Colors.white,
-                                    letterSpacing: 0.0,
-                                  ),
-                          elevation: 3.0,
-                          borderSide: const BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
+                      Expanded(
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            await authManager.sendEmailVerification();
+                          },
+                          text: 'Resend Email',
+                          options: FFButtonOptions(
+                            height: 40.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Inter Tight',
+                                  color: Colors.white,
+                                  letterSpacing: 0.0,
+                                ),
+                            elevation: 3.0,
+                            borderSide: const BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(18.0),
+                            hoverColor: const Color(0xFF2B16ED),
+                            hoverTextColor: Colors.white,
                           ),
-                          borderRadius: BorderRadius.circular(8.0),
-                          hoverColor: const Color(0xFF2B16ED),
-                          hoverTextColor: Colors.white,
                         ),
                       ),
-                    ],
+                      Expanded(
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            await authManager.refreshUser();
+                            if (currentUserEmailVerified == true) {
+                              if (currentUserDocument?.role == UserType.host) {
+                                context.goNamed('HostHomePage');
+                              } else {
+                                context.goNamed('userHome');
+                              }
+                            } else {
+                              await showDialog(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: const Text('Email verifcation'),
+                                    content: const Text(
+                                        'you need to verify your email first'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () =>
+                                            Navigator.pop(alertDialogContext),
+                                        child: const Text('Ok'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
+                            }
+                          },
+                          text: 'continue',
+                          options: FFButtonOptions(
+                            height: 40.0,
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleSmall
+                                .override(
+                                  fontFamily: 'Inter Tight',
+                                  color: Colors.white,
+                                  letterSpacing: 0.0,
+                                ),
+                            elevation: 3.0,
+                            borderSide: const BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(18.0),
+                            hoverColor: const Color(0xFF2B16ED),
+                            hoverTextColor: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ].divide(const SizedBox(width: 50.0)),
                   ),
                 ),
               ],

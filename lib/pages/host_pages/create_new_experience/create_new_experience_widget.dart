@@ -1,9 +1,12 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
+import '/backend/push_notifications/push_notifications_util.dart';
+import '/backend/schema/enums/enums.dart';
+import '/components/pick_location_widget.dart';
 import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
-import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -11,8 +14,12 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/pages/navbar_forhost/navbar_forhost_widget.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'create_new_experience_model.dart';
 export 'create_new_experience_model.dart';
 
@@ -34,6 +41,14 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
     super.initState();
     _model = createModel(context, () => CreateNewExperienceModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.api = await MapsStringCall.call(
+        lat: FFAppState().userlat,
+        long: FFAppState().userLong,
+      );
+    });
+
     _model.experiencename1TextController ??= TextEditingController();
     _model.experiencename1FocusNode ??= FocusNode();
 
@@ -42,6 +57,12 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
 
     _model.priceField1TextController ??= TextEditingController();
     _model.priceField1FocusNode ??= FocusNode();
+
+    _model.textField11TextController ??= TextEditingController();
+    _model.textField11FocusNode ??= FocusNode();
+
+    _model.textField22TextController ??= TextEditingController();
+    _model.textField22FocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -55,8 +76,13 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -165,101 +191,111 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                                            MainAxisAlignment.start,
                                         children: [
                                           Form(
                                             key: _model.formKey1,
                                             autovalidateMode:
                                                 AutovalidateMode.always,
-                                            child: Container(
-                                              width: 200.0,
-                                              decoration: const BoxDecoration(),
-                                              child: TextFormField(
-                                                key: const ValueKey('TestName'),
-                                                controller: _model
-                                                    .experiencename1TextController,
-                                                focusNode: _model
-                                                    .experiencename1FocusNode,
-                                                autofocus: true,
-                                                obscureText: false,
-                                                decoration: InputDecoration(
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        letterSpacing: 0.0,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Container(
+                                                  width: 200.0,
+                                                  decoration: const BoxDecoration(),
+                                                  child: TextFormField(
+                                                    key: const ValueKey('TestName'),
+                                                    controller: _model
+                                                        .experiencename1TextController,
+                                                    focusNode: _model
+                                                        .experiencename1FocusNode,
+                                                    autofocus: false,
+                                                    autofillHints: const [
+                                                      AutofillHints.email
+                                                    ],
+                                                    obscureText: false,
+                                                    decoration: InputDecoration(
+                                                      hintStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                      enabledBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: const BorderSide(
+                                                          color: Colors.black,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
                                                       ),
-                                                  enabledBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: const BorderSide(
-                                                      color: Colors.black,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                      focusedBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .primary,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  errorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      errorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .error,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  focusedErrorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      focusedErrorBorder:
+                                                          OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
                                                               .error,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                  ),
-                                                  filled: true,
-                                                  fillColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                      filled: true,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
                                                           .secondaryBackground,
-                                                  contentPadding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(10.0, 0.0,
-                                                              0.0, 0.0),
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                                      contentPadding:
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  10.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                    ),
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyMedium
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           letterSpacing: 0.0,
                                                         ),
-                                                validator: _model
-                                                    .experiencename1TextControllerValidator
-                                                    .asValidator(context),
-                                              ),
+                                                    validator: _model
+                                                        .experiencename1TextControllerValidator
+                                                        .asValidator(context),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ],
@@ -305,48 +341,192 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.spaceEvenly,
                                         children: [
-                                          FlutterFlowPlacePicker(
-                                            iOSGoogleMapsApiKey:
-                                                'AIzaSyCmb7_kKXT2DKqkNxdqwL7n32l_5E_vXfc',
-                                            androidGoogleMapsApiKey:
-                                                'AIzaSyC-SaPvP6QaFArZi7_JfEJ0YfbvjZ_Z67Q',
-                                            webGoogleMapsApiKey:
-                                                'AIzaSyCmb7_kKXT2DKqkNxdqwL7n32l_5E_vXfc',
-                                            onSelect: (place) async {
-                                              safeSetState(() =>
-                                                  _model.locationValue = place);
-                                            },
-                                            defaultText: 'Select Location',
-                                            icon: Icon(
-                                              Icons.place,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .info,
-                                              size: 16.0,
-                                            ),
-                                            buttonOptions: FFButtonOptions(
-                                              width: 200.0,
-                                              height: 40.0,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              textStyle: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleSmall
-                                                  .override(
-                                                    fontFamily: 'Inter Tight',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .info,
-                                                    letterSpacing: 0.0,
+                                          Expanded(
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                Builder(
+                                                  builder: (context) => Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                0.0, 5.0),
+                                                    child: FFButtonWidget(
+                                                      onPressed: () async {
+                                                        await showDialog(
+                                                          context: context,
+                                                          builder:
+                                                              (dialogContext) {
+                                                            return Dialog(
+                                                              elevation: 0,
+                                                              insetPadding:
+                                                                  EdgeInsets
+                                                                      .zero,
+                                                              backgroundColor:
+                                                                  Colors
+                                                                      .transparent,
+                                                              alignment: const AlignmentDirectional(
+                                                                      0.0, 0.0)
+                                                                  .resolve(
+                                                                      Directionality.of(
+                                                                          context)),
+                                                              child:
+                                                                  GestureDetector(
+                                                                onTap: () {
+                                                                  FocusScope.of(
+                                                                          dialogContext)
+                                                                      .unfocus();
+                                                                  FocusManager
+                                                                      .instance
+                                                                      .primaryFocus
+                                                                      ?.unfocus();
+                                                                },
+                                                                child:
+                                                                    PickLocationWidget(
+                                                                  returnLocation:
+                                                                      (location) async {
+                                                                    _model.locatIon =
+                                                                        location;
+                                                                    safeSetState(
+                                                                        () {});
+                                                                  },
+                                                                ),
+                                                              ),
+                                                            );
+                                                          },
+                                                        );
+
+                                                        _model.apiResultpzy =
+                                                            await MapsStringCall
+                                                                .call(
+                                                          lat2:
+                                                              functions.maptext(
+                                                                  _model
+                                                                      .locatIon,
+                                                                  true),
+                                                          long2:
+                                                              functions.maptext(
+                                                                  _model
+                                                                      .locatIon,
+                                                                  false),
+                                                        );
+
+                                                        if ((_model.apiResultpzy
+                                                                ?.succeeded ??
+                                                            true)) {
+                                                          FFAppState()
+                                                                  .conformLocation =
+                                                              true;
+                                                          safeSetState(() {});
+                                                        }
+
+                                                        safeSetState(() {});
+                                                      },
+                                                      text: 'Select Location',
+                                                      icon: const Icon(
+                                                        Icons
+                                                            .location_on_rounded,
+                                                        size: 15.0,
+                                                      ),
+                                                      options: FFButtonOptions(
+                                                        height: 45.0,
+                                                        padding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    16.0,
+                                                                    0.0,
+                                                                    16.0,
+                                                                    0.0),
+                                                        iconPadding:
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        textStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter Tight',
+                                                                  color: Colors
+                                                                      .white,
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                        elevation: 0.0,
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(8.0),
+                                                      ),
+                                                    ),
                                                   ),
-                                              elevation: 0.0,
-                                              borderSide: const BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8.0),
+                                                ),
+                                                Builder(
+                                                  builder: (context) {
+                                                    if (FFAppState()
+                                                            .conformLocation ==
+                                                        true) {
+                                                      return Card(
+                                                        clipBehavior: Clip
+                                                            .antiAliasWithSaveLayer,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
+                                                        elevation: 0.0,
+                                                        shape:
+                                                            RoundedRectangleBorder(
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      20.0),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              const EdgeInsets.all(
+                                                                  6.0),
+                                                          child: AutoSizeText(
+                                                            'Location is added',
+                                                            maxLines: 2,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Inter',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                          ),
+                                                        ),
+                                                      );
+                                                    } else {
+                                                      return Padding(
+                                                        padding:
+                                                            const EdgeInsets.all(6.0),
+                                                        child: Text(
+                                                          'no location saved',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                      );
+                                                    }
+                                                  },
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ],
@@ -383,7 +563,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          MainAxisAlignment.start,
                                       children: [
                                         Form(
                                           key: _model.formKey3,
@@ -398,7 +578,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                     .experienceAbout1TextController,
                                                 focusNode: _model
                                                     .experienceAbout1FocusNode,
-                                                autofocus: true,
+                                                autofocus: false,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   hintText:
@@ -523,6 +703,70 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                         thickness: 2.0,
                                         color: FlutterFlowTheme.of(context)
                                             .alternate,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 8.0, 0.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Text(
+                                            'pick the category: ',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    30.0, 0.0, 0.0, 0.0),
+                                            child: FlutterFlowRadioButton(
+                                              options: CategoriesEnum.values
+                                                  .map((e) => e.name)
+                                                  .toList()
+                                                  .toList(),
+                                              onChanged: (val) =>
+                                                  safeSetState(() {}),
+                                              controller: _model
+                                                      .categoryPickerValueController ??=
+                                                  FormFieldController<String>(
+                                                      'Other'),
+                                              optionHeight: 32.0,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              selectedTextStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              buttonPosition:
+                                                  RadioButtonPosition.left,
+                                              direction: Axis.vertical,
+                                              radioButtonColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              inactiveRadioButtonColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              toggleable: false,
+                                              horizontalAlignment:
+                                                  WrapAlignment.start,
+                                              verticalAlignment:
+                                                  WrapCrossAlignment.start,
+                                            ),
+                                          ),
+                                        ],
                                       ),
                                     ),
                                     Opacity(
@@ -655,64 +899,69 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                             .alternate,
                                       ),
                                     ),
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: Align(
-                                            alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
-                                            child: Container(
-                                              width: 150.0,
-                                              height: 150.0,
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                boxShadow: const [
-                                                  BoxShadow(
-                                                    blurRadius: 4.0,
-                                                    color: Color(0x33000000),
-                                                    offset: Offset(
-                                                      0.0,
-                                                      2.0,
-                                                    ),
-                                                  )
-                                                ],
-                                                borderRadius: const BorderRadius.only(
-                                                  bottomLeft:
-                                                      Radius.circular(0.0),
-                                                  bottomRight:
-                                                      Radius.circular(0.0),
-                                                  topLeft: Radius.circular(0.0),
-                                                  topRight:
-                                                      Radius.circular(0.0),
+                                    if (_model.uploadedFileUrl != '')
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Expanded(
+                                            child: Align(
+                                              alignment: const AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Container(
+                                                width: 150.0,
+                                                height: 150.0,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  boxShadow: const [
+                                                    BoxShadow(
+                                                      blurRadius: 4.0,
+                                                      color: Color(0x33000000),
+                                                      offset: Offset(
+                                                        0.0,
+                                                        2.0,
+                                                      ),
+                                                    )
+                                                  ],
+                                                  borderRadius:
+                                                      const BorderRadius.only(
+                                                    bottomLeft:
+                                                        Radius.circular(0.0),
+                                                    bottomRight:
+                                                        Radius.circular(0.0),
+                                                    topLeft:
+                                                        Radius.circular(0.0),
+                                                    topRight:
+                                                        Radius.circular(0.0),
+                                                  ),
+                                                  shape: BoxShape.rectangle,
                                                 ),
-                                                shape: BoxShape.rectangle,
-                                              ),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.network(
-                                                  _model.uploadedFileUrl,
-                                                  width: 200.0,
-                                                  height: 200.0,
-                                                  fit: BoxFit.cover,
-                                                  errorBuilder: (context, error,
-                                                          stackTrace) =>
-                                                      Image.asset(
-                                                    'assets/images/error_image.JPG',
+                                                child: ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.network(
+                                                    _model.uploadedFileUrl,
                                                     width: 200.0,
                                                     height: 200.0,
                                                     fit: BoxFit.cover,
+                                                    errorBuilder: (context,
+                                                            error,
+                                                            stackTrace) =>
+                                                        Image.asset(
+                                                      'assets/images/error_image.JPG',
+                                                      width: 200.0,
+                                                      height: 200.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
                                                   ),
                                                 ),
                                               ),
                                             ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
+                                        ],
+                                      ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
@@ -830,7 +1079,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                             Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      34.0, 0.0, 0.0, 0.0),
+                                                      34.0, 0.0, 0.0, 10.0),
                                               child: Text(
                                                 'Age:',
                                                 style:
@@ -907,18 +1156,23 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Text(
-                                              'Gender:',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        color:
-                                                            const Color(0xFF0A014F),
-                                                        fontSize: 14.0,
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                            Padding(
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 10.0),
+                                              child: Text(
+                                                'Gender:',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color:
+                                                              const Color(0xFF0A014F),
+                                                          fontSize: 14.0,
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
                                             ),
                                             Padding(
                                               padding: const EdgeInsetsDirectional
@@ -946,14 +1200,15 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                     options: [
                                                       'Female',
                                                       'Male',
-                                                      'Both'
+                                                      'Female and Male'
                                                     ].toList(),
                                                     onChanged: (val) =>
                                                         safeSetState(() {}),
                                                     controller: _model
                                                             .genderValueController ??=
                                                         FormFieldController<
-                                                            String>('Both'),
+                                                                String>(
+                                                            'Female and Male'),
                                                     optionHeight: 32.0,
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
@@ -1108,6 +1363,14 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                         fontFamily: 'Inter',
                                                         letterSpacing: 0.0,
                                                       ),
+                                                  maxLength: 8,
+                                                  maxLengthEnforcement:
+                                                      MaxLengthEnforcement.none,
+                                                  buildCounter: (context,
+                                                          {required currentLength,
+                                                          required isFocused,
+                                                          maxLength}) =>
+                                                      null,
                                                   keyboardType:
                                                       const TextInputType
                                                           .numberWithOptions(
@@ -1127,15 +1390,31 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                               ),
                                             ),
                                           ),
+                                          Opacity(
+                                            opacity: 0.0,
+                                            child: SizedBox(
+                                              height: 100.0,
+                                              child: VerticalDivider(
+                                                thickness: 2.0,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                              ),
+                                            ),
+                                          ),
+                                          Opacity(
+                                            opacity: 0.0,
+                                            child: SizedBox(
+                                              height: 100.0,
+                                              child: VerticalDivider(
+                                                thickness: 2.0,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                              ),
+                                            ),
+                                          ),
                                         ],
-                                      ),
-                                    ),
-                                    Opacity(
-                                      opacity: 0.0,
-                                      child: Divider(
-                                        thickness: 2.0,
-                                        color: FlutterFlowTheme.of(context)
-                                            .alternate,
                                       ),
                                     ),
                                     Row(
@@ -1143,30 +1422,6 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceAround,
                                       children: [
-                                        Opacity(
-                                          opacity: 0.0,
-                                          child: SizedBox(
-                                            height: 100.0,
-                                            child: VerticalDivider(
-                                              thickness: 2.0,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                            ),
-                                          ),
-                                        ),
-                                        Opacity(
-                                          opacity: 0.0,
-                                          child: SizedBox(
-                                            height: 100.0,
-                                            child: VerticalDivider(
-                                              thickness: 2.0,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                            ),
-                                          ),
-                                        ),
                                         Opacity(
                                           opacity: 0.0,
                                           child: SizedBox(
@@ -1202,15 +1457,102 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                             ),
                                           ),
                                         ),
-                                        Text(
-                                          dateTimeFormat(
-                                              "d/M/y", _model.datePicked1),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
+                                        Flexible(
+                                          child: SizedBox(
+                                            width: 200.0,
+                                            child: TextFormField(
+                                              controller: _model
+                                                  .textField11TextController,
+                                              focusNode:
+                                                  _model.textField11FocusNode,
+                                              autofocus: false,
+                                              readOnly: true,
+                                              obscureText: false,
+                                              decoration: InputDecoration(
+                                                isDense: true,
+                                                labelStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                hintText: dateTimeFormat(
+                                                    "d/M/y",
+                                                    _model.datePicked1),
+                                                hintStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                enabledBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                focusedBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: const BorderSide(
+                                                    color: Color(0x00000000),
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                errorBorder: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                focusedErrorBorder:
+                                                    OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .error,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                ),
+                                                filled: true,
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
                                               ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              textAlign: TextAlign.center,
+                                              cursorColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              validator: _model
+                                                  .textField11TextControllerValidator
+                                                  .asValidator(context),
+                                            ),
+                                          ),
                                         ),
                                         Opacity(
                                           opacity: 0.0,
@@ -1298,12 +1640,11 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                 });
                                               }
                                             },
-                                            text: 'Select Date',
+                                            text: ' Date',
                                             options: FFButtonOptions(
                                               height: 40.0,
                                               padding: const EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      16.0, 0.0, 16.0, 0.0),
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: const EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
@@ -1316,35 +1657,12 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                         fontFamily:
                                                             'Inter Tight',
                                                         color: Colors.white,
+                                                        fontSize: 2.0,
                                                         letterSpacing: 0.0,
                                                       ),
                                               elevation: 0.0,
                                               borderRadius:
                                                   BorderRadius.circular(22.0),
-                                            ),
-                                          ),
-                                        ),
-                                        Opacity(
-                                          opacity: 0.0,
-                                          child: SizedBox(
-                                            height: 100.0,
-                                            child: VerticalDivider(
-                                              thickness: 2.0,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
-                                            ),
-                                          ),
-                                        ),
-                                        Opacity(
-                                          opacity: 0.0,
-                                          child: SizedBox(
-                                            height: 100.0,
-                                            child: VerticalDivider(
-                                              thickness: 2.0,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .alternate,
                                             ),
                                           ),
                                         ),
@@ -1364,6 +1682,18 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
+                                        Opacity(
+                                          opacity: 0.0,
+                                          child: SizedBox(
+                                            height: 100.0,
+                                            child: VerticalDivider(
+                                              thickness: 2.0,
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .alternate,
+                                            ),
+                                          ),
+                                        ),
                                         Text(
                                           'Time:',
                                           style: FlutterFlowTheme.of(context)
@@ -1387,19 +1717,113 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                             ),
                                           ),
                                         ),
-                                        Text(
-                                          dateTimeFormat(
-                                              "jm", _model.datePicked2),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Inter',
-                                                letterSpacing: 0.0,
-                                              ),
-                                        ),
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
+                                            SizedBox(
+                                              width: 200.0,
+                                              child: SizedBox(
+                                                width: 200.0,
+                                                child: TextFormField(
+                                                  controller: _model
+                                                      .textField22TextController,
+                                                  focusNode: _model
+                                                      .textField22FocusNode,
+                                                  autofocus: false,
+                                                  readOnly: true,
+                                                  obscureText: false,
+                                                  decoration: InputDecoration(
+                                                    isDense: true,
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    hintText: dateTimeFormat(
+                                                        "jm",
+                                                        _model.datePicked2),
+                                                    hintStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        width: 1.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: const BorderSide(
+                                                        color:
+                                                            Color(0x00000000),
+                                                        width: 1.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    errorBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 1.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    focusedErrorBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 1.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              8.0),
+                                                    ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  textAlign: TextAlign.center,
+                                                  cursorColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primaryText,
+                                                  validator: _model
+                                                      .textField22TextControllerValidator
+                                                      .asValidator(context),
+                                                ),
+                                              ),
+                                            ),
                                             Opacity(
                                               opacity: 0.0,
                                               child: SizedBox(
@@ -1491,12 +1915,12 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                     });
                                                   }
                                                 },
-                                                text: 'Select Time',
+                                                text: 'Time',
                                                 options: FFButtonOptions(
                                                   height: 40.0,
                                                   padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          16.0, 0.0, 16.0, 0.0),
+                                                          0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
                                                       const EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
@@ -1512,12 +1936,13 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                             fontFamily:
                                                                 'Inter Tight',
                                                             color: Colors.white,
+                                                            fontSize: 2.0,
                                                             letterSpacing: 0.0,
                                                           ),
                                                   elevation: 0.0,
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          18.0),
+                                                          22.0),
                                                 ),
                                               ),
                                             ),
@@ -1533,6 +1958,32 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                             .alternate,
                                       ),
                                     ),
+                                    if (dateTimeFormat(
+                                            "d/M/y", getCurrentTimestamp) ==
+                                        dateTimeFormat(
+                                            "d/M/y", _model.datePicked1))
+                                      Align(
+                                        alignment:
+                                            const AlignmentDirectional(0.0, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              const EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 10.0),
+                                          child: Text(
+                                            'You can not create an experience on the same day',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .error,
+                                                  letterSpacing: 0.0,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 12.0),
@@ -1577,46 +2028,172 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                       snapshot.data!;
 
                                                   return FFButtonWidget(
-                                                    onPressed: () async {
-                                                      await ExperiencesRecord
-                                                          .collection
-                                                          .doc()
-                                                          .set(
-                                                              createExperiencesRecordData(
-                                                            experiencename1: _model
-                                                                .experiencename1TextController
-                                                                .text,
-                                                            experienceAbout1: _model
-                                                                .experienceAbout1TextController
-                                                                .text,
-                                                            priceField1: double
-                                                                .tryParse(_model
-                                                                    .priceField1TextController
-                                                                    .text),
-                                                            creator:
-                                                                currentUserReference,
-                                                            gender: _model
-                                                                .genderValue,
-                                                            image: _model
-                                                                .uploadedFileUrl,
-                                                            seatLimit: _model
-                                                                .seatLimitValue,
-                                                            ageField1: _model
-                                                                .ageField1Value,
-                                                            date: _model
-                                                                .datePicked1,
-                                                            time: _model
-                                                                .datePicked2,
-                                                            remainingSeats: _model
-                                                                .seatLimitValue,
-                                                            location: _model
-                                                                .locationValue
-                                                                .latLng,
-                                                          ));
+                                                    onPressed: (dateTimeFormat(
+                                                                "d/M/y",
+                                                                getCurrentTimestamp) ==
+                                                            dateTimeFormat(
+                                                                "d/M/y",
+                                                                _model
+                                                                    .datePicked1))
+                                                        ? null
+                                                        : () async {
+                                                            if ((_model.experiencename1TextController.text != '') &&
+                                                                (_model.locatIon !=
+                                                                    null) &&
+                                                                (_model.experienceAbout1TextController
+                                                                            .text !=
+                                                                        '') &&
+                                                                (_model.uploadedFileUrl !=
+                                                                        '') &&
+                                                                (_model.seatLimitValue !=
+                                                                    null) &&
+                                                                (_model.ageField1Value !=
+                                                                        null &&
+                                                                    _model.ageField1Value !=
+                                                                        '') &&
+                                                                (_model
+                                                                            .genderValue !=
+                                                                        null &&
+                                                                    _model.genderValue !=
+                                                                        '') &&
+                                                                (_model
+                                                                            .priceField1TextController
+                                                                            .text !=
+                                                                        '') &&
+                                                                (_model.datePicked1 !=
+                                                                    null) &&
+                                                                (_model.datePicked2 !=
+                                                                    null)) {
+                                                              _model.address =
+                                                                  await GeocodeCall
+                                                                      .call(
+                                                                latlong: functions
+                                                                    .convert(_model
+                                                                        .locatIon!),
+                                                              );
 
-                                                      context.pushNamed(
-                                                          'CreateExperienceConfirmation');
-                                                    },
+                                                              if ((_model
+                                                                      .address
+                                                                      ?.succeeded ??
+                                                                  true)) {
+                                                                await Future.delayed(
+                                                                    const Duration(
+                                                                        milliseconds:
+                                                                            1000));
+                                                              }
+
+                                                              await ExperiencesRecord
+                                                                  .collection
+                                                                  .doc()
+                                                                  .set({
+                                                                ...createExperiencesRecordData(
+                                                                  experiencename1:
+                                                                      _model
+                                                                          .experiencename1TextController
+                                                                          .text,
+                                                                  experienceAbout1:
+                                                                      _model
+                                                                          .experienceAbout1TextController
+                                                                          .text,
+                                                                  priceField1: double
+                                                                      .tryParse(_model
+                                                                          .priceField1TextController
+                                                                          .text),
+                                                                  creator:
+                                                                      currentUserReference,
+                                                                  gender: _model
+                                                                      .genderValue,
+                                                                  image: _model
+                                                                      .uploadedFileUrl,
+                                                                  seatLimit: _model
+                                                                      .seatLimitValue,
+                                                                  ageField1: _model
+                                                                      .ageField1Value,
+                                                                  date: _model
+                                                                      .datePicked1,
+                                                                  time: _model
+                                                                      .datePicked2,
+                                                                  remainingSeats:
+                                                                      _model
+                                                                          .seatLimitValue,
+                                                                  location: _model
+                                                                      .locatIon,
+                                                                  addressName:
+                                                                      GeocodeCall
+                                                                          .address(
+                                                                    (_model.address
+                                                                            ?.jsonBody ??
+                                                                        ''),
+                                                                  ),
+                                                                  newestLocationString:
+                                                                      getJsonField(
+                                                                    (_model.api
+                                                                            ?.jsonBody ??
+                                                                        ''),
+                                                                    r'''$.address''',
+                                                                  ).toString(),
+                                                                  categoryy: _model
+                                                                      .categoryPickerValue,
+                                                                ),
+                                                                ...mapToFirestore(
+                                                                  {
+                                                                    'cateelist':
+                                                                        [
+                                                                      _model
+                                                                          .categoryPickerValue
+                                                                    ],
+                                                                  },
+                                                                ),
+                                                              });
+                                                              FFAppState()
+                                                                      .conformLocation =
+                                                                  false;
+                                                              safeSetState(
+                                                                  () {});
+                                                              triggerPushNotification(
+                                                                notificationTitle:
+                                                                    'cancelation',
+                                                                notificationText:
+                                                                    'your experience ${_model.experienceAbout1TextController.text}is tomorrow!!',
+                                                                notificationSound:
+                                                                    'default',
+                                                                userRefs: FFAppState()
+                                                                    .multipleUsers
+                                                                    .toList(),
+                                                                initialPageName:
+                                                                    'userHome',
+                                                                parameterData: {},
+                                                              );
+
+                                                              context.pushNamed(
+                                                                  'CreateExperienceConfirmation');
+                                                            } else {
+                                                              ScaffoldMessenger
+                                                                      .of(context)
+                                                                  .showSnackBar(
+                                                                SnackBar(
+                                                                  content: Text(
+                                                                    'Please fill the whole form',
+                                                                    style:
+                                                                        TextStyle(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondaryBackground,
+                                                                    ),
+                                                                  ),
+                                                                  duration: const Duration(
+                                                                      milliseconds:
+                                                                          4000),
+                                                                  backgroundColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                ),
+                                                              );
+                                                            }
+
+                                                            safeSetState(() {});
+                                                          },
                                                     text: 'Create',
                                                     options: FFButtonOptions(
                                                       width: 230.0,
@@ -1661,6 +2238,10 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               40.0),
+                                                      disabledColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
                                                     ),
                                                   );
                                                 },
@@ -1680,44 +2261,11 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                     ],
                   ),
                 ),
-                Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
-                  child: Container(
-                    height: 60.0,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                    ),
-                    child: Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
-                      child: StreamBuilder<List<ExperiencesRecord>>(
-                        stream: queryExperiencesRecord(),
-                        builder: (context, snapshot) {
-                          // Customize what your widget looks like when it's loading.
-                          if (!snapshot.hasData) {
-                            return Center(
-                              child: SizedBox(
-                                width: 50.0,
-                                height: 50.0,
-                                child: CircularProgressIndicator(
-                                  valueColor: AlwaysStoppedAnimation<Color>(
-                                    FlutterFlowTheme.of(context).primary,
-                                  ),
-                                ),
-                              ),
-                            );
-                          }
-                          List<ExperiencesRecord>
-                              navbarForhostExperiencesRecordList =
-                              snapshot.data!;
-
-                          return wrapWithModel(
-                            model: _model.navbarForhostModel,
-                            updateCallback: () => safeSetState(() {}),
-                            child: const NavbarForhostWidget(),
-                          );
-                        },
-                      ),
-                    ),
+                wrapWithModel(
+                  model: _model.navbarForhostModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: const NavbarForhostWidget(
+                    index: 1,
                   ),
                 ),
               ],

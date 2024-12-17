@@ -1,6 +1,4 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/form_field_controller.dart';
-import '/pages/navbar_forhost/navbar_forhost_widget.dart';
 import 'recreate_exp_widget.dart' show RecreateExpWidget;
 import 'package:flutter/material.dart';
 
@@ -19,26 +17,26 @@ class RecreateExpModel extends FlutterFlowModel<RecreateExpWidget> {
 
   // State field(s) for SeatLimit widget.
   int? seatLimitValue;
-  // State field(s) for AgeField1 widget.
-  FormFieldController<String>? ageField1ValueController;
-  // State field(s) for Gender widget.
-  FormFieldController<String>? genderValueController;
+  // State field(s) for TextField1 widget.
+  FocusNode? textField1FocusNode;
+  TextEditingController? textField1TextController;
+  String? Function(BuildContext, String?)? textField1TextControllerValidator;
   DateTime? datePicked1;
+  // State field(s) for TextField22 widget.
+  FocusNode? textField22FocusNode;
+  TextEditingController? textField22TextController;
+  String? Function(BuildContext, String?)? textField22TextControllerValidator;
   DateTime? datePicked2;
-  // Model for navbarForhost component.
-  late NavbarForhostModel navbarForhostModel;
 
   @override
-  void initState(BuildContext context) {
-    navbarForhostModel = createModel(context, () => NavbarForhostModel());
-  }
+  void initState(BuildContext context) {}
 
   @override
   void dispose() {
-    navbarForhostModel.dispose();
-  }
+    textField1FocusNode?.dispose();
+    textField1TextController?.dispose();
 
-  /// Additional helper methods.
-  String? get ageField1Value => ageField1ValueController?.value;
-  String? get genderValue => genderValueController?.value;
+    textField22FocusNode?.dispose();
+    textField22TextController?.dispose();
+  }
 }

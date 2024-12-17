@@ -13,10 +13,10 @@ class AccounDModel extends FlutterFlowModel<AccounDWidget> {
   FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
-  // State field(s) for name widget.
-  FocusNode? nameFocusNode;
-  TextEditingController? nameTextController;
-  String? Function(BuildContext, String?)? nameTextControllerValidator;
+  // State field(s) for bio widget.
+  FocusNode? bioFocusNode;
+  TextEditingController? bioTextController;
+  String? Function(BuildContext, String?)? bioTextControllerValidator;
 
   @override
   void initState(BuildContext context) {}
@@ -29,7 +29,7 @@ class AccounDModel extends FlutterFlowModel<AccounDWidget> {
     textFieldFocusNode2?.dispose();
     textController2?.dispose();
 
-    nameFocusNode?.dispose();
-    nameTextController?.dispose();
+    bioFocusNode?.dispose();
+    bioTextController?.dispose();
   }
 }

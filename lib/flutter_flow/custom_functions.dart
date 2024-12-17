@@ -14,48 +14,6 @@ import '/backend/schema/structs/index.dart';
 import '/backend/schema/enums/enums.dart';
 import '/auth/firebase_auth/auth_util.dart';
 
-String? validatePassword(String? password) {
-  // Check if the password is null
-  if (password == null || password.isEmpty) {
-    return 'Password cannot be empty.';
-  }
-
-  String errorMessage = '';
-
-  // Check password length greater than 6
-  if (password.length < 6) {
-    errorMessage += 'Password must be longer than 6 characters.\n';
-  }
-
-  // Check for at least one uppercase letter
-  if (!password.contains(RegExp(r'[A-Z]'))) {
-    errorMessage += '• Uppercase letter is missing.\n';
-  }
-
-  // Check for at least one lowercase letter
-  if (!password.contains(RegExp(r'[a-z]'))) {
-    errorMessage += '• Lowercase letter is missing.\n';
-  }
-
-  // Check for at least one digit
-  if (!password.contains(RegExp(r'[0-9]'))) {
-    errorMessage += '• Digit is missing.\n';
-  }
-
-  // Check for at least one special character
-  if (!password.contains(RegExp(r'[!@#%^&*(),.?":{}|<>]'))) {
-    errorMessage += '• Special character is missing.\n';
-  }
-
-  // Return error message if there are any issues
-  if (errorMessage.isNotEmpty) {
-    return errorMessage;
-  }
-
-  // If no errors, return null indicating password is valid
-  return null;
-}
-
 bool isSubString(
   String? x,
   String? y,
@@ -63,4 +21,42 @@ bool isSubString(
   x = x?.trim().toLowerCase() ?? '';
   y = y?.trim().toLowerCase() ?? '';
   return x.contains(y);
+}
+
+String fCMToken(LatLng latlng) {
+  return '${latlng.latitude},${latlng.longitude}';
+}
+
+String convert(LatLng latlng) {
+  return '${latlng.latitude},${latlng.longitude}';
+}
+
+String? maptext(
+  LatLng? location,
+  bool? isLat,
+) {
+  // Check if location is null
+  if (location == null) {
+    return null; // or return an appropriate message, e.g., 'Location not provided.'
+  }
+
+  // Check if isLat is not null and true
+  if (isLat == true) {
+    return '${location.latitude.toString()}';
+  } else {
+    return '${location.longitude.toString()}';
+  }
+}
+
+List<DocumentReference>? sortExperience(List<DocumentReference>? data) {
+  return data!.toSet().toList();
+}
+
+List<String>? clearStrListFn(List<String>? inputList) {
+  if (inputList == null || inputList.isEmpty) {
+    return [];
+  }
+// Filter out empty string values, and return the cleaned list
+  var filteredList = inputList.where((item) => item.isNotEmpty).toList();
+  return filteredList.isEmpty ? [] : filteredList;
 }

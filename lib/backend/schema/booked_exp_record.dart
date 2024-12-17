@@ -35,12 +35,18 @@ class BookedExpRecord extends FirestoreRecord {
   DateTime? get date2 => _date2;
   bool hasDate2() => _date2 != null;
 
+  // "CountController1" field.
+  int? _countController1;
+  int get countController1 => _countController1 ?? 0;
+  bool hasCountController1() => _countController1 != null;
+
   void _initializeFields() {
     _userId = snapshotData['User_id'] as DocumentReference?;
     _expId = snapshotData['exp_id'] as DocumentReference?;
     _numberOfSeatsBooked =
         castToType<int>(snapshotData['number_of_seats_booked']);
     _date2 = snapshotData['Date2'] as DateTime?;
+    _countController1 = castToType<int>(snapshotData['CountController1']);
   }
 
   static CollectionReference get collection =>
@@ -82,6 +88,7 @@ Map<String, dynamic> createBookedExpRecordData({
   DocumentReference? expId,
   int? numberOfSeatsBooked,
   DateTime? date2,
+  int? countController1,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -89,6 +96,7 @@ Map<String, dynamic> createBookedExpRecordData({
       'exp_id': expId,
       'number_of_seats_booked': numberOfSeatsBooked,
       'Date2': date2,
+      'CountController1': countController1,
     }.withoutNulls,
   );
 
@@ -103,12 +111,18 @@ class BookedExpRecordDocumentEquality implements Equality<BookedExpRecord> {
     return e1?.userId == e2?.userId &&
         e1?.expId == e2?.expId &&
         e1?.numberOfSeatsBooked == e2?.numberOfSeatsBooked &&
-        e1?.date2 == e2?.date2;
+        e1?.date2 == e2?.date2 &&
+        e1?.countController1 == e2?.countController1;
   }
 
   @override
-  int hash(BookedExpRecord? e) => const ListEquality()
-      .hash([e?.userId, e?.expId, e?.numberOfSeatsBooked, e?.date2]);
+  int hash(BookedExpRecord? e) => const ListEquality().hash([
+        e?.userId,
+        e?.expId,
+        e?.numberOfSeatsBooked,
+        e?.date2,
+        e?.countController1
+      ]);
 
   @override
   bool isValidKey(Object? o) => o is BookedExpRecord;

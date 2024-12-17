@@ -1,3 +1,4 @@
+import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/navbar_forhost/navbar_forhost_widget.dart';
@@ -6,6 +7,10 @@ import 'package:flutter/material.dart';
 
 class CreateNewExperienceModel
     extends FlutterFlowModel<CreateNewExperienceWidget> {
+  ///  Local state fields for this page.
+
+  LatLng? locatIon;
+
   ///  State fields for stateful widgets in this page.
 
   final formKey1 = GlobalKey<FormState>();
@@ -13,6 +18,8 @@ class CreateNewExperienceModel
   final formKey2 = GlobalKey<FormState>();
   final formKey4 = GlobalKey<FormState>();
   final formKey5 = GlobalKey<FormState>();
+  // Stores action output result for [Backend Call - API (mapsString)] action in CreateNewExperience widget.
+  ApiCallResponse? api;
   // State field(s) for Experiencename1 widget.
   FocusNode? experiencename1FocusNode;
   TextEditingController? experiencename1TextController;
@@ -31,8 +38,8 @@ class CreateNewExperienceModel
     return null;
   }
 
-  // State field(s) for Location widget.
-  FFPlace locationValue = const FFPlace();
+  // Stores action output result for [Backend Call - API (mapsString)] action in Button widget.
+  ApiCallResponse? apiResultpzy;
   // State field(s) for Experience_about1 widget.
   FocusNode? experienceAbout1FocusNode;
   TextEditingController? experienceAbout1TextController;
@@ -51,6 +58,8 @@ class CreateNewExperienceModel
     return null;
   }
 
+  // State field(s) for categoryPicker widget.
+  FormFieldController<String>? categoryPickerValueController;
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -82,8 +91,18 @@ class CreateNewExperienceModel
     return null;
   }
 
+  // State field(s) for TextField11 widget.
+  FocusNode? textField11FocusNode;
+  TextEditingController? textField11TextController;
+  String? Function(BuildContext, String?)? textField11TextControllerValidator;
   DateTime? datePicked1;
+  // State field(s) for TextField22 widget.
+  FocusNode? textField22FocusNode;
+  TextEditingController? textField22TextController;
+  String? Function(BuildContext, String?)? textField22TextControllerValidator;
   DateTime? datePicked2;
+  // Stores action output result for [Backend Call - API (geocode)] action in Button widget.
+  ApiCallResponse? address;
   // Model for navbarForhost component.
   late NavbarForhostModel navbarForhostModel;
 
@@ -108,10 +127,17 @@ class CreateNewExperienceModel
     priceField1FocusNode?.dispose();
     priceField1TextController?.dispose();
 
+    textField11FocusNode?.dispose();
+    textField11TextController?.dispose();
+
+    textField22FocusNode?.dispose();
+    textField22TextController?.dispose();
+
     navbarForhostModel.dispose();
   }
 
   /// Additional helper methods.
+  String? get categoryPickerValue => categoryPickerValueController?.value;
   String? get ageField1Value => ageField1ValueController?.value;
   String? get genderValue => genderValueController?.value;
 }

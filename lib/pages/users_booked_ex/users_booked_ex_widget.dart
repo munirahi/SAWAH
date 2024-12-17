@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'users_booked_ex_model.dart';
 export 'users_booked_ex_model.dart';
@@ -36,7 +37,10 @@ class _UsersBookedExWidgetState extends State<UsersBookedExWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -63,10 +67,12 @@ class _UsersBookedExWidgetState extends State<UsersBookedExWidget> {
             children: [
               StreamBuilder<List<ExperiencesRecord>>(
                 stream: queryExperiencesRecord(
-                  queryBuilder: (experiencesRecord) => experiencesRecord.where(
-                    'users',
-                    arrayContains: currentUserReference,
-                  ),
+                  queryBuilder: (experiencesRecord) => experiencesRecord
+                      .where(
+                        'EmailsofUsers',
+                        arrayContains: currentUserEmail,
+                      )
+                      .orderBy('Date'),
                 ),
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
@@ -190,6 +196,45 @@ class _UsersBookedExWidgetState extends State<UsersBookedExWidget> {
                                                   fontFamily: 'Inter',
                                                   letterSpacing: 0.0,
                                                 ),
+                                          ),
+                                          FFButtonWidget(
+                                            onPressed: () async {
+                                              context.pushNamed(
+                                                'Exp_Details',
+                                                queryParameters: {
+                                                  'experienceDetails':
+                                                      serializeParam(
+                                                    listViewExperiencesRecord
+                                                        .reference,
+                                                    ParamType.DocumentReference,
+                                                  ),
+                                                }.withoutNulls,
+                                              );
+                                            },
+                                            text: 'details',
+                                            options: FFButtonOptions(
+                                              height: 40.0,
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      16.0, 0.0, 16.0, 0.0),
+                                              iconPadding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              textStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Inter Tight',
+                                                        color: Colors.white,
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              elevation: 0.0,
+                                              borderRadius:
+                                                  BorderRadius.circular(24.0),
+                                            ),
                                           ),
                                         ],
                                       ),

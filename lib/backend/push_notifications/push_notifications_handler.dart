@@ -74,8 +74,8 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
       ? Container(
           color: Colors.transparent,
           child: Image.asset(
-            'assets/images/logo444.jpg',
-            fit: BoxFit.contain,
+            'assets/images/Screenshot_2024-11-23_221936.png',
+            fit: BoxFit.cover,
           ),
         )
       : widget.child;
@@ -104,12 +104,14 @@ final parametersBuilderMap =
     <String, Future<ParameterData> Function(Map<String, dynamic>)>{
   'profile_Settings': ParameterData.none(),
   'onbording': ParameterData.none(),
-  'availableexperiences': ParameterData.none(),
+  'userHome': ParameterData.none(),
   'BookExperience': (data) async => ParameterData(
         allParams: {
           'experienceRef': await getDocumentParameter<ExperiencesRecord>(
               data, 'experienceRef', ExperiencesRecord.fromSnapshot),
           'userRef': getParameter<DocumentReference>(data, 'userRef'),
+          'seatlimittt': getParameter<int>(data, 'seatlimittt'),
+          'remainingseatsss': getParameter<int>(data, 'remainingseatsss'),
         },
       ),
   'payment1': (data) async => ParameterData(
@@ -135,7 +137,8 @@ final parametersBuilderMap =
   'AuthNew': ParameterData.none(),
   'Exp_Details': (data) async => ParameterData(
         allParams: {
-          'expDetails': getParameter<DocumentReference>(data, 'expDetails'),
+          'experienceDetails':
+              getParameter<DocumentReference>(data, 'experienceDetails'),
         },
       ),
   'Exp_DetailsFor_Creator': (data) async => ParameterData(
@@ -161,7 +164,10 @@ final parametersBuilderMap =
       ),
   'payment2Copy': (data) async => ParameterData(
         allParams: {
-          'countRef': getParameter<int>(data, 'countRef'),
+          'countcontrollerguest':
+              getParameter<int>(data, 'countcontrollerguest'),
+          'expreffffffff': await getDocumentParameter<ExperiencesRecord>(
+              data, 'expreffffffff', ExperiencesRecord.fromSnapshot),
         },
       ),
   'RecreateExp': (data) async => ParameterData(
@@ -170,19 +176,63 @@ final parametersBuilderMap =
           'expDescription': getParameter<String>(data, 'expDescription'),
           'expImage': getParameter<String>(data, 'expImage'),
           'expAge': getParameter<String>(data, 'expAge'),
-          'expGender': getParameter<String>(data, 'expGender'),
           'expPrice': getParameter<double>(data, 'expPrice'),
           'expLocation': getParameter<LatLng>(data, 'expLocation'),
           'expRef': getParameter<DocumentReference>(data, 'expRef'),
           'creatorRef': getParameter<DocumentReference>(data, 'creatorRef'),
+          'expGenderr': getParameter<String>(data, 'expGenderr'),
         },
       ),
-  'map': (data) async => ParameterData(
+  'map': ParameterData.none(),
+  'acountD_for_user': (data) async => ParameterData(
         allParams: {
-          'userlat': getParameter<double>(data, 'userlat'),
-          'userLong': getParameter<double>(data, 'userLong'),
+          'userData': getParameter<DocumentReference>(data, 'userData'),
         },
       ),
+  'User_ReservedExperiences': (data) async => const ParameterData(
+        allParams: {},
+      ),
+  'review_for_user': (data) async => ParameterData(
+        allParams: {
+          'experienceToRate':
+              getParameter<DocumentReference>(data, 'experienceToRate'),
+        },
+      ),
+  'review_Exp_Confirmation': ParameterData.none(),
+  'Notifications': ParameterData.none(),
+  'reviews1': (data) async => ParameterData(
+        allParams: {
+          'experID': getParameter<DocumentReference>(data, 'experID'),
+        },
+      ),
+  'TermsandConditions': ParameterData.none(),
+  'ContacttheSupportteam': ParameterData.none(),
+  'image_Details': (data) async => ParameterData(
+        allParams: {
+          'chatMessage': await getDocumentParameter<ChatMessagesRecord>(
+              data, 'chatMessage', ChatMessagesRecord.fromSnapshot),
+        },
+      ),
+  'chat_2_Details': (data) async => ParameterData(
+        allParams: {
+          'chatRef': await getDocumentParameter<ChatsRecord>(
+              data, 'chatRef', ChatsRecord.fromSnapshot),
+        },
+      ),
+  'chat_2_main': ParameterData.none(),
+  'chat_2_InviteUsers': (data) async => ParameterData(
+        allParams: {
+          'chatRef': await getDocumentParameter<ChatsRecord>(
+              data, 'chatRef', ChatsRecord.fromSnapshot),
+        },
+      ),
+  'image_Details_1': (data) async => ParameterData(
+        allParams: {
+          'chatMessage': await getDocumentParameter<ChatMessagesRecord>(
+              data, 'chatMessage', ChatMessagesRecord.fromSnapshot),
+        },
+      ),
+  'userHomeCopy2': ParameterData.none(),
 };
 
 Map<String, dynamic> getInitialParameterData(Map<String, dynamic> data) {

@@ -214,7 +214,10 @@ class _ReservationConfirmedWidgetState extends State<ReservationConfirmedWidget>
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () {
+        FocusScope.of(context).unfocus();
+        FocusManager.instance.primaryFocus?.unfocus();
+      },
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -365,7 +368,7 @@ class _ReservationConfirmedWidgetState extends State<ReservationConfirmedWidget>
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                context.pushNamed('availableexperiences');
+                                context.pushNamed('userHome');
                               },
                               text: 'Done',
                               options: FFButtonOptions(

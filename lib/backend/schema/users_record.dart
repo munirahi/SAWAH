@@ -61,6 +61,11 @@ class UsersRecord extends FirestoreRecord {
   String get photoUrl => _photoUrl ?? '';
   bool hasPhotoUrl() => _photoUrl != null;
 
+  // "title" field.
+  String? _title;
+  String get title => _title ?? '';
+  bool hasTitle() => _title != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -69,8 +74,11 @@ class UsersRecord extends FirestoreRecord {
     _phoneNumber = snapshotData['phone_number'] as String?;
     _shortDescription = snapshotData['shortDescription'] as String?;
     _lastActiveTime = snapshotData['last_active_time'] as DateTime?;
-    _role = deserializeEnum<UserType>(snapshotData['role']);
+    _role = snapshotData['role'] is UserType
+        ? snapshotData['role']
+        : deserializeEnum<UserType>(snapshotData['role']);
     _photoUrl = snapshotData['photo_url'] as String?;
+    _title = snapshotData['title'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -116,6 +124,7 @@ Map<String, dynamic> createUsersRecordData({
   DateTime? lastActiveTime,
   UserType? role,
   String? photoUrl,
+  String? title,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -128,6 +137,7 @@ Map<String, dynamic> createUsersRecordData({
       'last_active_time': lastActiveTime,
       'role': role,
       'photo_url': photoUrl,
+      'title': title,
     }.withoutNulls,
   );
 
@@ -147,7 +157,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.shortDescription == e2?.shortDescription &&
         e1?.lastActiveTime == e2?.lastActiveTime &&
         e1?.role == e2?.role &&
-        e1?.photoUrl == e2?.photoUrl;
+        e1?.photoUrl == e2?.photoUrl &&
+        e1?.title == e2?.title;
   }
 
   @override
@@ -160,7 +171,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.shortDescription,
         e?.lastActiveTime,
         e?.role,
-        e?.photoUrl
+        e?.photoUrl,
+        e?.title
       ]);
 
   @override

@@ -1,13 +1,13 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/pages/host_pages/update_phone_num/update_phone_num_widget.dart';
-import 'package:easy_debounce/easy_debounce.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'accoun_d_model.dart';
 export 'accoun_d_model.dart';
 
@@ -40,9 +40,9 @@ class _AccounDWidgetState extends State<AccounDWidget> {
     _model.textController2 ??= TextEditingController(text: currentUserEmail);
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    _model.nameTextController ??=
-        TextEditingController(text: currentPhoneNumber);
-    _model.nameFocusNode ??= FocusNode();
+    _model.bioTextController ??= TextEditingController(
+        text: valueOrDefault(currentUserDocument?.shortDescription, ''));
+    _model.bioFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -56,6 +56,8 @@ class _AccounDWidgetState extends State<AccounDWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -238,6 +240,8 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                                         .labelMedium
                                         .override(
                                           fontFamily: 'Inter',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryText,
                                           letterSpacing: 0.0,
                                         ),
                                     hintText: 'Email',
@@ -298,174 +302,121 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                             ),
                           ],
                         ),
-                        AuthUserStreamWidget(
-                          builder: (context) => Text(
-                            currentUserDisplayName,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
-                                ),
-                          ),
-                        ),
-                        Text(
-                          currentUserEmail,
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            if (currentUserDocument?.role == UserType.host)
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 16.0, 0.0, 0.0),
+                                  child: AuthUserStreamWidget(
+                                    builder: (context) => TextFormField(
+                                      controller: _model.bioTextController,
+                                      focusNode: _model.bioFocusNode,
+                                      obscureText: false,
+                                      decoration: InputDecoration(
+                                        labelText: 'Bio',
+                                        labelStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        hintText: 'Your Name',
+                                        hintStyle: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .alternate,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        errorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        focusedErrorBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                            color: FlutterFlowTheme.of(context)
+                                                .error,
+                                            width: 2.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                        filled: true,
+                                        fillColor: FlutterFlowTheme.of(context)
+                                            .secondaryBackground,
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
+                                      validator: _model
+                                          .bioTextControllerValidator
+                                          .asValidator(context),
+                                    ),
                                   ),
-                        ),
-                        AuthUserStreamWidget(
-                          builder: (context) => Text(
-                            currentPhoneNumber,
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  letterSpacing: 0.0,
                                 ),
-                          ),
+                              ),
+                          ],
                         ),
                       ],
                     ),
                   ),
-                  Container(
-                    width: 358.0,
-                    height: 55.0,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      shape: BoxShape.rectangle,
-                    ),
-                    child: Stack(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 8.0),
-                          child: AuthUserStreamWidget(
-                            builder: (context) => TextFormField(
-                              controller: _model.nameTextController,
-                              focusNode: _model.nameFocusNode,
-                              onChanged: (_) => EasyDebounce.debounce(
-                                '_model.nameTextController',
-                                const Duration(milliseconds: 2000),
-                                () => safeSetState(() {}),
-                              ),
-                              autofocus: true,
-                              autofillHints: const [
-                                AutofillHints.telephoneNumberCountryCode
-                              ],
-                              textInputAction: TextInputAction.next,
-                              obscureText: false,
-                              decoration: InputDecoration(
-                                labelText: 'Phone number',
-                                labelStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                                alignLabelWithHint: false,
-                                hintText: '+966 569487010',
-                                hintStyle: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      letterSpacing: 0.0,
-                                    ),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color:
-                                        FlutterFlowTheme.of(context).alternate,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(6.0),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).primary,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(6.0),
-                                ),
-                                errorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(6.0),
-                                ),
-                                focusedErrorBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: FlutterFlowTheme.of(context).error,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(6.0),
-                                ),
-                                filled: true,
-                                fillColor: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                contentPadding: const EdgeInsets.all(12.0),
-                              ),
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    letterSpacing: 0.0,
-                                  ),
-                              cursorColor: FlutterFlowTheme.of(context).primary,
-                              validator: _model.nameTextControllerValidator
-                                  .asValidator(context),
-                              inputFormatters: [
-                                FilteringTextInputFormatter.allow(
-                                    RegExp('[a-zA-Z]'))
-                              ],
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: const AlignmentDirectional(0.98, -0.5),
-                          child: Builder(
-                            builder: (context) => FlutterFlowIconButton(
-                              borderRadius: 8.0,
-                              buttonSize: 40.0,
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              icon: Icon(
-                                Icons.edit_off,
-                                color: FlutterFlowTheme.of(context).primary,
-                                size: 24.0,
-                              ),
-                              onPressed: () async {
-                                await showDialog(
-                                  context: context,
-                                  builder: (dialogContext) {
-                                    return Dialog(
-                                      elevation: 0,
-                                      insetPadding: EdgeInsets.zero,
-                                      backgroundColor: Colors.transparent,
-                                      alignment: const AlignmentDirectional(0.0, 0.0)
-                                          .resolve(Directionality.of(context)),
-                                      child: UpdatePhoneNumWidget(
-                                        userref: widget.userData!,
-                                      ),
-                                    );
-                                  },
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-                      ],
+                  SizedBox(
+                    width: MediaQuery.sizeOf(context).width * 0.9,
+                    height: 70.0,
+                    child: custom_widgets.PhoneNumberPicker(
+                      width: MediaQuery.sizeOf(context).width * 0.9,
+                      height: 70.0,
+                      userNumber: FFAppState().phoneNumber,
                     ),
                   ),
                   FFButtonWidget(
                     onPressed: () async {
                       await widget.userData!.update(createUsersRecordData(
                         displayName: _model.textController1.text,
-                        phoneNumber: _model.nameTextController.text,
+                        phoneNumber: FFAppState().phoneNumber,
                       ));
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(
+                            'Saved changes',
+                            style: TextStyle(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              fontSize: 14.0,
+                            ),
+                          ),
+                          duration: const Duration(milliseconds: 3000),
+                          backgroundColor: FlutterFlowTheme.of(context).primary,
+                        ),
+                      );
                     },
                     text: 'Save Changes',
                     options: FFButtonOptions(

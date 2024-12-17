@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'flutter_flow/request_manager.dart';
 import '/backend/backend.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -28,6 +29,13 @@ class FFAppState extends ChangeNotifier {
       _CurrentDate = prefs.containsKey('ff_CurrentDate')
           ? DateTime.fromMillisecondsSinceEpoch(prefs.getInt('ff_CurrentDate')!)
           : _CurrentDate;
+    });
+    _safeInit(() {
+      _multipleUsers = prefs
+              .getStringList('ff_multipleUsers')
+              ?.map((path) => path.ref)
+              .toList() ??
+          _multipleUsers;
     });
   }
 
@@ -82,7 +90,7 @@ class FFAppState extends ChangeNotifier {
     _verfiyEmail = value;
   }
 
-  DateTime? _CurrentDate = DateTime.fromMillisecondsSinceEpoch(1728516660000);
+  DateTime? _CurrentDate = DateTime.fromMillisecondsSinceEpoch(1729011900000);
   DateTime? get CurrentDate => _CurrentDate;
   set CurrentDate(DateTime? value) {
     _CurrentDate = value;
@@ -138,6 +146,105 @@ class FFAppState extends ChangeNotifier {
     _location = value;
   }
 
+  double _isApiHasrResponse = 0.0;
+  double get isApiHasrResponse => _isApiHasrResponse;
+  set isApiHasrResponse(double value) {
+    _isApiHasrResponse = value;
+  }
+
+  bool _conformLocation = false;
+  bool get conformLocation => _conformLocation;
+  set conformLocation(bool value) {
+    _conformLocation = value;
+  }
+
+  List<DocumentReference> _multipleUsers = [];
+  List<DocumentReference> get multipleUsers => _multipleUsers;
+  set multipleUsers(List<DocumentReference> value) {
+    _multipleUsers = value;
+    prefs.setStringList('ff_multipleUsers', value.map((x) => x.path).toList());
+  }
+
+  void addToMultipleUsers(DocumentReference value) {
+    multipleUsers.add(value);
+    prefs.setStringList(
+        'ff_multipleUsers', _multipleUsers.map((x) => x.path).toList());
+  }
+
+  void removeFromMultipleUsers(DocumentReference value) {
+    multipleUsers.remove(value);
+    prefs.setStringList(
+        'ff_multipleUsers', _multipleUsers.map((x) => x.path).toList());
+  }
+
+  void removeAtIndexFromMultipleUsers(int index) {
+    multipleUsers.removeAt(index);
+    prefs.setStringList(
+        'ff_multipleUsers', _multipleUsers.map((x) => x.path).toList());
+  }
+
+  void updateMultipleUsersAtIndex(
+    int index,
+    DocumentReference Function(DocumentReference) updateFn,
+  ) {
+    multipleUsers[index] = updateFn(_multipleUsers[index]);
+    prefs.setStringList(
+        'ff_multipleUsers', _multipleUsers.map((x) => x.path).toList());
+  }
+
+  void insertAtIndexInMultipleUsers(int index, DocumentReference value) {
+    multipleUsers.insert(index, value);
+    prefs.setStringList(
+        'ff_multipleUsers', _multipleUsers.map((x) => x.path).toList());
+  }
+
+  String _searchQuery = '\" \"';
+  String get searchQuery => _searchQuery;
+  set searchQuery(String value) {
+    _searchQuery = value;
+  }
+
+  String _filterList = '';
+  String get filterList => _filterList;
+  set filterList(String value) {
+    _filterList = value;
+  }
+
+  bool _filterActive = false;
+  bool get filterActive => _filterActive;
+  set filterActive(bool value) {
+    _filterActive = value;
+  }
+
+  List<DocumentReference> _revrecreate = [];
+  List<DocumentReference> get revrecreate => _revrecreate;
+  set revrecreate(List<DocumentReference> value) {
+    _revrecreate = value;
+  }
+
+  void addToRevrecreate(DocumentReference value) {
+    revrecreate.add(value);
+  }
+
+  void removeFromRevrecreate(DocumentReference value) {
+    revrecreate.remove(value);
+  }
+
+  void removeAtIndexFromRevrecreate(int index) {
+    revrecreate.removeAt(index);
+  }
+
+  void updateRevrecreateAtIndex(
+    int index,
+    DocumentReference Function(DocumentReference) updateFn,
+  ) {
+    revrecreate[index] = updateFn(_revrecreate[index]);
+  }
+
+  void insertAtIndexInRevrecreate(int index, DocumentReference value) {
+    revrecreate.insert(index, value);
+  }
+
   final _exDetailsManager = StreamRequestManager<List<ExperiencesRecord>>();
   Stream<List<ExperiencesRecord>> exDetails({
     String? uniqueQueryKey,
@@ -152,6 +259,21 @@ class FFAppState extends ChangeNotifier {
   void clearExDetailsCache() => _exDetailsManager.clear();
   void clearExDetailsCacheKey(String? uniqueKey) =>
       _exDetailsManager.clearRequest(uniqueKey);
+
+  final _userDocQueryManager = FutureRequestManager<UsersRecord>();
+  Future<UsersRecord> userDocQuery({
+    String? uniqueQueryKey,
+    bool? overrideCache,
+    required Future<UsersRecord> Function() requestFn,
+  }) =>
+      _userDocQueryManager.performRequest(
+        uniqueQueryKey: uniqueQueryKey,
+        overrideCache: overrideCache,
+        requestFn: requestFn,
+      );
+  void clearUserDocQueryCache() => _userDocQueryManager.clear();
+  void clearUserDocQueryCacheKey(String? uniqueKey) =>
+      _userDocQueryManager.clearRequest(uniqueKey);
 }
 
 void _safeInit(Function() initializeField) {

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/enums/enums.dart';
 
 import 'index.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -39,11 +40,6 @@ class ExperiencesRecord extends FirestoreRecord {
   List<DocumentReference>? _users;
   List<DocumentReference> get users => _users ?? const [];
   bool hasUsers() => _users != null;
-
-  // "PhoneNumberPicker" field.
-  int? _phoneNumberPicker;
-  int get phoneNumberPicker => _phoneNumberPicker ?? 0;
-  bool hasPhoneNumberPicker() => _phoneNumberPicker != null;
 
   // "Image" field.
   String? _image;
@@ -90,15 +86,50 @@ class ExperiencesRecord extends FirestoreRecord {
   LatLng? get location => _location;
   bool hasLocation() => _location != null;
 
-  // "emailAddressGuest" field.
-  List<String>? _emailAddressGuest;
-  List<String> get emailAddressGuest => _emailAddressGuest ?? const [];
-  bool hasEmailAddressGuest() => _emailAddressGuest != null;
-
   // "EmailsofUsers" field.
   List<String>? _emailsofUsers;
   List<String> get emailsofUsers => _emailsofUsers ?? const [];
   bool hasEmailsofUsers() => _emailsofUsers != null;
+
+  // "AddressName" field.
+  String? _addressName;
+  String get addressName => _addressName ?? '';
+  bool hasAddressName() => _addressName != null;
+
+  // "phone_number" field.
+  List<String>? _phoneNumber;
+  List<String> get phoneNumber => _phoneNumber ?? const [];
+  bool hasPhoneNumber() => _phoneNumber != null;
+
+  // "newestLocationString" field.
+  String? _newestLocationString;
+  String get newestLocationString => _newestLocationString ?? '';
+  bool hasNewestLocationString() => _newestLocationString != null;
+
+  // "reviewsIDs" field.
+  List<DocumentReference>? _reviewsIDs;
+  List<DocumentReference> get reviewsIDs => _reviewsIDs ?? const [];
+  bool hasReviewsIDs() => _reviewsIDs != null;
+
+  // "categories" field.
+  List<CategoriesEnum>? _categories;
+  List<CategoriesEnum> get categories => _categories ?? const [];
+  bool hasCategories() => _categories != null;
+
+  // "categoryy" field.
+  String? _categoryy;
+  String get categoryy => _categoryy ?? '';
+  bool hasCategoryy() => _categoryy != null;
+
+  // "oldExID" field.
+  DocumentReference? _oldExID;
+  DocumentReference? get oldExID => _oldExID;
+  bool hasOldExID() => _oldExID != null;
+
+  // "cateelist" field.
+  List<String>? _cateelist;
+  List<String> get cateelist => _cateelist ?? const [];
+  bool hasCateelist() => _cateelist != null;
 
   void _initializeFields() {
     _experiencename1 = snapshotData['Experiencename1'] as String?;
@@ -106,7 +137,6 @@ class ExperiencesRecord extends FirestoreRecord {
     _priceField1 = castToType<double>(snapshotData['PriceField1']);
     _creator = snapshotData['creator'] as DocumentReference?;
     _users = getDataList(snapshotData['users']);
-    _phoneNumberPicker = castToType<int>(snapshotData['PhoneNumberPicker']);
     _image = snapshotData['Image'] as String?;
     _gender = snapshotData['Gender'] as String?;
     _seatLimit = castToType<int>(snapshotData['SeatLimit']);
@@ -116,8 +146,15 @@ class ExperiencesRecord extends FirestoreRecord {
     _date = snapshotData['Date'] as DateTime?;
     _time = snapshotData['Time'] as DateTime?;
     _location = snapshotData['location'] as LatLng?;
-    _emailAddressGuest = getDataList(snapshotData['emailAddressGuest']);
     _emailsofUsers = getDataList(snapshotData['EmailsofUsers']);
+    _addressName = snapshotData['AddressName'] as String?;
+    _phoneNumber = getDataList(snapshotData['phone_number']);
+    _newestLocationString = snapshotData['newestLocationString'] as String?;
+    _reviewsIDs = getDataList(snapshotData['reviewsIDs']);
+    _categories = getEnumList<CategoriesEnum>(snapshotData['categories']);
+    _categoryy = snapshotData['categoryy'] as String?;
+    _oldExID = snapshotData['oldExID'] as DocumentReference?;
+    _cateelist = getDataList(snapshotData['cateelist']);
   }
 
   static CollectionReference get collection =>
@@ -159,7 +196,6 @@ Map<String, dynamic> createExperiencesRecordData({
   String? experienceAbout1,
   double? priceField1,
   DocumentReference? creator,
-  int? phoneNumberPicker,
   String? image,
   String? gender,
   int? seatLimit,
@@ -169,6 +205,10 @@ Map<String, dynamic> createExperiencesRecordData({
   DateTime? date,
   DateTime? time,
   LatLng? location,
+  String? addressName,
+  String? newestLocationString,
+  String? categoryy,
+  DocumentReference? oldExID,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -176,7 +216,6 @@ Map<String, dynamic> createExperiencesRecordData({
       'Experience_about1': experienceAbout1,
       'PriceField1': priceField1,
       'creator': creator,
-      'PhoneNumberPicker': phoneNumberPicker,
       'Image': image,
       'Gender': gender,
       'SeatLimit': seatLimit,
@@ -186,6 +225,10 @@ Map<String, dynamic> createExperiencesRecordData({
       'Date': date,
       'Time': time,
       'location': location,
+      'AddressName': addressName,
+      'newestLocationString': newestLocationString,
+      'categoryy': categoryy,
+      'oldExID': oldExID,
     }.withoutNulls,
   );
 
@@ -203,7 +246,6 @@ class ExperiencesRecordDocumentEquality implements Equality<ExperiencesRecord> {
         e1?.priceField1 == e2?.priceField1 &&
         e1?.creator == e2?.creator &&
         listEquality.equals(e1?.users, e2?.users) &&
-        e1?.phoneNumberPicker == e2?.phoneNumberPicker &&
         e1?.image == e2?.image &&
         e1?.gender == e2?.gender &&
         e1?.seatLimit == e2?.seatLimit &&
@@ -213,8 +255,15 @@ class ExperiencesRecordDocumentEquality implements Equality<ExperiencesRecord> {
         e1?.date == e2?.date &&
         e1?.time == e2?.time &&
         e1?.location == e2?.location &&
-        listEquality.equals(e1?.emailAddressGuest, e2?.emailAddressGuest) &&
-        listEquality.equals(e1?.emailsofUsers, e2?.emailsofUsers);
+        listEquality.equals(e1?.emailsofUsers, e2?.emailsofUsers) &&
+        e1?.addressName == e2?.addressName &&
+        listEquality.equals(e1?.phoneNumber, e2?.phoneNumber) &&
+        e1?.newestLocationString == e2?.newestLocationString &&
+        listEquality.equals(e1?.reviewsIDs, e2?.reviewsIDs) &&
+        listEquality.equals(e1?.categories, e2?.categories) &&
+        e1?.categoryy == e2?.categoryy &&
+        e1?.oldExID == e2?.oldExID &&
+        listEquality.equals(e1?.cateelist, e2?.cateelist);
   }
 
   @override
@@ -224,7 +273,6 @@ class ExperiencesRecordDocumentEquality implements Equality<ExperiencesRecord> {
         e?.priceField1,
         e?.creator,
         e?.users,
-        e?.phoneNumberPicker,
         e?.image,
         e?.gender,
         e?.seatLimit,
@@ -234,8 +282,15 @@ class ExperiencesRecordDocumentEquality implements Equality<ExperiencesRecord> {
         e?.date,
         e?.time,
         e?.location,
-        e?.emailAddressGuest,
-        e?.emailsofUsers
+        e?.emailsofUsers,
+        e?.addressName,
+        e?.phoneNumber,
+        e?.newestLocationString,
+        e?.reviewsIDs,
+        e?.categories,
+        e?.categoryy,
+        e?.oldExID,
+        e?.cateelist
       ]);
 
   @override

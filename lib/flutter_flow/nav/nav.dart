@@ -17,6 +17,8 @@ export 'serialization_util.dart';
 
 const kTransitionInfoKey = '__transition_info__';
 
+GlobalKey<NavigatorState> appNavigatorKey = GlobalKey<NavigatorState>();
+
 class AppStateNotifier extends ChangeNotifier {
   AppStateNotifier._();
 
@@ -74,6 +76,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
+      navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
           appStateNotifier.loggedIn ? const NavBarPage() : const OnbordingWidget(),
       routes: [
@@ -96,11 +99,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const OnbordingWidget(),
         ),
         FFRoute(
-          name: 'availableexperiences',
-          path: '/availableexperiences',
+          name: 'userHome',
+          path: '/userHome',
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'availableexperiences')
-              : const AvailableexperiencesWidget(),
+              ? const NavBarPage(initialPage: 'userHome')
+              : const UserHomeWidget(),
         ),
         FFRoute(
           name: 'BookExperience',
@@ -119,6 +122,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.DocumentReference,
               isList: false,
               collectionNamePath: ['users'],
+            ),
+            seatlimittt: params.getParam(
+              'seatlimittt',
+              ParamType.int,
+            ),
+            remainingseatsss: params.getParam(
+              'remainingseatsss',
+              ParamType.int,
+            ),
+            revvvv: params.getParam<DocumentReference>(
+              'revvvv',
+              ParamType.DocumentReference,
+              isList: true,
+              collectionNamePath: ['reviews'],
             ),
           ),
         ),
@@ -156,6 +173,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'HostHomePage',
           path: '/hostHomePage',
+          requireAuth: true,
           builder: (context, params) => const HostHomePageWidget(),
         ),
         FFRoute(
@@ -199,8 +217,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Exp_Details',
           path: '/expDetails',
           builder: (context, params) => ExpDetailsWidget(
-            expDetails: params.getParam(
-              'expDetails',
+            experienceDetails: params.getParam(
+              'experienceDetails',
               ParamType.DocumentReference,
               isList: false,
               collectionNamePath: ['Experiences'],
@@ -244,9 +262,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'users_booked_ex',
           path: '/usersBookedEx',
-          builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'users_booked_ex')
-              : const UsersBookedExWidget(),
+          builder: (context, params) => const UsersBookedExWidget(),
         ),
         FFRoute(
           name: 'Location',
@@ -269,10 +285,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'payment2Copy',
           path: '/payment2Copy',
+          asyncParams: {
+            'expreffffffff':
+                getDoc(['Experiences'], ExperiencesRecord.fromSnapshot),
+          },
           builder: (context, params) => Payment2CopyWidget(
-            countRef: params.getParam(
-              'countRef',
+            countcontrollerguest: params.getParam(
+              'countcontrollerguest',
               ParamType.int,
+            ),
+            expreffffffff: params.getParam(
+              'expreffffffff',
+              ParamType.Document,
             ),
           ),
         ),
@@ -296,10 +320,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               'expAge',
               ParamType.String,
             ),
-            expGender: params.getParam(
-              'expGender',
-              ParamType.String,
-            ),
             expPrice: params.getParam(
               'expPrice',
               ParamType.double,
@@ -320,23 +340,161 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               isList: false,
               collectionNamePath: ['users'],
             ),
+            expGenderr: params.getParam(
+              'expGenderr',
+              ParamType.String,
+            ),
+            reveiws: params.getParam<DocumentReference>(
+              'reveiws',
+              ParamType.DocumentReference,
+              isList: true,
+              collectionNamePath: ['reviews'],
+            ),
           ),
         ),
         FFRoute(
           name: 'map',
           path: '/map',
-          builder: (context, params) => MapWidget(
-            userlat: params.getParam(
-              'userlat',
-              ParamType.double,
-            ),
-            userLong: params.getParam(
-              'userLong',
-              ParamType.double,
+          builder: (context, params) =>
+              params.isEmpty ? const NavBarPage(initialPage: 'map') : const MapWidget(),
+        ),
+        FFRoute(
+          name: 'acountD_for_user',
+          path: '/acountDForUser',
+          builder: (context, params) => AcountDForUserWidget(
+            userData: params.getParam(
+              'userData',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['users'],
             ),
           ),
+        ),
+        FFRoute(
+          name: 'User_ReservedExperiences',
+          path: '/userReservedExperiences',
+          requireAuth: true,
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'User_ReservedExperiences')
+              : UserReservedExperiencesWidget(
+                  reserved: params.getParam<DocumentReference>(
+                    'reserved',
+                    ParamType.DocumentReference,
+                    isList: true,
+                    collectionNamePath: ['Reserved'],
+                  ),
+                ),
+        ),
+        FFRoute(
+          name: 'review_for_user',
+          path: '/reviewForUser',
+          builder: (context, params) => ReviewForUserWidget(
+            experienceToRate: params.getParam(
+              'experienceToRate',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['Experiences'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'review_Exp_Confirmation',
+          path: '/reviewExpConfirmation',
+          builder: (context, params) => const ReviewExpConfirmationWidget(),
+        ),
+        FFRoute(
+          name: 'Notifications',
+          path: '/notifications',
+          builder: (context, params) => const NotificationsWidget(),
+        ),
+        FFRoute(
+          name: 'reviews1',
+          path: '/reviews1',
+          builder: (context, params) => Reviews1Widget(
+            experID: params.getParam(
+              'experID',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['Experiences'],
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'TermsandConditions',
+          path: '/termsandConditions',
+          builder: (context, params) => const TermsandConditionsWidget(),
+        ),
+        FFRoute(
+          name: 'ContacttheSupportteam',
+          path: '/contacttheSupportteam',
+          builder: (context, params) => const ContacttheSupportteamWidget(),
+        ),
+        FFRoute(
+          name: 'image_Details',
+          path: '/imageDetails',
+          asyncParams: {
+            'chatMessage':
+                getDoc(['chat_messages'], ChatMessagesRecord.fromSnapshot),
+          },
+          builder: (context, params) => ImageDetailsWidget(
+            chatMessage: params.getParam(
+              'chatMessage',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'chat_2_Details',
+          path: '/chat2Details',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Chat2DetailsWidget(
+            chatRef: params.getParam(
+              'chatRef',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'chat_2_main',
+          path: '/chat2Main',
+          builder: (context, params) => const Chat2MainWidget(),
+        ),
+        FFRoute(
+          name: 'chat_2_InviteUsers',
+          path: '/chat2InviteUsers',
+          asyncParams: {
+            'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
+          },
+          builder: (context, params) => Chat2InviteUsersWidget(
+            chatRef: params.getParam(
+              'chatRef',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'image_Details_1',
+          path: '/imageDetails1',
+          asyncParams: {
+            'chatMessage':
+                getDoc(['chat_messages'], ChatMessagesRecord.fromSnapshot),
+          },
+          builder: (context, params) => ImageDetails1Widget(
+            chatMessage: params.getParam(
+              'chatMessage',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'userHomeCopy2',
+          path: '/userHomeCopy2',
+          builder: (context, params) => const UserHomeCopy2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {
@@ -524,8 +682,8 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/logo444.jpg',
-                    fit: BoxFit.contain,
+                    'assets/images/Screenshot_2024-11-23_221936.png',
+                    fit: BoxFit.cover,
                   ),
                 )
               : PushNotificationsHandler(child: page);

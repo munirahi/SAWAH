@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -11,9 +12,11 @@ class UpdatePhoneNumWidget extends StatefulWidget {
   const UpdatePhoneNumWidget({
     super.key,
     required this.userref,
+    required this.newPhoneNumber,
   });
 
   final DocumentReference? userref;
+  final String? newPhoneNumber;
 
   @override
   State<UpdatePhoneNumWidget> createState() => _UpdatePhoneNumWidgetState();
@@ -78,12 +81,22 @@ class _UpdatePhoneNumWidgetState extends State<UpdatePhoneNumWidget> {
           ),
           Align(
             alignment: const AlignmentDirectional(0.0, 0.0),
-            child: SizedBox(
-              width: MediaQuery.sizeOf(context).width * 1.0,
-              height: 60.0,
-              child: custom_widgets.PhoneNumberPicker(
-                width: MediaQuery.sizeOf(context).width * 1.0,
-                height: 60.0,
+            child: InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              onTap: () async {
+                FFAppState().phoneNumber = '';
+                safeSetState(() {});
+              },
+              child: SizedBox(
+                width: MediaQuery.sizeOf(context).width * 0.9,
+                height: 70.0,
+                child: custom_widgets.PhoneNumberPicker(
+                  width: MediaQuery.sizeOf(context).width * 0.9,
+                  height: 70.0,
+                ),
               ),
             ),
           ),
@@ -96,6 +109,10 @@ class _UpdatePhoneNumWidgetState extends State<UpdatePhoneNumWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(110.0, 0.0, 0.0, 0.0),
                   child: StreamBuilder<List<UsersRecord>>(
                     stream: queryUsersRecord(
+                      queryBuilder: (usersRecord) => usersRecord.where(
+                        'uid',
+                        isEqualTo: currentUserUid,
+                      ),
                       singleRecord: true,
                     )..listen((snapshot) {
                         List<UsersRecord> buttonUsersRecordList = snapshot;
@@ -108,8 +125,14 @@ class _UpdatePhoneNumWidgetState extends State<UpdatePhoneNumWidget> {
                                 .equals(buttonUsersRecordList,
                                     _model.buttonPreviousSnapshot)) {
                           () async {
-                            FFAppState().phoneNumber = '';
+                            FFAppState().phoneNumber = widget.newPhoneNumber!;
                             safeSetState(() {});
+
+                            await buttonUsersRecord!.reference
+                                .update(createUsersRecordData(
+                              phoneNumber: currentPhoneNumber,
+                              uid: buttonUsersRecord.reference.id,
+                            ));
 
                             safeSetState(() {});
                           }();
