@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/userdelete_exp_alert/userdelete_exp_alert_widget.dart';
 import '/actions/actions.dart' as action_blocks;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'user_reserved_experiences_model.dart';
@@ -17,6 +18,9 @@ class UserReservedExperiencesWidget extends StatefulWidget {
   });
 
   final List<DocumentReference>? reserved;
+
+  static String routeName = 'User_ReservedExperiences';
+  static String routePath = '/userReservedExperiences';
 
   @override
   State<UserReservedExperiencesWidget> createState() =>
@@ -88,7 +92,7 @@ class _UserReservedExperiencesWidgetState
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: PreferredSize(
-              preferredSize: const Size.fromHeight(70.0),
+              preferredSize: Size.fromHeight(70.0),
               child: AppBar(
                 backgroundColor: FlutterFlowTheme.of(context).primary,
                 automaticallyImplyLeading: false,
@@ -97,7 +101,7 @@ class _UserReservedExperiencesWidgetState
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Text(
                         'My Experiences',
                         style: FlutterFlowTheme.of(context)
@@ -112,7 +116,7 @@ class _UserReservedExperiencesWidgetState
                     ),
                   ],
                 ),
-                actions: const [],
+                actions: [],
                 centerTitle: false,
                 elevation: 2.0,
               ),
@@ -122,7 +126,7 @@ class _UserReservedExperiencesWidgetState
                 Column(
                   children: [
                     Align(
-                      alignment: const Alignment(0.0, 0),
+                      alignment: Alignment(0.0, 0),
                       child: TabBar(
                         labelColor: FlutterFlowTheme.of(context).primaryText,
                         unselectedLabelColor:
@@ -139,7 +143,7 @@ class _UserReservedExperiencesWidgetState
                                   letterSpacing: 0.0,
                                 ),
                         indicatorColor: FlutterFlowTheme.of(context).primary,
-                        tabs: const [
+                        tabs: [
                           Tab(
                             text: 'Future ',
                           ),
@@ -216,7 +220,7 @@ class _UserReservedExperiencesWidgetState
                                                     getCurrentTimestamp)
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 8.0),
                                                     child: Container(
@@ -225,7 +229,7 @@ class _UserReservedExperiencesWidgetState
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        boxShadow: const [
+                                                        boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 3.0,
                                                             color: Color(
@@ -242,7 +246,7 @@ class _UserReservedExperiencesWidgetState
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets.all(4.0),
+                                                            EdgeInsets.all(4.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -252,7 +256,7 @@ class _UserReservedExperiencesWidgetState
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           1.0,
@@ -277,7 +281,7 @@ class _UserReservedExperiencesWidgetState
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           10.0,
@@ -292,7 +296,7 @@ class _UserReservedExperiencesWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'Inter Tight',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF176490),
                                                                       letterSpacing:
                                                                           0.0,
@@ -301,7 +305,7 @@ class _UserReservedExperiencesWidgetState
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           5.0,
@@ -358,7 +362,7 @@ class _UserReservedExperiencesWidgetState
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           10.0,
@@ -377,7 +381,8 @@ class _UserReservedExperiencesWidgetState
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'Exp_Details',
+                                                                        ExpDetailsWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'experienceDetails':
@@ -394,12 +399,12 @@ class _UserReservedExperiencesWidgetState
                                                                         FFButtonOptions(
                                                                       height:
                                                                           40.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -469,12 +474,12 @@ class _UserReservedExperiencesWidgetState
                                                                         FFButtonOptions(
                                                                       height:
                                                                           40.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -513,7 +518,8 @@ class _UserReservedExperiencesWidgetState
 
                                                                       context
                                                                           .pushNamed(
-                                                                        'chat_2_Details',
+                                                                        Chat2DetailsWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'chatRef':
@@ -538,12 +544,12 @@ class _UserReservedExperiencesWidgetState
                                                                         FFButtonOptions(
                                                                       height:
                                                                           40.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -593,7 +599,7 @@ class _UserReservedExperiencesWidgetState
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 0.0, 0.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -604,17 +610,18 @@ class _UserReservedExperiencesWidgetState
                                                 .clearRedirectLocation();
 
                                             context.pushNamedAuth(
-                                                'AuthNew', context.mounted);
+                                                AuthNewWidget.routeName,
+                                                context.mounted);
                                           },
                                           text:
                                               'Sign Up to view any reseved experiences',
                                           options: FFButtonOptions(
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     24.0, 0.0, 24.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
@@ -723,7 +730,7 @@ class _UserReservedExperiencesWidgetState
                                                     getCurrentTimestamp)
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 8.0),
                                                     child: Container(
@@ -732,7 +739,7 @@ class _UserReservedExperiencesWidgetState
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        boxShadow: const [
+                                                        boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 3.0,
                                                             color: Color(
@@ -749,7 +756,7 @@ class _UserReservedExperiencesWidgetState
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets.all(4.0),
+                                                            EdgeInsets.all(4.0),
                                                         child: Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
@@ -759,7 +766,7 @@ class _UserReservedExperiencesWidgetState
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           1.0,
@@ -784,7 +791,7 @@ class _UserReservedExperiencesWidgetState
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           10.0,
@@ -799,7 +806,7 @@ class _UserReservedExperiencesWidgetState
                                                                     .override(
                                                                       fontFamily:
                                                                           'Inter Tight',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF176490),
                                                                       letterSpacing:
                                                                           0.0,
@@ -808,7 +815,7 @@ class _UserReservedExperiencesWidgetState
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           20.0,
                                                                           5.0,
@@ -857,7 +864,7 @@ class _UserReservedExperiencesWidgetState
                                                             ),
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           10.0,
@@ -876,7 +883,8 @@ class _UserReservedExperiencesWidgetState
                                                                         () async {
                                                                       context
                                                                           .pushNamed(
-                                                                        'Exp_Details',
+                                                                        ExpDetailsWidget
+                                                                            .routeName,
                                                                         queryParameters:
                                                                             {
                                                                           'experienceDetails':
@@ -893,12 +901,12 @@ class _UserReservedExperiencesWidgetState
                                                                         FFButtonOptions(
                                                                       height:
                                                                           40.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -970,7 +978,7 @@ class _UserReservedExperiencesWidgetState
 
                                                                       return Container(
                                                                         decoration:
-                                                                            const BoxDecoration(),
+                                                                            BoxDecoration(),
                                                                         child:
                                                                             Visibility(
                                                                           visible:
@@ -984,12 +992,12 @@ class _UserReservedExperiencesWidgetState
                                                                                   context: context,
                                                                                   builder: (alertDialogContext) {
                                                                                     return AlertDialog(
-                                                                                      title: const Text('This Exp has been reviewed'),
-                                                                                      content: const Text('sorry you can only review an experience one '),
+                                                                                      title: Text('This Exp has been reviewed'),
+                                                                                      content: Text('sorry you can only review an experience one '),
                                                                                       actions: [
                                                                                         TextButton(
                                                                                           onPressed: () => Navigator.pop(alertDialogContext),
-                                                                                          child: const Text('Ok'),
+                                                                                          child: Text('Ok'),
                                                                                         ),
                                                                                       ],
                                                                                     );
@@ -997,7 +1005,7 @@ class _UserReservedExperiencesWidgetState
                                                                                 );
                                                                               } else {
                                                                                 context.pushNamed(
-                                                                                  'review_for_user',
+                                                                                  ReviewForUserWidget.routeName,
                                                                                   queryParameters: {
                                                                                     'experienceToRate': serializeParam(
                                                                                       columnExperiencesRecord.reference,
@@ -1012,8 +1020,8 @@ class _UserReservedExperiencesWidgetState
                                                                             options:
                                                                                 FFButtonOptions(
                                                                               height: 40.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).primary,
                                                                               textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                     fontFamily: 'Inter Tight',
@@ -1047,12 +1055,12 @@ class _UserReservedExperiencesWidgetState
                                                                         FFButtonOptions(
                                                                       height:
                                                                           40.0,
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
-                                                                      iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -1103,7 +1111,7 @@ class _UserReservedExperiencesWidgetState
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 12.0, 0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
@@ -1114,16 +1122,17 @@ class _UserReservedExperiencesWidgetState
                                                   .clearRedirectLocation();
 
                                               context.pushNamedAuth(
-                                                  'AuthNew', context.mounted);
+                                                  AuthNewWidget.routeName,
+                                                  context.mounted);
                                             },
                                             text:
                                                 'Sign Up to view any reseved experiences',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       24.0, 0.0, 24.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)

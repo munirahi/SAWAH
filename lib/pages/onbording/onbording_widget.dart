@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
@@ -12,6 +13,9 @@ export 'onbording_model.dart';
 
 class OnbordingWidget extends StatefulWidget {
   const OnbordingWidget({super.key});
+
+  static String routeName = 'onbording';
+  static String routePath = '/onbording';
 
   @override
   State<OnbordingWidget> createState() => _OnbordingWidgetState();
@@ -40,15 +44,15 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
             curve: Curves.easeOut,
             delay: 0.0.ms,
             duration: 3200.0.ms,
-            begin: const Offset(0.0, -80.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, -80.0),
+            end: Offset(0.0, 0.0),
           ),
           MoveEffect(
             curve: Curves.easeInOut,
             delay: 3200.0.ms,
             duration: 3200.0.ms,
-            begin: const Offset(0.0, 0.0),
-            end: const Offset(0.0, -80.0),
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, -80.0),
           ),
         ],
       ),
@@ -67,15 +71,15 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -94,15 +98,15 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -121,15 +125,15 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -148,15 +152,15 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -175,15 +179,15 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -202,15 +206,15 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 20.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 20.0),
+            end: Offset(0.0, 0.0),
           ),
           ScaleEffect(
             curve: Curves.easeInOut,
             delay: 300.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.9, 0.9),
-            end: const Offset(1.0, 1.0),
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
           ),
         ],
       ),
@@ -260,7 +264,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                         child: MasonryGridView.builder(
                           physics: const NeverScrollableScrollPhysics(),
                           gridDelegate:
-                              const SliverSimpleGridDelegateWithFixedCrossAxisCount(
+                              SliverSimpleGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 3,
                           ),
                           crossAxisSpacing: 10.0,
@@ -269,7 +273,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                           itemBuilder: (context, index) {
                             return [
                               () => ClipRRect(
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(0.0),
                                       bottomRight: Radius.circular(16.0),
                                       topLeft: Radius.circular(0.0),
@@ -292,7 +296,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                     ),
                                   ),
                               () => ClipRRect(
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(0.0),
                                       bottomRight: Radius.circular(16.0),
                                       topLeft: Radius.circular(0.0),
@@ -306,7 +310,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                     ),
                                   ),
                               () => ClipRRect(
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(16.0),
                                       bottomRight: Radius.circular(0.0),
                                       topLeft: Radius.circular(16.0),
@@ -338,7 +342,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                     ),
                                   ),
                               () => ClipRRect(
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(16.0),
                                       bottomRight: Radius.circular(0.0),
                                       topLeft: Radius.circular(16.0),
@@ -370,7 +374,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                     ),
                                   ),
                               () => ClipRRect(
-                                    borderRadius: const BorderRadius.only(
+                                    borderRadius: BorderRadius.only(
                                       bottomLeft: Radius.circular(16.0),
                                       bottomRight: Radius.circular(0.0),
                                       topLeft: Radius.circular(16.0),
@@ -404,10 +408,10 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
             ),
             Expanded(
               child: Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Container(
                   width: double.infinity,
-                  constraints: const BoxConstraints(
+                  constraints: BoxConstraints(
                     maxWidth: 670.0,
                   ),
                   decoration: BoxDecoration(
@@ -416,13 +420,13 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      SizedBox(
+                      Container(
                         width: double.infinity,
                         height: 230.0,
                         child: Stack(
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 50.0),
                               child: PageView(
                                 controller: _model.pageViewController ??=
@@ -430,7 +434,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                 scrollDirection: Axis.horizontal,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         48.0, 0.0, 48.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -444,7 +448,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                               .displaySmall
                                               .override(
                                                 fontFamily: 'Inter Tight',
-                                                color: const Color(0xFF176490),
+                                                color: Color(0xFF176490),
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
@@ -452,7 +456,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                             'textOnPageLoadAnimation1']!),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Text(
                                             'Discover Saudi, Live the Culture.',
@@ -473,7 +477,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         48.0, 0.0, 48.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -487,7 +491,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                               .displaySmall
                                               .override(
                                                 fontFamily: 'Inter Tight',
-                                                color: const Color(0xFF176490),
+                                                color: Color(0xFF176490),
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
@@ -495,7 +499,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                             'textOnPageLoadAnimation3']!),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Text(
                                             'Unlock the Magic of Saudi Culture.',
@@ -516,7 +520,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         48.0, 0.0, 48.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -530,7 +534,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                               .displaySmall
                                               .override(
                                                 fontFamily: 'Inter Tight',
-                                                color: const Color(0xFF176490),
+                                                color: Color(0xFF176490),
                                                 letterSpacing: 0.0,
                                                 fontWeight: FontWeight.bold,
                                               ),
@@ -538,7 +542,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                             'textOnPageLoadAnimation5']!),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Text(
                                             'Start Exploring Saudi Culture',
@@ -562,9 +566,9 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(0.0, 1.0),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 10.0),
                                 child:
                                     smooth_page_indicator.SmoothPageIndicator(
@@ -576,7 +580,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                     await _model.pageViewController!
                                         .animateToPage(
                                       i,
-                                      duration: const Duration(milliseconds: 500),
+                                      duration: Duration(milliseconds: 500),
                                       curve: Curves.ease,
                                     );
                                     safeSetState(() {});
@@ -601,19 +605,19 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('AuthNew');
+                            context.pushNamed(AuthNewWidget.routeName);
                           },
                           text: 'Next',
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 60.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -625,7 +629,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 4.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -636,19 +640,19 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 44.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            context.pushNamed('AuthNew');
+                            context.pushNamed(AuthNewWidget.routeName);
                           },
                           text: 'Skip',
                           options: FFButtonOptions(
                             width: double.infinity,
                             height: 60.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -659,7 +663,7 @@ class _OnbordingWidgetState extends State<OnbordingWidget>
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 0.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),

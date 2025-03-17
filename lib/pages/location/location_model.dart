@@ -7,7 +7,7 @@ class LocationModel extends FlutterFlowModel<LocationWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for PlacePicker widget.
-  FFPlace placePickerValue = const FFPlace();
+  FFPlace placePickerValue = FFPlace();
   // State field(s) for GoogleMap widget.
   LatLng? googleMapsCenter;
   final googleMapsController = Completer<GoogleMapController>();

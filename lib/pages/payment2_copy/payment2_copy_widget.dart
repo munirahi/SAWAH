@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'payment2_copy_model.dart';
@@ -18,6 +19,9 @@ class Payment2CopyWidget extends StatefulWidget {
 
   final int? countcontrollerguest;
   final ExperiencesRecord? expreffffffff;
+
+  static String routeName = 'payment2Copy';
+  static String routePath = '/payment2Copy';
 
   @override
   State<Payment2CopyWidget> createState() => _Payment2CopyWidgetState();
@@ -66,7 +70,7 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -84,16 +88,16 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
+            alignment: AlignmentDirectional(-1.0, 0.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
+              padding: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
               child: StreamBuilder<List<ExperiencesRecord>>(
                 stream: queryExperiencesRecord(
                   singleRecord: true,
@@ -138,18 +142,18 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                             autovalidateMode: AutovalidateMode.always,
                             child: Container(
                               width: 358.0,
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 16.0),
-                                child: SizedBox(
+                                child: Container(
                                   width: double.infinity,
                                   child: TextFormField(
                                     controller:
                                         _model.emailsofUsersTextController,
                                     focusNode: _model.emailsofUsersFocusNode,
                                     autofocus: false,
-                                    autofillHints: const [AutofillHints.email],
+                                    autofillHints: [AutofillHints.email],
                                     obscureText: false,
                                     decoration: InputDecoration(
                                       labelText: 'Email',
@@ -157,7 +161,7 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                                           .labelMedium
                                           .override(
                                             fontFamily: 'Plus Jakarta Sans',
-                                            color: const Color(0xFF57636C),
+                                            color: Color(0xFF57636C),
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
@@ -166,13 +170,13 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                                           .bodyMedium
                                           .override(
                                             fontFamily: 'Plus Jakarta Sans',
-                                            color: const Color(0xFF57636C),
+                                            color: Color(0xFF57636C),
                                             fontSize: 14.0,
                                             letterSpacing: 0.0,
                                             fontWeight: FontWeight.w500,
                                           ),
                                       enabledBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0xFFE0E3E7),
                                           width: 2.0,
                                         ),
@@ -180,7 +184,7 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                                             BorderRadius.circular(40.0),
                                       ),
                                       focusedBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0xFF4B39EF),
                                           width: 2.0,
                                         ),
@@ -188,7 +192,7 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                                             BorderRadius.circular(40.0),
                                       ),
                                       errorBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0xFFFF5963),
                                           width: 2.0,
                                         ),
@@ -196,7 +200,7 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                                             BorderRadius.circular(40.0),
                                       ),
                                       focusedErrorBorder: OutlineInputBorder(
-                                        borderSide: const BorderSide(
+                                        borderSide: BorderSide(
                                           color: Color(0xFFFF5963),
                                           width: 2.0,
                                         ),
@@ -205,19 +209,19 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                                       ),
                                       filled: true,
                                       fillColor: Colors.white,
-                                      contentPadding: const EdgeInsets.all(24.0),
+                                      contentPadding: EdgeInsets.all(24.0),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Plus Jakarta Sans',
-                                          color: const Color(0xFF101213),
+                                          color: Color(0xFF101213),
                                           fontSize: 14.0,
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w500,
                                         ),
                                     keyboardType: TextInputType.emailAddress,
-                                    cursorColor: const Color(0xFF4B39EF),
+                                    cursorColor: Color(0xFF4B39EF),
                                     validator: _model
                                         .emailsofUsersTextControllerValidator
                                         .asValidator(context),
@@ -233,11 +237,11 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
-                              child: SizedBox(
+                              child: Container(
                                 width: MediaQuery.sizeOf(context).width * 0.9,
                                 height: 70.0,
                                 child: custom_widgets.PhoneNumberPicker(
@@ -254,7 +258,7 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 1.0),
+                            alignment: AlignmentDirectional(0.0, 1.0),
                             child: StreamBuilder<List<ExperiencesRecord>>(
                               stream: queryExperiencesRecord(
                                 singleRecord: true,
@@ -311,7 +315,8 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                                         ),
                                       });
 
-                                      context.pushNamed('ReservationConfirmed');
+                                      context.pushNamed(
+                                          ReservationConfirmedWidget.routeName);
                                     } else {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
@@ -325,7 +330,7 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                                             ),
                                           ),
                                           duration:
-                                              const Duration(milliseconds: 4000),
+                                              Duration(milliseconds: 4000),
                                           backgroundColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondary,
@@ -337,9 +342,9 @@ class _Payment2CopyWidgetState extends State<Payment2CopyWidget> {
                                   options: FFButtonOptions(
                                     width: 150.0,
                                     height: 50.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 0.0),
-                                    iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
                                     color: FlutterFlowTheme.of(context).primary,
                                     textStyle: FlutterFlowTheme.of(context)

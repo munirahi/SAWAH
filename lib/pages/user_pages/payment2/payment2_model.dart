@@ -1,5 +1,6 @@
 import '/flutter_flow/flutter_flow_credit_card_form.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'payment2_widget.dart' show Payment2Widget;
 import 'package:flutter/material.dart';
 

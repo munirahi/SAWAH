@@ -15,6 +15,9 @@ class Reviews1Widget extends StatefulWidget {
 
   final DocumentReference? experID;
 
+  static String routeName = 'reviews1';
+  static String routePath = '/reviews1';
+
   @override
   State<Reviews1Widget> createState() => _Reviews1WidgetState();
 }
@@ -52,7 +55,7 @@ class _Reviews1WidgetState extends State<Reviews1Widget> {
           borderRadius: 30.0,
           borderWidth: 1.0,
           buttonSize: 60.0,
-          icon: const Icon(
+          icon: Icon(
             Icons.arrow_back_rounded,
             color: Colors.white,
             size: 30.0,
@@ -70,7 +73,7 @@ class _Reviews1WidgetState extends State<Reviews1Widget> {
                 letterSpacing: 0.0,
               ),
         ),
-        actions: const [],
+        actions: [],
         centerTitle: true,
         elevation: 2.0,
       ),
@@ -121,7 +124,7 @@ class _Reviews1WidgetState extends State<Reviews1Widget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 0.0),
                                 child: Container(
                                   width:
@@ -129,7 +132,7 @@ class _Reviews1WidgetState extends State<Reviews1Widget> {
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
                                         blurRadius: 4.0,
                                         color: Color(0x33000000),
@@ -142,14 +145,14 @@ class _Reviews1WidgetState extends State<Reviews1Widget> {
                                     borderRadius: BorderRadius.circular(12.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(2.0),
+                                    padding: EdgeInsets.all(2.0),
                                     child: SingleChildScrollView(
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 12.0, 16.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -234,7 +237,7 @@ class _Reviews1WidgetState extends State<Reviews1Widget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   4.0,
@@ -256,7 +259,7 @@ class _Reviews1WidgetState extends State<Reviews1Widget> {
                                                                 .rate
                                                                 .toDouble(),
                                                         unratedColor:
-                                                            const Color(0xFF95A1AC),
+                                                            Color(0xFF95A1AC),
                                                         itemCount: 5,
                                                         itemSize: 24.0,
                                                       ),
@@ -276,13 +279,13 @@ class _Reviews1WidgetState extends State<Reviews1Widget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsets.all(2.0),
+                                                        EdgeInsets.all(2.0),
                                                     child: Container(
                                                       width: 50.0,
                                                       height: 50.0,
                                                       clipBehavior:
                                                           Clip.antiAlias,
-                                                      decoration: const BoxDecoration(
+                                                      decoration: BoxDecoration(
                                                         shape: BoxShape.circle,
                                                       ),
                                                       child: Image.asset(
@@ -296,7 +299,7 @@ class _Reviews1WidgetState extends State<Reviews1Widget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 4.0, 16.0, 12.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -329,14 +332,14 @@ class _Reviews1WidgetState extends State<Reviews1Widget> {
                           Opacity(
                             opacity: 0.0,
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 1.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 0.96,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 4.0,
                                       color: Color(0x33000000),

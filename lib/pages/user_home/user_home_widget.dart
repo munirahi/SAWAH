@@ -4,6 +4,7 @@ import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,9 @@ export 'user_home_model.dart';
 
 class UserHomeWidget extends StatefulWidget {
   const UserHomeWidget({super.key});
+
+  static String routeName = 'userHome';
+  static String routePath = '/userHome';
 
   @override
   State<UserHomeWidget> createState() => _UserHomeWidgetState();
@@ -32,7 +36,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (currentUserDocument?.role == UserType.host) {
-        context.pushNamed('HostHomePage');
+        context.pushNamed(HostHomePageWidget.routeName);
       }
     });
 
@@ -85,7 +89,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                   width: 100.0,
                   height: 170.0,
                   decoration: BoxDecoration(
-                    color: const Color(0x9A1D2428),
+                    color: Color(0x9A1D2428),
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: Image.asset(
@@ -95,13 +99,13 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 16.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 16.0, 12.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 8.0),
                           child: Text(
                             'Welcome to Sawwah!',
@@ -110,7 +114,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                 .displaySmall
                                 .override(
                                   fontFamily: 'Inter Tight',
-                                  color: const Color(0xFFE4F6CE),
+                                  color: Color(0xFFE4F6CE),
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -120,21 +124,21 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Inter',
-                                    color: const Color(0xBEE5EAE2),
+                                    color: Color(0xBEE5EAE2),
                                     letterSpacing: 0.0,
                                   ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
-                          child: SizedBox(
+                          child: Container(
                             width: double.infinity,
                             child: TextFormField(
                               controller: _model.textController,
                               focusNode: _model.textFieldFocusNode,
                               onChanged: (_) => EasyDebounce.debounce(
                                 '_model.textController',
-                                const Duration(milliseconds: 200),
+                                Duration(milliseconds: 200),
                                 () async {
                                   FFAppState().searchQuery =
                                       _model.textController.text;
@@ -187,7 +191,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                contentPadding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 24.0, 0.0, 24.0),
                                 prefixIcon: Icon(
                                   Icons.search_rounded,
@@ -215,7 +219,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 16.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 16.0),
                 child: Text(
                   'Popular Experiences',
                   style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -229,18 +233,18 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    SizedBox(
+                    Container(
                       height: 709.0,
                       child: Column(
                         children: [
                           Align(
-                            alignment: const Alignment(-1.0, 0),
+                            alignment: Alignment(-1.0, 0),
                             child: TabBar(
                               isScrollable: true,
                               labelColor: FlutterFlowTheme.of(context).primary,
                               unselectedLabelColor:
                                   FlutterFlowTheme.of(context).secondaryText,
-                              labelPadding: const EdgeInsetsDirectional.fromSTEB(
+                              labelPadding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
@@ -248,16 +252,16 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                     fontFamily: 'Inter Tight',
                                     letterSpacing: 0.0,
                                   ),
-                              unselectedLabelStyle: const TextStyle(),
+                              unselectedLabelStyle: TextStyle(),
                               indicatorColor:
                                   FlutterFlowTheme.of(context).primary,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
                               tabs: [
-                                const Tab(
+                                Tab(
                                   text: 'All',
                                 ),
-                                const Tab(
+                                Tab(
                                   text: 'Workshops',
                                 ),
                                 StreamBuilder<List<ExperiencesRecord>>(
@@ -289,12 +293,12 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                         tabExperiencesRecordList =
                                         snapshot.data!;
 
-                                    return const Tab(
+                                    return Tab(
                                       text: 'Food',
                                     );
                                   },
                                 ),
-                                const Tab(
+                                Tab(
                                   text: 'Outdoors',
                                 ),
                               ],
@@ -385,7 +389,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                           .textController.text),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 8.0),
                                                     child: Container(
@@ -394,7 +398,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        boxShadow: const [
+                                                        boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 3.0,
                                                             color: Color(
@@ -411,7 +415,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets.all(4.0),
+                                                            EdgeInsets.all(4.0),
                                                         child:
                                                             SingleChildScrollView(
                                                           primary: false,
@@ -424,7 +428,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                     .start,
                                                             children: [
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         10.0,
@@ -463,7 +467,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         10.0,
@@ -486,7 +490,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         10.0,
@@ -511,7 +515,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Inter',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF244B25),
                                                                         letterSpacing:
                                                                             0.0,
@@ -520,7 +524,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -535,7 +539,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           10.0,
                                                                           4.0,
@@ -561,7 +565,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                             .titleLarge
                                                                             .override(
                                                                               fontFamily: 'Inter Tight',
-                                                                              color: const Color(0xFF244B25),
+                                                                              color: Color(0xFF244B25),
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -583,7 +587,8 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'BookExperience',
+                                                                          BookExperienceWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'experienceRef':
@@ -615,7 +620,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                         );
                                                                       },
                                                                       child:
-                                                                          const Icon(
+                                                                          Icon(
                                                                         Icons
                                                                             .chevron_right_rounded,
                                                                         color: Color(
@@ -715,7 +720,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                           .textController.text),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 8.0),
                                                     child: Container(
@@ -724,7 +729,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        boxShadow: const [
+                                                        boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 3.0,
                                                             color: Color(
@@ -741,7 +746,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets.all(4.0),
+                                                            EdgeInsets.all(4.0),
                                                         child:
                                                             SingleChildScrollView(
                                                           primary: false,
@@ -754,7 +759,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                     .start,
                                                             children: [
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         10.0,
@@ -793,7 +798,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         10.0,
@@ -816,7 +821,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         10.0,
@@ -841,7 +846,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Inter',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF244B25),
                                                                         letterSpacing:
                                                                             0.0,
@@ -850,7 +855,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -865,7 +870,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           10.0,
                                                                           4.0,
@@ -891,7 +896,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                             .titleLarge
                                                                             .override(
                                                                               fontFamily: 'Inter Tight',
-                                                                              color: const Color(0xFF244B25),
+                                                                              color: Color(0xFF244B25),
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -913,7 +918,8 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'BookExperience',
+                                                                          BookExperienceWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'experienceRef':
@@ -945,7 +951,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                         );
                                                                       },
                                                                       child:
-                                                                          const Icon(
+                                                                          Icon(
                                                                         Icons
                                                                             .chevron_right_rounded,
                                                                         color: Color(
@@ -1051,7 +1057,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                             .text),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
@@ -1064,7 +1070,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .secondaryBackground,
-                                                          boxShadow: const [
+                                                          boxShadow: [
                                                             BoxShadow(
                                                               blurRadius: 3.0,
                                                               color: Color(
@@ -1082,7 +1088,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsets.all(
+                                                              EdgeInsets.all(
                                                                   4.0),
                                                           child:
                                                               SingleChildScrollView(
@@ -1096,7 +1102,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                       .start,
                                                               children: [
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           10.0,
@@ -1134,7 +1140,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           10.0,
@@ -1157,7 +1163,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           10.0,
@@ -1183,14 +1189,14 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                           fontFamily:
                                                                               'Inter',
                                                                           color:
-                                                                              const Color(0xFF244B25),
+                                                                              Color(0xFF244B25),
                                                                           letterSpacing:
                                                                               0.0,
                                                                         ),
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -1205,7 +1211,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                             .spaceBetween,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             10.0,
                                                                             4.0,
@@ -1228,7 +1234,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                               .titleLarge
                                                                               .override(
                                                                                 fontFamily: 'Inter Tight',
-                                                                                color: const Color(0xFF244B25),
+                                                                                color: Color(0xFF244B25),
                                                                                 letterSpacing: 0.0,
                                                                               ),
                                                                         ),
@@ -1246,7 +1252,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                             () async {
                                                                           context
                                                                               .pushNamed(
-                                                                            'BookExperience',
+                                                                            BookExperienceWidget.routeName,
                                                                             queryParameters:
                                                                                 {
                                                                               'experienceRef': serializeParam(
@@ -1273,7 +1279,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                           );
                                                                         },
                                                                         child:
-                                                                            const Icon(
+                                                                            Icon(
                                                                           Icons
                                                                               .chevron_right_rounded,
                                                                           color:
@@ -1374,7 +1380,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                           .textController.text),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 8.0),
                                                     child: Container(
@@ -1383,7 +1389,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        boxShadow: const [
+                                                        boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 3.0,
                                                             color: Color(
@@ -1400,7 +1406,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets.all(4.0),
+                                                            EdgeInsets.all(4.0),
                                                         child:
                                                             SingleChildScrollView(
                                                           primary: false,
@@ -1413,7 +1419,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                     .start,
                                                             children: [
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         10.0,
@@ -1452,7 +1458,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         10.0,
@@ -1475,7 +1481,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: const EdgeInsetsDirectional
+                                                                padding: EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         10.0,
@@ -1500,7 +1506,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                       .override(
                                                                         fontFamily:
                                                                             'Inter',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF244B25),
                                                                         letterSpacing:
                                                                             0.0,
@@ -1509,7 +1515,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                               ),
                                                               Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             16.0,
                                                                             0.0,
@@ -1524,7 +1530,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           10.0,
                                                                           4.0,
@@ -1550,7 +1556,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                             .titleLarge
                                                                             .override(
                                                                               fontFamily: 'Inter Tight',
-                                                                              color: const Color(0xFF244B25),
+                                                                              color: Color(0xFF244B25),
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -1572,7 +1578,8 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                           () async {
                                                                         context
                                                                             .pushNamed(
-                                                                          'BookExperience',
+                                                                          BookExperienceWidget
+                                                                              .routeName,
                                                                           queryParameters:
                                                                               {
                                                                             'experienceRef':
@@ -1604,7 +1611,7 @@ class _UserHomeWidgetState extends State<UserHomeWidget>
                                                                         );
                                                                       },
                                                                       child:
-                                                                          const Icon(
+                                                                          Icon(
                                                                         Icons
                                                                             .chevron_right_rounded,
                                                                         color: Color(

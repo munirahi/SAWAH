@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'chat_details_overlay_model.dart';
 export 'chat_details_overlay_model.dart';
@@ -59,20 +60,20 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: const BoxDecoration(),
+          decoration: BoxDecoration(),
           child: Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Container(
               width: double.infinity,
               height: double.infinity,
-              constraints: const BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: 700.0,
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(0.0),
               ),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 70.0, 0.0, 0.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +83,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Chat Details',
@@ -95,7 +96,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 16.0, 0.0),
                           child: FlutterFlowIconButton(
                             borderColor: FlutterFlowTheme.of(context).alternate,
@@ -117,7 +118,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
                       child: Text(
                         'In this chat',
                         style:
@@ -129,7 +130,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                     ),
                     Expanded(
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 16.0, 0.0),
                         child: Builder(
                           builder: (context) {
@@ -141,7 +142,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                               scrollDirection: Axis.vertical,
                               itemCount: chatUsers.length,
                               separatorBuilder: (_, __) =>
-                                  const SizedBox(height: 8.0),
+                                  SizedBox(height: 8.0),
                               itemBuilder: (context, chatUsersIndex) {
                                 final chatUsersItem = chatUsers[chatUsersIndex];
                                 return FutureBuilder<UsersRecord>(
@@ -200,9 +201,9 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                       desktop: false,
                     ))
                       Align(
-                        alignment: const AlignmentDirectional(0.0, -1.0),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(12.0),
@@ -225,7 +226,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                                     Navigator.pop(context);
 
                                     context.pushNamed(
-                                      'chat_2_InviteUsers',
+                                      Chat2InviteUsersWidget.routeName,
                                       queryParameters: {
                                         'chatRef': serializeParam(
                                           widget.chatRef,
@@ -234,7 +235,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                                       }.withoutNulls,
                                       extra: <String, dynamic>{
                                         'chatRef': widget.chatRef,
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.bottomToTop,
@@ -259,16 +260,16 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
-                                        duration: const Duration(milliseconds: 3000),
+                                        duration: Duration(milliseconds: 3000),
                                         backgroundColor:
                                             FlutterFlowTheme.of(context).error,
                                       ),
                                     );
 
                                     context.pushNamed(
-                                      'chat_2_main',
+                                      Chat2MainWidget.routeName,
                                       extra: <String, dynamic>{
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.leftToRight,
@@ -284,7 +285,7 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                         ),
                       ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           16.0, 16.0, 16.0, 44.0),
                       child: FFButtonWidget(
                         onPressed: () async {
@@ -294,9 +295,9 @@ class _ChatDetailsOverlayWidgetState extends State<ChatDetailsOverlayWidget> {
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 52.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               44.0, 0.0, 44.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,

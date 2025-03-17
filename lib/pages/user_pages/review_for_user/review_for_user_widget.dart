@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -17,6 +18,9 @@ class ReviewForUserWidget extends StatefulWidget {
   });
 
   final DocumentReference? experienceToRate;
+
+  static String routeName = 'review_for_user';
+  static String routePath = '/reviewForUser';
 
   @override
   State<ReviewForUserWidget> createState() => _ReviewForUserWidgetState();
@@ -86,13 +90,13 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
                   size: 30.0,
                 ),
                 onPressed: () async {
-                  context.pushNamed('User_ReservedExperiences');
+                  context.pushNamed(UserReservedExperiencesWidget.routeName);
                 },
               ),
               title: Text(
@@ -104,7 +108,7 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -115,15 +119,15 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(16.0),
                           child: CachedNetworkImage(
-                            fadeInDuration: const Duration(milliseconds: 500),
-                            fadeOutDuration: const Duration(milliseconds: 500),
+                            fadeInDuration: Duration(milliseconds: 500),
+                            fadeOutDuration: Duration(milliseconds: 500),
                             imageUrl: reviewForUserExperiencesRecord.image,
                             width: MediaQuery.sizeOf(context).width * 0.9,
                             height: 250.0,
@@ -133,27 +137,27 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
                         child: Text(
                           reviewForUserExperiencesRecord.experiencename1,
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
                                 fontFamily: 'Inter Tight',
-                                color: const Color(0xFF176490),
+                                color: Color(0xFF176490),
                                 letterSpacing: 0.0,
                               ),
                         ),
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
                         child: Text(
                           reviewForUserExperiencesRecord.experienceAbout1,
                           style:
@@ -165,10 +169,10 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(-1.0, 0.0),
+                      alignment: AlignmentDirectional(-1.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
                         child: Text(
                           valueOrDefault<String>(
                             dateTimeFormat(
@@ -188,7 +192,7 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                       child: RatingBar.builder(
                         onRatingUpdate: (newValue) => safeSetState(
                             () => _model.ratingBarValue = newValue),
@@ -207,7 +211,7 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 12.0),
+                          EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 12.0),
                       child: TextFormField(
                         controller: _model.myBioTextController,
                         focusNode: _model.myBioFocusNode,
@@ -257,7 +261,7 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                           filled: true,
                           fillColor:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                          contentPadding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 24.0, 0.0, 24.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -275,7 +279,7 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
                               if (_model.myBioTextController.text != '') {
@@ -286,7 +290,11 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                                     userID: currentUserReference,
                                     creatorID:
                                         reviewForUserExperiencesRecord.creator,
-                                    expID: reviewForUserExperiencesRecord.oldExID ?? widget.experienceToRate,
+                                    expID: reviewForUserExperiencesRecord
+                                                .oldExID !=
+                                            null
+                                        ? reviewForUserExperiencesRecord.oldExID
+                                        : widget.experienceToRate,
                                   ),
                                   ...mapToFirestore(
                                     {
@@ -295,15 +303,16 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                                   ),
                                 });
 
-                                context.pushNamed('review_Exp_Confirmation');
+                                context.pushNamed(
+                                    ReviewExpConfirmationWidget.routeName);
                               } else {
                                 var confirmDialogResponse =
                                     await showDialog<bool>(
                                           context: context,
                                           builder: (alertDialogContext) {
                                             return AlertDialog(
-                                              title: const Text('Are you sure ?'),
-                                              content: const Text(
+                                              title: Text('Are you sure ?'),
+                                              content: Text(
                                                   'Are you sure you do not want to write a review?'),
                                               actions: [
                                                 TextButton(
@@ -311,14 +320,14 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                                                       Navigator.pop(
                                                           alertDialogContext,
                                                           false),
-                                                  child: const Text('Cancel'),
+                                                  child: Text('Cancel'),
                                                 ),
                                                 TextButton(
                                                   onPressed: () =>
                                                       Navigator.pop(
                                                           alertDialogContext,
                                                           true),
-                                                  child: const Text('Confirm'),
+                                                  child: Text('Confirm'),
                                                 ),
                                               ],
                                             );
@@ -344,7 +353,8 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                                     ),
                                   });
 
-                                  context.pushNamed('review_Exp_Confirmation');
+                                  context.pushNamed(
+                                      ReviewExpConfirmationWidget.routeName);
                                 }
                               }
                             },
@@ -352,9 +362,9 @@ class _ReviewForUserWidgetState extends State<ReviewForUserWidget> {
                             options: FFButtonOptions(
                               width: 180.0,
                               height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)

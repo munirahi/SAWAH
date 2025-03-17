@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'termsand_conditions_widget.dart' show TermsandConditionsWidget;
 import 'package:flutter/material.dart';
 

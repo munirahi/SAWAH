@@ -1,3 +1,4 @@
+import '';
 import '/flutter_flow/flutter_flow_google_map.dart';
 import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -50,7 +51,7 @@ class _PickLocationWidgetState extends State<PickLocationWidget> {
     context.watch<FFAppState>();
 
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(10.0, 3.0, 10.0, 0.0),
+      padding: EdgeInsetsDirectional.fromSTEB(10.0, 3.0, 10.0, 0.0),
       child: Container(
         width: double.infinity,
         height: double.infinity,
@@ -59,7 +60,7 @@ class _PickLocationWidgetState extends State<PickLocationWidget> {
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+          padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
@@ -67,10 +68,10 @@ class _PickLocationWidgetState extends State<PickLocationWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(1.0, 0.0),
+                    alignment: AlignmentDirectional(1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
@@ -88,7 +89,7 @@ class _PickLocationWidgetState extends State<PickLocationWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 6.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 6.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -116,7 +117,7 @@ class _PickLocationWidgetState extends State<PickLocationWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 0.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -130,14 +131,14 @@ class _PickLocationWidgetState extends State<PickLocationWidget> {
               ),
               Expanded(
                 child: Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Stack(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 10.0),
                           child: FlutterFlowGoogleMap(
                             controller: _model.googleMapsController,
@@ -161,7 +162,7 @@ class _PickLocationWidgetState extends State<PickLocationWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: PointerInterceptor(
                           intercepting: isWeb,
                           child: Container(
@@ -179,7 +180,7 @@ class _PickLocationWidgetState extends State<PickLocationWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     await widget.returnLocation?.call(
@@ -193,9 +194,9 @@ class _PickLocationWidgetState extends State<PickLocationWidget> {
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter Tight',

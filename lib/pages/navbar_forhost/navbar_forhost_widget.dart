@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'navbar_forhost_model.dart';
 export 'navbar_forhost_model.dart';
@@ -9,7 +10,7 @@ class NavbarForhostWidget extends StatefulWidget {
   const NavbarForhostWidget({
     super.key,
     int? index,
-  }) : index = index ?? 0;
+  }) : this.index = index ?? 0;
 
   final int index;
 
@@ -44,13 +45,13 @@ class _NavbarForhostWidgetState extends State<NavbarForhostWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: Container(
         width: double.infinity,
         height: 60.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 12.0,
               color: Color(0x33000000),
@@ -61,7 +62,7 @@ class _NavbarForhostWidgetState extends State<NavbarForhostWidget> {
               spreadRadius: 2.0,
             )
           ],
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(0.0),
             bottomRight: Radius.circular(0.0),
             topLeft: Radius.circular(0.0),
@@ -71,9 +72,9 @@ class _NavbarForhostWidgetState extends State<NavbarForhostWidget> {
         child: Stack(
           children: [
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -90,7 +91,7 @@ class _NavbarForhostWidgetState extends State<NavbarForhostWidget> {
                         size: 28.0,
                       ),
                       onPressed: () async {
-                        context.pushNamed('HostHomePage');
+                        context.pushNamed(HostHomePageWidget.routeName);
                       },
                     ),
                     FlutterFlowIconButton(
@@ -105,7 +106,7 @@ class _NavbarForhostWidgetState extends State<NavbarForhostWidget> {
                         size: 28.0,
                       ),
                       onPressed: () async {
-                        context.pushNamed('CreateNewExperience');
+                        context.pushNamed(CreateNewExperienceWidget.routeName);
                       },
                     ),
                     FlutterFlowIconButton(
@@ -119,7 +120,7 @@ class _NavbarForhostWidgetState extends State<NavbarForhostWidget> {
                         size: 28.0,
                       ),
                       onPressed: () async {
-                        context.pushNamed('profile_Settings_host');
+                        context.pushNamed(ProfileSettingsHostWidget.routeName);
                       },
                     ),
                   ],

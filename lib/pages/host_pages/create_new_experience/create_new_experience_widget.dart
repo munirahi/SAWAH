@@ -1,3 +1,4 @@
+import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
@@ -15,6 +16,7 @@ import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
 import '/pages/navbar_forhost/navbar_forhost_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -25,6 +27,9 @@ export 'create_new_experience_model.dart';
 
 class CreateNewExperienceWidget extends StatefulWidget {
   const CreateNewExperienceWidget({super.key});
+
+  static String routeName = 'CreateNewExperience';
+  static String routePath = '/createNewExperience';
 
   @override
   State<CreateNewExperienceWidget> createState() =>
@@ -94,13 +99,13 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
             ),
             onPressed: () async {
-              context.pushNamed('HostHomePage');
+              context.pushNamed(HostHomePageWidget.routeName);
             },
           ),
           title: Text(
@@ -112,16 +117,16 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.0, 1.0),
             child: Stack(
-              alignment: const AlignmentDirectional(0.0, 1.0),
+              alignment: AlignmentDirectional(0.0, 1.0),
               children: [
                 SingleChildScrollView(
                   primary: false,
@@ -129,7 +134,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: SingleChildScrollView(
                           child: Column(
@@ -138,12 +143,12 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                               Container(
                                 width: double.infinity,
                                 height: 0.25,
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   color: Color(0xFFB7B5B7),
                                 ),
                               ),
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 40.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -166,7 +171,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -177,7 +182,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Inter',
-                                                  color: const Color(0xFF0A014F),
+                                                  color: Color(0xFF0A014F),
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -186,7 +191,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -202,15 +207,15 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                               children: [
                                                 Container(
                                                   width: 200.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: TextFormField(
-                                                    key: const ValueKey('TestName'),
+                                                    key: ValueKey('TestName'),
                                                     controller: _model
                                                         .experiencename1TextController,
                                                     focusNode: _model
                                                         .experiencename1FocusNode,
                                                     autofocus: false,
-                                                    autofillHints: const [
+                                                    autofillHints: [
                                                       AutofillHints.email
                                                     ],
                                                     obscureText: false,
@@ -227,7 +232,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                               ),
                                                       enabledBorder:
                                                           OutlineInputBorder(
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color: Colors.black,
                                                           width: 1.0,
                                                         ),
@@ -276,7 +281,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                               .of(context)
                                                           .secondaryBackground,
                                                       contentPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -310,7 +315,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -325,7 +330,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Inter',
-                                                  color: const Color(0xFF0A014F),
+                                                  color: Color(0xFF0A014F),
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -334,7 +339,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 16.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -348,7 +353,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                 Builder(
                                                   builder: (context) => Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 5.0),
                                                     child: FFButtonWidget(
@@ -365,7 +370,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                               backgroundColor:
                                                                   Colors
                                                                       .transparent,
-                                                              alignment: const AlignmentDirectional(
+                                                              alignment: AlignmentDirectional(
                                                                       0.0, 0.0)
                                                                   .resolve(
                                                                       Directionality.of(
@@ -423,7 +428,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                         safeSetState(() {});
                                                       },
                                                       text: 'Select Location',
-                                                      icon: const Icon(
+                                                      icon: Icon(
                                                         Icons
                                                             .location_on_rounded,
                                                         size: 15.0,
@@ -431,14 +436,14 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                       options: FFButtonOptions(
                                                         height: 45.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
                                                                     16.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -489,7 +494,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              const EdgeInsets.all(
+                                                              EdgeInsets.all(
                                                                   6.0),
                                                           child: AutoSizeText(
                                                             'Location is added',
@@ -509,7 +514,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                     } else {
                                                       return Padding(
                                                         padding:
-                                                            const EdgeInsets.all(6.0),
+                                                            EdgeInsets.all(6.0),
                                                         child: Text(
                                                           'no location saved',
                                                           style: FlutterFlowTheme
@@ -533,7 +538,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 20.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -544,7 +549,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Inter',
-                                                  color: const Color(0xFF0A014F),
+                                                  color: Color(0xFF0A014F),
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -569,7 +574,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                           key: _model.formKey3,
                                           autovalidateMode:
                                               AutovalidateMode.always,
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 268.0,
                                             child: Opacity(
                                               opacity: 0.8,
@@ -592,7 +597,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                             letterSpacing: 0.0,
                                                           ),
                                                   enabledBorder:
-                                                      const OutlineInputBorder(
+                                                      OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: Colors.black,
                                                       width: 1.0,
@@ -619,7 +624,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
-                                                        const BorderRadius.only(
+                                                        BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(6.0),
                                                       bottomRight:
@@ -640,7 +645,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
-                                                        const BorderRadius.only(
+                                                        BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(6.0),
                                                       bottomRight:
@@ -661,7 +666,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
-                                                        const BorderRadius.only(
+                                                        BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(6.0),
                                                       bottomRight:
@@ -678,7 +683,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                               context)
                                                           .secondaryBackground,
                                                   contentPadding:
-                                                      const EdgeInsets.all(15.0),
+                                                      EdgeInsets.all(15.0),
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -706,7 +711,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 8.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -722,12 +727,11 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     30.0, 0.0, 0.0, 0.0),
                                             child: FlutterFlowRadioButton(
                                               options: CategoriesEnum.values
                                                   .map((e) => e.name)
-                                                  .toList()
                                                   .toList(),
                                               onChanged: (val) =>
                                                   safeSetState(() {}),
@@ -778,7 +782,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -787,7 +791,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Text(
                                               'Add Photos:',
                                               style:
@@ -796,7 +800,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            const Color(0xFF0A014F),
+                                                            Color(0xFF0A014F),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -905,7 +909,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                         children: [
                                           Expanded(
                                             child: Align(
-                                              alignment: const AlignmentDirectional(
+                                              alignment: AlignmentDirectional(
                                                   0.0, 0.0),
                                               child: Container(
                                                 width: 150.0,
@@ -914,7 +918,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  boxShadow: const [
+                                                  boxShadow: [
                                                     BoxShadow(
                                                       blurRadius: 4.0,
                                                       color: Color(0x33000000),
@@ -925,7 +929,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                     )
                                                   ],
                                                   borderRadius:
-                                                      const BorderRadius.only(
+                                                      BorderRadius.only(
                                                     bottomLeft:
                                                         Radius.circular(0.0),
                                                     bottomRight:
@@ -963,7 +967,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                         ],
                                       ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -976,7 +980,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Inter',
-                                                  color: const Color(0xFF0A014F),
+                                                  color: Color(0xFF0A014F),
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -1058,7 +1062,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                               stepSize: 1,
                                               minimum: 1,
                                               contentPadding:
-                                                  const EdgeInsetsDirectional
+                                                  EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 12.0, 0.0),
                                             ),
@@ -1077,7 +1081,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       34.0, 0.0, 0.0, 10.0),
                                               child: Text(
@@ -1095,7 +1099,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           30.0, 0.0, 0.0, 0.0),
                                                   child: FlutterFlowRadioButton(
@@ -1157,7 +1161,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 10.0),
                                               child: Text(
@@ -1168,14 +1172,14 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              const Color(0xFF0A014F),
+                                                              Color(0xFF0A014F),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Row(
@@ -1254,7 +1258,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 10.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1267,7 +1271,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Inter',
-                                                  color: const Color(0xFF0A014F),
+                                                  color: Color(0xFF0A014F),
                                                   fontSize: 16.0,
                                                   letterSpacing: 0.0,
                                                 ),
@@ -1276,9 +1280,9 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                             key: _model.formKey2,
                                             autovalidateMode:
                                                 AutovalidateMode.always,
-                                            child: SizedBox(
+                                            child: Container(
                                               width: 200.0,
-                                              child: SizedBox(
+                                              child: Container(
                                                 width: 200.0,
                                                 child: TextFormField(
                                                   controller: _model
@@ -1305,7 +1309,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0xFF151515),
                                                         width: 1.0,
@@ -1316,7 +1320,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 1.0,
@@ -1440,7 +1444,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Inter',
-                                                color: const Color(0xFF0A014F),
+                                                color: Color(0xFF0A014F),
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                               ),
@@ -1458,7 +1462,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                           ),
                                         ),
                                         Flexible(
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller: _model
@@ -1501,7 +1505,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -1572,7 +1576,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                               AutovalidateMode.always,
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              final datePicked1Date =
+                                              final _datePicked1Date =
                                                   await showDatePicker(
                                                 context: context,
                                                 initialDate:
@@ -1630,22 +1634,28 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                 },
                                               );
 
-                                              if (datePicked1Date != null) {
+                                              if (_datePicked1Date != null) {
                                                 safeSetState(() {
                                                   _model.datePicked1 = DateTime(
-                                                    datePicked1Date.year,
-                                                    datePicked1Date.month,
-                                                    datePicked1Date.day,
+                                                    _datePicked1Date.year,
+                                                    _datePicked1Date.month,
+                                                    _datePicked1Date.day,
                                                   );
+                                                });
+                                              } else if (_model.datePicked1 !=
+                                                  null) {
+                                                safeSetState(() {
+                                                  _model.datePicked1 =
+                                                      getCurrentTimestamp;
                                                 });
                                               }
                                             },
                                             text: ' Date',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1700,7 +1710,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Inter',
-                                                color: const Color(0xFF0A014F),
+                                                color: Color(0xFF0A014F),
                                                 fontSize: 16.0,
                                                 letterSpacing: 0.0,
                                               ),
@@ -1720,9 +1730,9 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            SizedBox(
+                                            Container(
                                               width: 200.0,
-                                              child: SizedBox(
+                                              child: Container(
                                                 width: 200.0,
                                                 child: TextFormField(
                                                   controller: _model
@@ -1766,7 +1776,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                     ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Color(0x00000000),
                                                         width: 1.0,
@@ -1842,7 +1852,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                   AutovalidateMode.always,
                                               child: FFButtonWidget(
                                                 onPressed: () async {
-                                                  final datePicked2Time =
+                                                  final _datePicked2Time =
                                                       await showTimePicker(
                                                     context: context,
                                                     initialTime:
@@ -1899,7 +1909,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                       );
                                                     },
                                                   );
-                                                  if (datePicked2Time !=
+                                                  if (_datePicked2Time !=
                                                       null) {
                                                     safeSetState(() {
                                                       _model.datePicked2 =
@@ -1909,20 +1919,27 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                         getCurrentTimestamp
                                                             .month,
                                                         getCurrentTimestamp.day,
-                                                        datePicked2Time.hour,
-                                                        datePicked2Time.minute,
+                                                        _datePicked2Time.hour,
+                                                        _datePicked2Time.minute,
                                                       );
+                                                    });
+                                                  } else if (_model
+                                                          .datePicked2 !=
+                                                      null) {
+                                                    safeSetState(() {
+                                                      _model.datePicked2 =
+                                                          getCurrentTimestamp;
                                                     });
                                                   }
                                                 },
                                                 text: 'Time',
                                                 options: FFButtonOptions(
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -1964,10 +1981,10 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                             "d/M/y", _model.datePicked1))
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 10.0),
                                           child: Text(
                                             'You can not create an experience on the same day',
@@ -1985,7 +2002,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                         ),
                                       ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -1994,9 +2011,9 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 16.0),
                                               child: StreamBuilder<
@@ -2166,7 +2183,8 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                               );
 
                                                               context.pushNamed(
-                                                                  'CreateExperienceConfirmation');
+                                                                  CreateExperienceConfirmationWidget
+                                                                      .routeName);
                                                             } else {
                                                               ScaffoldMessenger
                                                                       .of(context)
@@ -2181,7 +2199,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                                           .secondaryBackground,
                                                                     ),
                                                                   ),
-                                                                  duration: const Duration(
+                                                                  duration: Duration(
                                                                       milliseconds:
                                                                           4000),
                                                                   backgroundColor:
@@ -2199,14 +2217,14 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                       width: 230.0,
                                                       height: 52.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -2230,7 +2248,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                                                                     0.0,
                                                               ),
                                                       elevation: 3.0,
-                                                      borderSide: const BorderSide(
+                                                      borderSide: BorderSide(
                                                         color:
                                                             Colors.transparent,
                                                         width: 1.0,
@@ -2264,7 +2282,7 @@ class _CreateNewExperienceWidgetState extends State<CreateNewExperienceWidget> {
                 wrapWithModel(
                   model: _model.navbarForhostModel,
                   updateCallback: () => safeSetState(() {}),
-                  child: const NavbarForhostWidget(
+                  child: NavbarForhostWidget(
                     index: 1,
                   ),
                 ),

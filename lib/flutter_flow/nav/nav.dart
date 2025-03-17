@@ -8,9 +8,10 @@ import '/auth/base_auth_user_provider.dart';
 
 import '/backend/push_notifications/push_notifications_handler.dart'
     show PushNotificationsHandler;
-import '/index.dart';
 import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+
+import '/index.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -78,36 +79,36 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const NavBarPage() : const OnbordingWidget(),
+          appStateNotifier.loggedIn ? NavBarPage() : OnbordingWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const NavBarPage() : const OnbordingWidget(),
+              appStateNotifier.loggedIn ? NavBarPage() : OnbordingWidget(),
         ),
         FFRoute(
-          name: 'profile_Settings',
-          path: '/profileSettings',
+          name: ProfileSettingsWidget.routeName,
+          path: ProfileSettingsWidget.routePath,
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'profile_Settings')
-              : const ProfileSettingsWidget(),
+              ? NavBarPage(initialPage: 'profile_Settings')
+              : ProfileSettingsWidget(),
         ),
         FFRoute(
-          name: 'onbording',
-          path: '/onbording',
-          builder: (context, params) => const OnbordingWidget(),
+          name: OnbordingWidget.routeName,
+          path: OnbordingWidget.routePath,
+          builder: (context, params) => OnbordingWidget(),
         ),
         FFRoute(
-          name: 'userHome',
-          path: '/userHome',
+          name: UserHomeWidget.routeName,
+          path: UserHomeWidget.routePath,
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'userHome')
-              : const UserHomeWidget(),
+              ? NavBarPage(initialPage: 'userHome')
+              : UserHomeWidget(),
         ),
         FFRoute(
-          name: 'BookExperience',
-          path: '/bookExperience',
+          name: BookExperienceWidget.routeName,
+          path: BookExperienceWidget.routePath,
           asyncParams: {
             'experienceRef':
                 getDoc(['Experiences'], ExperiencesRecord.fromSnapshot),
@@ -140,8 +141,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'payment1',
-          path: '/payment1',
+          name: Payment1Widget.routeName,
+          path: Payment1Widget.routePath,
           builder: (context, params) => Payment1Widget(
             experienceRef: params.getParam(
               'experienceRef',
@@ -156,49 +157,49 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'payment2',
-          path: '/payment2',
-          builder: (context, params) => const Payment2Widget(),
+          name: Payment2Widget.routeName,
+          path: Payment2Widget.routePath,
+          builder: (context, params) => Payment2Widget(),
         ),
         FFRoute(
-          name: 'CreateNewExperience',
-          path: '/createNewExperience',
-          builder: (context, params) => const CreateNewExperienceWidget(),
+          name: CreateNewExperienceWidget.routeName,
+          path: CreateNewExperienceWidget.routePath,
+          builder: (context, params) => CreateNewExperienceWidget(),
         ),
         FFRoute(
-          name: 'ReservationConfirmed',
-          path: '/reservationConfirmed',
-          builder: (context, params) => const ReservationConfirmedWidget(),
+          name: ReservationConfirmedWidget.routeName,
+          path: ReservationConfirmedWidget.routePath,
+          builder: (context, params) => ReservationConfirmedWidget(),
         ),
         FFRoute(
-          name: 'HostHomePage',
-          path: '/hostHomePage',
+          name: HostHomePageWidget.routeName,
+          path: HostHomePageWidget.routePath,
           requireAuth: true,
-          builder: (context, params) => const HostHomePageWidget(),
+          builder: (context, params) => HostHomePageWidget(),
         ),
         FFRoute(
-          name: 'CreateExperienceConfirmation',
-          path: '/createExperienceConfirmation',
-          builder: (context, params) => const CreateExperienceConfirmationWidget(),
+          name: CreateExperienceConfirmationWidget.routeName,
+          path: CreateExperienceConfirmationWidget.routePath,
+          builder: (context, params) => CreateExperienceConfirmationWidget(),
         ),
         FFRoute(
-          name: 'profile_Settings_host',
-          path: '/profileSettingsHost',
-          builder: (context, params) => const ProfileSettingsHostWidget(),
+          name: ProfileSettingsHostWidget.routeName,
+          path: ProfileSettingsHostWidget.routePath,
+          builder: (context, params) => ProfileSettingsHostWidget(),
         ),
         FFRoute(
-          name: 'auth2_profile',
-          path: '/auth2Profile',
-          builder: (context, params) => const Auth2ProfileWidget(),
+          name: Auth2ProfileWidget.routeName,
+          path: Auth2ProfileWidget.routePath,
+          builder: (context, params) => Auth2ProfileWidget(),
         ),
         FFRoute(
-          name: 'AuthEDITED',
-          path: '/authEDITED',
-          builder: (context, params) => const AuthEDITEDWidget(),
+          name: AuthEDITEDWidget.routeName,
+          path: AuthEDITEDWidget.routePath,
+          builder: (context, params) => AuthEDITEDWidget(),
         ),
         FFRoute(
-          name: 'UserInfooo',
-          path: '/userInfooo',
+          name: UserInfoooWidget.routeName,
+          path: UserInfoooWidget.routePath,
           builder: (context, params) => UserInfoooWidget(
             nameee: params.getParam(
               'nameee',
@@ -209,13 +210,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'AuthNew',
-          path: '/authNew',
-          builder: (context, params) => const AuthNewWidget(),
+          name: AuthNewWidget.routeName,
+          path: AuthNewWidget.routePath,
+          builder: (context, params) => AuthNewWidget(),
         ),
         FFRoute(
-          name: 'Exp_Details',
-          path: '/expDetails',
+          name: ExpDetailsWidget.routeName,
+          path: ExpDetailsWidget.routePath,
           builder: (context, params) => ExpDetailsWidget(
             experienceDetails: params.getParam(
               'experienceDetails',
@@ -226,8 +227,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'Exp_DetailsFor_Creator',
-          path: '/expDetailsForCreator',
+          name: ExpDetailsForCreatorWidget.routeName,
+          path: ExpDetailsForCreatorWidget.routePath,
           builder: (context, params) => ExpDetailsForCreatorWidget(
             experienceDetails: params.getParam(
               'experienceDetails',
@@ -238,8 +239,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'accounD',
-          path: '/accounD',
+          name: AccounDWidget.routeName,
+          path: AccounDWidget.routePath,
           builder: (context, params) => AccounDWidget(
             userData: params.getParam(
               'userData',
@@ -250,23 +251,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'resendEmailV',
-          path: '/resendEmailV',
-          builder: (context, params) => const ResendEmailVWidget(),
+          name: ResendEmailVWidget.routeName,
+          path: ResendEmailVWidget.routePath,
+          builder: (context, params) => ResendEmailVWidget(),
         ),
         FFRoute(
-          name: 'notificationsDrawer',
-          path: '/notificationsDrawer',
-          builder: (context, params) => const NotificationsDrawerWidget(),
+          name: NotificationsDrawerWidget.routeName,
+          path: NotificationsDrawerWidget.routePath,
+          builder: (context, params) => NotificationsDrawerWidget(),
         ),
         FFRoute(
-          name: 'users_booked_ex',
-          path: '/usersBookedEx',
-          builder: (context, params) => const UsersBookedExWidget(),
+          name: UsersBookedExWidget.routeName,
+          path: UsersBookedExWidget.routePath,
+          builder: (context, params) => UsersBookedExWidget(),
         ),
         FFRoute(
-          name: 'Location',
-          path: '/location',
+          name: LocationWidget.routeName,
+          path: LocationWidget.routePath,
           builder: (context, params) => LocationWidget(
             locationParameter: params.getParam(
               'locationParameter',
@@ -283,8 +284,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'payment2Copy',
-          path: '/payment2Copy',
+          name: Payment2CopyWidget.routeName,
+          path: Payment2CopyWidget.routePath,
           asyncParams: {
             'expreffffffff':
                 getDoc(['Experiences'], ExperiencesRecord.fromSnapshot),
@@ -301,8 +302,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'RecreateExp',
-          path: '/recreateExp',
+          name: RecreateExpWidget.routeName,
+          path: RecreateExpWidget.routePath,
           builder: (context, params) => RecreateExpWidget(
             expName: params.getParam(
               'expName',
@@ -353,14 +354,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'map',
-          path: '/map',
+          name: MapWidget.routeName,
+          path: MapWidget.routePath,
           builder: (context, params) =>
-              params.isEmpty ? const NavBarPage(initialPage: 'map') : const MapWidget(),
+              params.isEmpty ? NavBarPage(initialPage: 'map') : MapWidget(),
         ),
         FFRoute(
-          name: 'acountD_for_user',
-          path: '/acountDForUser',
+          name: AcountDForUserWidget.routeName,
+          path: AcountDForUserWidget.routePath,
           builder: (context, params) => AcountDForUserWidget(
             userData: params.getParam(
               'userData',
@@ -371,11 +372,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'User_ReservedExperiences',
-          path: '/userReservedExperiences',
+          name: UserReservedExperiencesWidget.routeName,
+          path: UserReservedExperiencesWidget.routePath,
           requireAuth: true,
           builder: (context, params) => params.isEmpty
-              ? const NavBarPage(initialPage: 'User_ReservedExperiences')
+              ? NavBarPage(initialPage: 'User_ReservedExperiences')
               : UserReservedExperiencesWidget(
                   reserved: params.getParam<DocumentReference>(
                     'reserved',
@@ -386,8 +387,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 ),
         ),
         FFRoute(
-          name: 'review_for_user',
-          path: '/reviewForUser',
+          name: ReviewForUserWidget.routeName,
+          path: ReviewForUserWidget.routePath,
           builder: (context, params) => ReviewForUserWidget(
             experienceToRate: params.getParam(
               'experienceToRate',
@@ -398,18 +399,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'review_Exp_Confirmation',
-          path: '/reviewExpConfirmation',
-          builder: (context, params) => const ReviewExpConfirmationWidget(),
+          name: ReviewExpConfirmationWidget.routeName,
+          path: ReviewExpConfirmationWidget.routePath,
+          builder: (context, params) => ReviewExpConfirmationWidget(),
         ),
         FFRoute(
-          name: 'Notifications',
-          path: '/notifications',
-          builder: (context, params) => const NotificationsWidget(),
+          name: NotificationsWidget.routeName,
+          path: NotificationsWidget.routePath,
+          builder: (context, params) => NotificationsWidget(),
         ),
         FFRoute(
-          name: 'reviews1',
-          path: '/reviews1',
+          name: Reviews1Widget.routeName,
+          path: Reviews1Widget.routePath,
           builder: (context, params) => Reviews1Widget(
             experID: params.getParam(
               'experID',
@@ -420,18 +421,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'TermsandConditions',
-          path: '/termsandConditions',
-          builder: (context, params) => const TermsandConditionsWidget(),
+          name: TermsandConditionsWidget.routeName,
+          path: TermsandConditionsWidget.routePath,
+          builder: (context, params) => TermsandConditionsWidget(),
         ),
         FFRoute(
-          name: 'ContacttheSupportteam',
-          path: '/contacttheSupportteam',
-          builder: (context, params) => const ContacttheSupportteamWidget(),
+          name: ContacttheSupportteamWidget.routeName,
+          path: ContacttheSupportteamWidget.routePath,
+          builder: (context, params) => ContacttheSupportteamWidget(),
         ),
         FFRoute(
-          name: 'image_Details',
-          path: '/imageDetails',
+          name: ImageDetailsWidget.routeName,
+          path: ImageDetailsWidget.routePath,
           asyncParams: {
             'chatMessage':
                 getDoc(['chat_messages'], ChatMessagesRecord.fromSnapshot),
@@ -444,8 +445,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'chat_2_Details',
-          path: '/chat2Details',
+          name: Chat2DetailsWidget.routeName,
+          path: Chat2DetailsWidget.routePath,
           asyncParams: {
             'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
           },
@@ -457,13 +458,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'chat_2_main',
-          path: '/chat2Main',
-          builder: (context, params) => const Chat2MainWidget(),
+          name: Chat2MainWidget.routeName,
+          path: Chat2MainWidget.routePath,
+          builder: (context, params) => Chat2MainWidget(),
         ),
         FFRoute(
-          name: 'chat_2_InviteUsers',
-          path: '/chat2InviteUsers',
+          name: Chat2InviteUsersWidget.routeName,
+          path: Chat2InviteUsersWidget.routePath,
           asyncParams: {
             'chatRef': getDoc(['chats'], ChatsRecord.fromSnapshot),
           },
@@ -475,8 +476,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'image_Details_1',
-          path: '/imageDetails1',
+          name: ImageDetails1Widget.routeName,
+          path: ImageDetails1Widget.routePath,
           asyncParams: {
             'chatMessage':
                 getDoc(['chat_messages'], ChatMessagesRecord.fromSnapshot),
@@ -489,9 +490,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'userHomeCopy2',
-          path: '/userHomeCopy2',
-          builder: (context, params) => const UserHomeCopy2Widget(),
+          name: UserHomeCopy2Widget.routeName,
+          path: UserHomeCopy2Widget.routePath,
+          builder: (context, params) => UserHomeCopy2Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -728,7 +729,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

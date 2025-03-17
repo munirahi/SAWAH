@@ -46,12 +46,12 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(16.0),
       child: Container(
         width: 300.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x33000000),
@@ -64,7 +64,7 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
           borderRadius: BorderRadius.circular(12.0),
         ),
         child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 12.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,7 +75,7 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 8.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 8.0),
                     child: Text(
                       'experience booked by',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
@@ -112,14 +112,8 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                   MouseRegion(
                     opaque: false,
                     cursor: MouseCursor.defer ?? MouseCursor.defer,
-                    onEnter: ((event) async {
-                      safeSetState(() => _model.iuserHovered1 = true);
-                    }),
-                    onExit: ((event) async {
-                      safeSetState(() => _model.iuserHovered1 = false);
-                    }),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 150),
+                      duration: Duration(milliseconds: 150),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -128,13 +122,13 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             12.0, 8.0, 12.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 8.0, 0.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(40.0),
@@ -147,7 +141,7 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -165,7 +159,7 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       'name@domainname.com',
@@ -186,18 +180,18 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                         ),
                       ),
                     ),
+                    onEnter: ((event) async {
+                      safeSetState(() => _model.iuserHovered1 = true);
+                    }),
+                    onExit: ((event) async {
+                      safeSetState(() => _model.iuserHovered1 = false);
+                    }),
                   ),
                   MouseRegion(
                     opaque: false,
                     cursor: MouseCursor.defer ?? MouseCursor.defer,
-                    onEnter: ((event) async {
-                      safeSetState(() => _model.iuserHovered2 = true);
-                    }),
-                    onExit: ((event) async {
-                      safeSetState(() => _model.iuserHovered2 = false);
-                    }),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 150),
+                      duration: Duration(milliseconds: 150),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -206,13 +200,13 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             12.0, 8.0, 12.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 8.0, 0.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(40.0),
@@ -225,7 +219,7 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -243,7 +237,7 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       'name@domainname.com',
@@ -264,16 +258,16 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                         ),
                       ),
                     ),
+                    onEnter: ((event) async {
+                      safeSetState(() => _model.iuserHovered2 = true);
+                    }),
+                    onExit: ((event) async {
+                      safeSetState(() => _model.iuserHovered2 = false);
+                    }),
                   ),
                   MouseRegion(
                     opaque: false,
                     cursor: MouseCursor.defer ?? MouseCursor.defer,
-                    onEnter: ((event) async {
-                      safeSetState(() => _model.iuserHovered3 = true);
-                    }),
-                    onExit: ((event) async {
-                      safeSetState(() => _model.iuserHovered3 = false);
-                    }),
                     child: StreamBuilder<UsersRecord>(
                       stream: UsersRecord.getDocument(currentUserReference!),
                       builder: (context, snapshot) {
@@ -295,7 +289,7 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                         final replaceWidgetUsersRecord = snapshot.data!;
 
                         return AnimatedContainer(
-                          duration: const Duration(milliseconds: 150),
+                          duration: Duration(milliseconds: 150),
                           curve: Curves.easeInOut,
                           width: double.infinity,
                           decoration: BoxDecoration(
@@ -305,13 +299,13 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                                     .secondaryBackground,
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 12.0, 8.0, 12.0, 8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 8.0, 0.0),
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(40.0),
@@ -324,7 +318,7 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       4.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -343,7 +337,7 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
                                           'name@domainname.com',
@@ -367,18 +361,18 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                         );
                       },
                     ),
+                    onEnter: ((event) async {
+                      safeSetState(() => _model.iuserHovered3 = true);
+                    }),
+                    onExit: ((event) async {
+                      safeSetState(() => _model.iuserHovered3 = false);
+                    }),
                   ),
                   MouseRegion(
                     opaque: false,
                     cursor: MouseCursor.defer ?? MouseCursor.defer,
-                    onEnter: ((event) async {
-                      safeSetState(() => _model.iuserHovered4 = true);
-                    }),
-                    onExit: ((event) async {
-                      safeSetState(() => _model.iuserHovered4 = false);
-                    }),
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 150),
+                      duration: Duration(milliseconds: 150),
                       curve: Curves.easeInOut,
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -387,13 +381,13 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                             : FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             12.0, 8.0, 12.0, 8.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 8.0, 0.0),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(40.0),
@@ -406,7 +400,7 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   4.0, 0.0, 0.0, 0.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
@@ -424,7 +418,7 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                                         ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 4.0, 0.0, 0.0),
                                     child: Text(
                                       'name@domainname.com',
@@ -445,6 +439,12 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                         ),
                       ),
                     ),
+                    onEnter: ((event) async {
+                      safeSetState(() => _model.iuserHovered4 = true);
+                    }),
+                    onExit: ((event) async {
+                      safeSetState(() => _model.iuserHovered4 = false);
+                    }),
                   ),
                 ],
               ),
@@ -455,14 +455,8 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
               MouseRegion(
                 opaque: false,
                 cursor: SystemMouseCursors.click ?? MouseCursor.defer,
-                onEnter: ((event) async {
-                  safeSetState(() => _model.mouseRegionHovered = true);
-                }),
-                onExit: ((event) async {
-                  safeSetState(() => _model.mouseRegionHovered = false);
-                }),
                 child: AnimatedContainer(
-                  duration: const Duration(milliseconds: 150),
+                  duration: Duration(milliseconds: 150),
                   curve: Curves.easeInOut,
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -471,6 +465,12 @@ class _Dropdown10UserListWidgetState extends State<Dropdown10UserListWidget> {
                         : FlutterFlowTheme.of(context).secondaryBackground,
                   ),
                 ),
+                onEnter: ((event) async {
+                  safeSetState(() => _model.mouseRegionHovered = true);
+                }),
+                onExit: ((event) async {
+                  safeSetState(() => _model.mouseRegionHovered = false);
+                }),
               ),
             ],
           ),

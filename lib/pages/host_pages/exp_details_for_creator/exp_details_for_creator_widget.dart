@@ -16,6 +16,9 @@ class ExpDetailsForCreatorWidget extends StatefulWidget {
 
   final DocumentReference? experienceDetails;
 
+  static String routeName = 'Exp_DetailsFor_Creator';
+  static String routePath = '/expDetailsForCreator';
+
   @override
   State<ExpDetailsForCreatorWidget> createState() =>
       _ExpDetailsForCreatorWidgetState();
@@ -50,8 +53,8 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -125,7 +128,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                     letterSpacing: 0.0,
                   ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 0.0,
           ),
@@ -141,7 +144,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -160,21 +163,21 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
                         child: Text(
                           expDetailsForCreatorExperiencesRecord.experiencename1,
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
                                 fontFamily: 'Inter Tight',
-                                color: const Color(0xFF176490),
+                                color: Color(0xFF176490),
                                 letterSpacing: 0.0,
                               ),
                         ),
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
                         child: Text(
                           expDetailsForCreatorExperiencesRecord
                               .experienceAbout1,
@@ -189,7 +192,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 18.0, 15.0, 0.0, 10.0),
                             child: Text(
                               'Location :',
@@ -209,7 +212,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 16.0),
                               child: Container(
                                 width: double.infinity,
@@ -217,7 +220,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 5.0,
                                       color: Color(0x28000000),
@@ -230,7 +233,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                   borderRadius: BorderRadius.circular(12.0),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       5.0, 0.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -238,7 +241,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                         CrossAxisAlignment.center,
                                     children: [
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -249,7 +252,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 8.0, 0.0, 0.0),
                                                 child: Text(
@@ -282,14 +285,14 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 16.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.9,
                               height: 202.0,
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 12.0,
                                     color: Color(0x34000000),
@@ -302,7 +305,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 12.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -319,7 +322,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -357,7 +360,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                                   ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
@@ -374,7 +377,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -383,7 +386,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
@@ -399,7 +402,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                                         .override(
                                                           fontFamily: 'Outfit',
                                                           color:
-                                                              const Color(0xFF14181B),
+                                                              Color(0xFF14181B),
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -408,7 +411,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 'Gender: ${expDetailsForCreatorExperiencesRecord.gender}',
@@ -419,7 +422,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -428,7 +431,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 4.0, 0.0, 0.0),
                                               child: Text(
                                                 'Ages : ${expDetailsForCreatorExperiencesRecord.ageField1}',
@@ -439,7 +442,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                                           fontFamily:
                                                               'Plus Jakarta Sans',
                                                           color:
-                                                              const Color(0xFF57636C),
+                                                              Color(0xFF57636C),
                                                           fontSize: 14.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -452,7 +455,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 0.0, 0.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
@@ -468,7 +471,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                                 .override(
                                                   fontFamily:
                                                       'Plus Jakarta Sans',
-                                                  color: const Color(0xFF57636C),
+                                                  color: Color(0xFF57636C),
                                                   fontSize: 12.0,
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
@@ -476,7 +479,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 4.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -484,7 +487,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                                   CrossAxisAlignment.end,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           4.0, 4.0, 0.0, 0.0),
                                                   child: Text(
@@ -502,7 +505,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                                         .override(
                                                           fontFamily: 'Outfit',
                                                           color:
-                                                              const Color(0xFF14181B),
+                                                              Color(0xFF14181B),
                                                           fontSize: 24.0,
                                                           letterSpacing: 0.0,
                                                           fontWeight:
@@ -515,7 +518,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 8.0),
                                             child: Text(
                                               'Total seats: ${valueOrDefault<String>(
@@ -530,7 +533,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: const Color(0xFF57636C),
+                                                    color: Color(0xFF57636C),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
@@ -539,7 +542,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 8.0),
                                             child: Text(
                                               'Remaining seats: ${valueOrDefault<String>(
@@ -554,7 +557,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                                   .override(
                                                     fontFamily:
                                                         'Plus Jakarta Sans',
-                                                    color: const Color(0xFF57636C),
+                                                    color: Color(0xFF57636C),
                                                     fontSize: 14.0,
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
@@ -575,14 +578,14 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 12.0, 16.0, 16.0),
                             child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.9,
                               height: 102.0,
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 12.0,
                                     color: Color(0x34000000),
@@ -595,7 +598,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     8.0, 8.0, 12.0, 8.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -612,7 +615,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -744,7 +747,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primary,
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
                       blurRadius: 4.0,
                       color: Color(0x55000000),
@@ -754,7 +757,7 @@ class _ExpDetailsForCreatorWidgetState extends State<ExpDetailsForCreatorWidget>
                       ),
                     )
                   ],
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(16.0),

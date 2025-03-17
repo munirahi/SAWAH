@@ -3,12 +3,16 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'users_booked_ex_model.dart';
 export 'users_booked_ex_model.dart';
 
 class UsersBookedExWidget extends StatefulWidget {
   const UsersBookedExWidget({super.key});
+
+  static String routeName = 'users_booked_ex';
+  static String routePath = '/usersBookedEx';
 
   @override
   State<UsersBookedExWidget> createState() => _UsersBookedExWidgetState();
@@ -56,7 +60,7 @@ class _UsersBookedExWidgetState extends State<UsersBookedExWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -105,14 +109,14 @@ class _UsersBookedExWidgetState extends State<UsersBookedExWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 8.0),
                             child: Container(
                               width: double.infinity,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
                                     blurRadius: 3.0,
                                     color: Color(0x411D2429),
@@ -125,13 +129,13 @@ class _UsersBookedExWidgetState extends State<UsersBookedExWidget> {
                                 borderRadius: BorderRadius.circular(8.0),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(4.0),
+                                padding: EdgeInsets.all(4.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 1.0, 1.0, 1.0),
                                       child: ClipRRect(
                                         borderRadius:
@@ -145,7 +149,7 @@ class _UsersBookedExWidgetState extends State<UsersBookedExWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 10.0, 0.0, 10.0),
                                       child: Text(
                                         listViewExperiencesRecord
@@ -154,13 +158,13 @@ class _UsersBookedExWidgetState extends State<UsersBookedExWidget> {
                                             .headlineSmall
                                             .override(
                                               fontFamily: 'Inter Tight',
-                                              color: const Color(0xFF176490),
+                                              color: Color(0xFF176490),
                                               letterSpacing: 0.0,
                                             ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 10.0, 16.0, 10.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -200,7 +204,7 @@ class _UsersBookedExWidgetState extends State<UsersBookedExWidget> {
                                           FFButtonWidget(
                                             onPressed: () async {
                                               context.pushNamed(
-                                                'Exp_Details',
+                                                ExpDetailsWidget.routeName,
                                                 queryParameters: {
                                                   'experienceDetails':
                                                       serializeParam(
@@ -214,10 +218,10 @@ class _UsersBookedExWidgetState extends State<UsersBookedExWidget> {
                                             text: 'details',
                                             options: FFButtonOptions(
                                               height: 40.0,
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 16.0, 0.0),
-                                              iconPadding: const EdgeInsetsDirectional
+                                              iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               color:
                                                   FlutterFlowTheme.of(context)

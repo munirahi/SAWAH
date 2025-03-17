@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/actions/actions.dart' as action_blocks;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -30,6 +31,9 @@ class BookExperienceWidget extends StatefulWidget {
   final int? seatlimittt;
   final int? remainingseatsss;
   final List<DocumentReference>? revvvv;
+
+  static String routeName = 'BookExperience';
+  static String routePath = '/bookExperience';
 
   @override
   State<BookExperienceWidget> createState() => _BookExperienceWidgetState();
@@ -64,8 +68,8 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -138,7 +142,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
                   size: 30.0,
@@ -159,7 +163,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -198,14 +202,14 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                           scrollDirection: Axis.vertical,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 0.0),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(8.0),
@@ -221,7 +225,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 5.0, 0.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -229,7 +233,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                 children: [
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           20.0, 10.0, 20.0, 10.0),
                                       child: Text(
                                         listViewExperiencesRecord
@@ -247,14 +251,14 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   25.0, 1.0, 0.0, 1.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 10.0, 0.0, 10.0),
                                     child: Text(
                                       'Location:',
@@ -275,7 +279,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                               children: [
                                 Expanded(
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 0.0, 16.0, 16.0),
                                     child: Container(
                                       width: double.infinity,
@@ -283,7 +287,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 5.0,
                                             color: Color(0x28000000),
@@ -297,7 +301,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                             BorderRadius.circular(12.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -305,7 +309,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                               CrossAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Column(
@@ -318,7 +322,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                                   Expanded(
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   8.0,
@@ -353,9 +357,9 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                               ],
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
+                              alignment: AlignmentDirectional(-1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 12.0),
                                 child: Text(
                                   '    Experience Date:',
@@ -376,7 +380,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(0.0),
@@ -384,13 +388,13 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(10.0),
+                                padding: EdgeInsets.all(10.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           10.0, 0.0, 0.0, 0.0),
                                       child: Container(
                                         width: 24.0,
@@ -399,7 +403,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
                                         ),
-                                        child: const Icon(
+                                        child: Icon(
                                           Icons.calendar_month_sharp,
                                           color: Color(0xFF0A014F),
                                           size: 20.0,
@@ -407,7 +411,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                       ),
                                     ),
                                     Container(
-                                      decoration: const BoxDecoration(),
+                                      decoration: BoxDecoration(),
                                       child: Text(
                                         dateTimeFormat("d/M/y",
                                             listViewExperiencesRecord.date!),
@@ -416,19 +420,19 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                             .bodyMedium
                                             .override(
                                               fontFamily: 'Lexend Deca',
-                                              color: const Color(0xFF0A014F),
+                                              color: Color(0xFF0A014F),
                                               fontSize: 16.0,
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.w300,
                                             ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 20.0)),
+                                  ].divide(SizedBox(width: 20.0)),
                                 ),
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   100.0, 14.0, 100.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -460,7 +464,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   100.0, 10.0, 100.0, 10.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -505,7 +509,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -585,7 +589,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           12.0,
@@ -601,7 +605,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryBackground,
-                                                                  boxShadow: const [
+                                                                  boxShadow: [
                                                                     BoxShadow(
                                                                       blurRadius:
                                                                           4.0,
@@ -621,7 +625,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                                                 ),
                                                                 child: Padding(
                                                                   padding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               2.0),
                                                                   child:
@@ -633,7 +637,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                                                               .max,
                                                                       children: [
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               16.0,
                                                                               12.0,
                                                                               16.0,
@@ -692,7 +696,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                                                                     },
                                                                                   ),
                                                                                   Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 4.0),
                                                                                     child: RatingBarIndicator(
                                                                                       itemBuilder: (context, index) => Icon(
                                                                                         Icons.star_rounded,
@@ -700,7 +704,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                                                                       ),
                                                                                       direction: Axis.horizontal,
                                                                                       rating: listViewReviewsRecord.rate.toDouble(),
-                                                                                      unratedColor: const Color(0xFF95A1AC),
+                                                                                      unratedColor: Color(0xFF95A1AC),
                                                                                       itemCount: 5,
                                                                                       itemSize: 24.0,
                                                                                     ),
@@ -714,12 +718,12 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                                                                   borderRadius: BorderRadius.circular(40.0),
                                                                                 ),
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsets.all(2.0),
+                                                                                  padding: EdgeInsets.all(2.0),
                                                                                   child: Container(
                                                                                     width: 50.0,
                                                                                     height: 50.0,
                                                                                     clipBehavior: Clip.antiAlias,
-                                                                                    decoration: const BoxDecoration(
+                                                                                    decoration: BoxDecoration(
                                                                                       shape: BoxShape.circle,
                                                                                     ),
                                                                                     child: Image.asset(
@@ -732,7 +736,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                                                           ),
                                                                         ),
                                                                         Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               16.0,
                                                                               4.0,
                                                                               16.0,
@@ -767,7 +771,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                                           opacity: 0.0,
                                                           child: Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         5.0,
@@ -784,7 +788,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .secondaryBackground,
-                                                                boxShadow: const [
+                                                                boxShadow: [
                                                                   BoxShadow(
                                                                     blurRadius:
                                                                         4.0,
@@ -820,7 +824,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     20.0, 0.0, 0.0, 0.0),
                                             child: Text(
                                               '* no reviews, this is a new experience be the first to try it!',
@@ -893,7 +897,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(1.0, 0.0),
+                          alignment: AlignmentDirectional(1.0, 0.0),
                           child: Container(
                             width: 120.0,
                             height: 40.0,
@@ -933,7 +937,7 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                               stepSize: 1,
                               minimum: 1,
                               maximum: 5,
-                              contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                              contentPadding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 12.0, 0.0),
                             ),
                           ),
@@ -953,13 +957,13 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                       ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 20.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 1.0),
+                            alignment: AlignmentDirectional(0.0, 1.0),
                             child: FFButtonWidget(
                               onPressed: (_model.countController1Value! >
                                       widget.remainingseatsss!)
@@ -1015,11 +1019,12 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                                           parameterData: {},
                                         );
 
-                                        context
-                                            .pushNamed('ReservationConfirmed');
+                                        context.pushNamed(
+                                            ReservationConfirmedWidget
+                                                .routeName);
                                       } else {
                                         context.pushNamed(
-                                          'payment2Copy',
+                                          Payment2CopyWidget.routeName,
                                           queryParameters: {
                                             'countcontrollerguest':
                                                 serializeParam(
@@ -1042,9 +1047,9 @@ class _BookExperienceWidgetState extends State<BookExperienceWidget>
                               options: FFButtonOptions(
                                 width: 150.0,
                                 height: 50.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).primary,
                                 textStyle: FlutterFlowTheme.of(context)

@@ -50,7 +50,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 1.0),
+      alignment: AlignmentDirectional(0.0, 1.0),
       child: StreamBuilder<ExperiencesRecord>(
         stream: ExperiencesRecord.getDocument(widget.experienceToRate!),
         builder: (context, snapshot) {
@@ -76,7 +76,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
             height: 319.0,
             decoration: BoxDecoration(
               color: FlutterFlowTheme.of(context).secondaryBackground,
-              borderRadius: const BorderRadius.only(
+              borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(0.0),
                 bottomRight: Radius.circular(0.0),
                 topLeft: Radius.circular(23.0),
@@ -90,9 +90,9 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, -1.0),
+                      alignment: AlignmentDirectional(0.0, -1.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 8.0, 0.0, 20.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -136,7 +136,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                   child: RatingBar.builder(
                     onRatingUpdate: (newValue) =>
                         safeSetState(() => _model.ratingBarValue = newValue),
@@ -153,7 +153,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 12.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 12.0),
                   child: TextFormField(
                     controller: _model.myBioTextController,
                     focusNode: _model.myBioFocusNode,
@@ -203,7 +203,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                       fillColor:
                           FlutterFlowTheme.of(context).secondaryBackground,
                       contentPadding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Inter',
@@ -220,7 +220,7 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           await ReviewsRecord.collection
@@ -236,9 +236,9 @@ class _ReviewWidgetState extends State<ReviewWidget> {
                         options: FFButtonOptions(
                           width: 180.0,
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:

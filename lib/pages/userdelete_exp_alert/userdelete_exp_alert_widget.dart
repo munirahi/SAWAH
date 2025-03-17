@@ -57,7 +57,7 @@ class _UserdeleteExpAlertWidgetState extends State<UserdeleteExpAlertWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
+      padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 30.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -67,7 +67,7 @@ class _UserdeleteExpAlertWidgetState extends State<UserdeleteExpAlertWidget> {
               color: FlutterFlowTheme.of(context).primaryBackground,
             ),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 12.0),
+              padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 12.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -75,15 +75,15 @@ class _UserdeleteExpAlertWidgetState extends State<UserdeleteExpAlertWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: Icon(
                               Icons.warning_outlined,
@@ -93,7 +93,7 @@ class _UserdeleteExpAlertWidgetState extends State<UserdeleteExpAlertWidget> {
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Text(
                             'Are you sure you want to cancel this experience reservation?',
                             textAlign: TextAlign.center,
@@ -121,9 +121,9 @@ class _UserdeleteExpAlertWidgetState extends State<UserdeleteExpAlertWidget> {
                           text: 'Back',
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -156,9 +156,9 @@ class _UserdeleteExpAlertWidgetState extends State<UserdeleteExpAlertWidget> {
                           text: 'Cancel',
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).error,
                             textStyle: FlutterFlowTheme.of(context)
@@ -174,9 +174,9 @@ class _UserdeleteExpAlertWidgetState extends State<UserdeleteExpAlertWidget> {
                         ),
                       ),
                     ]
-                        .divide(const SizedBox(width: 15.0))
-                        .addToStart(const SizedBox(width: 20.0))
-                        .addToEnd(const SizedBox(width: 20.0)),
+                        .divide(SizedBox(width: 15.0))
+                        .addToStart(SizedBox(width: 20.0))
+                        .addToEnd(SizedBox(width: 20.0)),
                   ),
                 ],
               ),

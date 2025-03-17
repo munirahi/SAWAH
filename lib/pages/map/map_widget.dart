@@ -1,3 +1,4 @@
+import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_google_map.dart';
@@ -5,6 +6,7 @@ import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:pointer_interceptor/pointer_interceptor.dart';
@@ -13,6 +15,9 @@ export 'map_model.dart';
 
 class MapWidget extends StatefulWidget {
   const MapWidget({super.key});
+
+  static String routeName = 'map';
+  static String routePath = '/map';
 
   @override
   State<MapWidget> createState() => _MapWidgetState();
@@ -29,7 +34,7 @@ class _MapWidgetState extends State<MapWidget> {
     super.initState();
     _model = createModel(context, () => MapModel());
 
-    getCurrentUserLocation(defaultLocation: const LatLng(0.0, 0.0), cached: true)
+    getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0), cached: true)
         .then((loc) => safeSetState(() => currentUserLocationValue = loc));
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -81,7 +86,7 @@ class _MapWidgetState extends State<MapWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
@@ -123,7 +128,7 @@ class _MapWidgetState extends State<MapWidget> {
                           letterSpacing: 0.0,
                         ),
                     elevation: 0.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -183,11 +188,11 @@ class _MapWidgetState extends State<MapWidget> {
                     ),
                     if (_model.isSelect == true)
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 1.0),
+                        alignment: AlignmentDirectional(0.0, 1.0),
                         child: PointerInterceptor(
                           intercepting: isWeb,
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 15.0),
                             child: StreamBuilder<List<ExperiencesRecord>>(
                               stream: queryExperiencesRecord(
@@ -234,7 +239,7 @@ class _MapWidgetState extends State<MapWidget> {
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                      'BookExperience',
+                                      BookExperienceWidget.routeName,
                                       queryParameters: {
                                         'experienceRef': serializeParam(
                                           containerExperiencesRecord,
@@ -257,7 +262,7 @@ class _MapWidgetState extends State<MapWidget> {
                                       extra: <String, dynamic>{
                                         'experienceRef':
                                             containerExperiencesRecord,
-                                        kTransitionInfoKey: const TransitionInfo(
+                                        kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,
                                           transitionType:
                                               PageTransitionType.fade,
@@ -283,10 +288,10 @@ class _MapWidgetState extends State<MapWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 2.0),
                                             child: ClipRRect(
-                                              borderRadius: const BorderRadius.only(
+                                              borderRadius: BorderRadius.only(
                                                 bottomLeft:
                                                     Radius.circular(0.0),
                                                 bottomRight:
@@ -313,7 +318,7 @@ class _MapWidgetState extends State<MapWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 0.0, 6.0),
                                             child: Text(
                                               containerExperiencesRecord
@@ -333,7 +338,7 @@ class _MapWidgetState extends State<MapWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 8.0),
                                             child: AutoSizeText(
                                               containerExperiencesRecord
@@ -350,14 +355,14 @@ class _MapWidgetState extends State<MapWidget> {
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            const Color(0xFF244B25),
+                                                            Color(0xFF244B25),
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 8.0, 10.0),
                                             child: Text(
                                               formatNumber(
@@ -373,7 +378,7 @@ class _MapWidgetState extends State<MapWidget> {
                                                   .titleLarge
                                                   .override(
                                                     fontFamily: 'Inter Tight',
-                                                    color: const Color(0xFF244B25),
+                                                    color: Color(0xFF244B25),
                                                     fontSize: 16.0,
                                                     letterSpacing: 0.0,
                                                   ),

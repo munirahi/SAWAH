@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'recreate_exp_model.dart';
@@ -38,6 +39,9 @@ class RecreateExpWidget extends StatefulWidget {
   final DocumentReference? creatorRef;
   final String? expGenderr;
   final List<DocumentReference>? reveiws;
+
+  static String routeName = 'RecreateExp';
+  static String routePath = '/recreateExp';
 
   @override
   State<RecreateExpWidget> createState() => _RecreateExpWidgetState();
@@ -78,8 +82,8 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -119,17 +123,17 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
             ),
             onPressed: () async {
-              context.pushNamed('HostHomePage');
+              context.pushNamed(HostHomePageWidget.routeName);
             },
           ),
           title: Align(
-            alignment: const AlignmentDirectional(-1.0, -1.0),
+            alignment: AlignmentDirectional(-1.0, -1.0),
             child: Text(
               valueOrDefault<String>(
                 widget.expName,
@@ -144,16 +148,16 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(0.0, 1.0),
+            alignment: AlignmentDirectional(0.0, 1.0),
             child: Stack(
-              alignment: const AlignmentDirectional(0.0, 1.0),
+              alignment: AlignmentDirectional(0.0, 1.0),
               children: [
                 StreamBuilder<ExperiencesRecord>(
                   stream: ExperiencesRecord.getDocument(widget.expRef!),
@@ -181,7 +185,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: SingleChildScrollView(
                               child: Column(
@@ -190,12 +194,12 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                   Container(
                                     width: double.infinity,
                                     height: 0.25,
-                                    decoration: const BoxDecoration(
+                                    decoration: BoxDecoration(
                                       color: Color(0xFFB7B5B7),
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 40.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -220,7 +224,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -233,7 +237,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              const Color(0xFF0A014F),
+                                                              Color(0xFF0A014F),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -243,7 +247,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -256,9 +260,9 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                     AutovalidateMode.always,
                                                 child: Container(
                                                   width: 200.0,
-                                                  decoration: const BoxDecoration(),
+                                                  decoration: BoxDecoration(),
                                                   child: Text(
-                                                    key: const ValueKey('TestName'),
+                                                    key: ValueKey('TestName'),
                                                     valueOrDefault<String>(
                                                       widget.expName,
                                                       'Experience Name',
@@ -287,7 +291,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -304,7 +308,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              const Color(0xFF0A014F),
+                                                              Color(0xFF0A014F),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -314,7 +318,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -345,7 +349,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                           children: [
                                             Expanded(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         16.0, 0.0, 16.0, 16.0),
                                                 child: Container(
@@ -355,7 +359,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
-                                                    boxShadow: const [
+                                                    boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 5.0,
                                                         color:
@@ -372,7 +376,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Row(
@@ -384,7 +388,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       12.0,
                                                                       0.0,
@@ -403,7 +407,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                             children: [
                                                               Expanded(
                                                                 child: Padding(
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           8.0,
@@ -440,7 +444,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 20.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -453,7 +457,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              const Color(0xFF0A014F),
+                                                              Color(0xFF0A014F),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -478,7 +482,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                               key: _model.formKey1,
                                               autovalidateMode:
                                                   AutovalidateMode.always,
-                                              child: SizedBox(
+                                              child: Container(
                                                 width: 268.0,
                                                 child: Opacity(
                                                   opacity: 0.8,
@@ -519,13 +523,13 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Text(
                                                   'Add Photos:',
@@ -535,7 +539,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            const Color(0xFF0A014F),
+                                                            Color(0xFF0A014F),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -557,7 +561,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                           children: [
                                             Expanded(
                                               child: Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Container(
                                                   width: 150.0,
@@ -566,7 +570,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryBackground,
-                                                    boxShadow: const [
+                                                    boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4.0,
                                                         color:
@@ -578,7 +582,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                       )
                                                     ],
                                                     borderRadius:
-                                                        const BorderRadius.only(
+                                                        BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(0.0),
                                                       bottomRight:
@@ -710,7 +714,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   10.0, 0.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -725,7 +729,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              const Color(0xFF0A014F),
+                                                              Color(0xFF0A014F),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -811,7 +815,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                   stepSize: 1,
                                                   minimum: 1,
                                                   contentPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(12.0, 0.0,
                                                               12.0, 0.0),
                                                 ),
@@ -887,7 +891,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 0.0, 0.0),
                                                   child: Row(
@@ -905,7 +909,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                             .override(
                                                               fontFamily:
                                                                   'Inter',
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFF0A014F),
                                                               fontSize: 14.0,
                                                               letterSpacing:
@@ -957,7 +961,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 20.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -972,7 +976,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              const Color(0xFF0A014F),
+                                                              Color(0xFF0A014F),
                                                           fontSize: 16.0,
                                                           letterSpacing: 0.0,
                                                         ),
@@ -981,7 +985,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                 key: _model.formKey2,
                                                 autovalidateMode:
                                                     AutovalidateMode.always,
-                                                child: SizedBox(
+                                                child: Container(
                                                   width: 200.0,
                                                   child: Text(
                                                     valueOrDefault<String>(
@@ -1035,7 +1039,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            const Color(0xFF0A014F),
+                                                            Color(0xFF0A014F),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1059,9 +1063,9 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  SizedBox(
+                                                  Container(
                                                     width: 200.0,
-                                                    child: SizedBox(
+                                                    child: Container(
                                                       width: 200.0,
                                                       child: TextFormField(
                                                         controller: _model
@@ -1115,7 +1119,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                           focusedBorder:
                                                               OutlineInputBorder(
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Color(
                                                                   0x00000000),
                                                               width: 1.0,
@@ -1196,7 +1200,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                   ),
                                                   FFButtonWidget(
                                                     onPressed: () async {
-                                                      final datePicked1Date =
+                                                      final _datePicked1Date =
                                                           await showDatePicker(
                                                         context: context,
                                                         initialDate:
@@ -1258,18 +1262,25 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                         },
                                                       );
 
-                                                      if (datePicked1Date !=
+                                                      if (_datePicked1Date !=
                                                           null) {
                                                         safeSetState(() {
                                                           _model.datePicked1 =
                                                               DateTime(
-                                                            datePicked1Date
+                                                            _datePicked1Date
                                                                 .year,
-                                                            datePicked1Date
+                                                            _datePicked1Date
                                                                 .month,
-                                                            datePicked1Date
+                                                            _datePicked1Date
                                                                 .day,
                                                           );
+                                                        });
+                                                      } else if (_model
+                                                              .datePicked1 !=
+                                                          null) {
+                                                        safeSetState(() {
+                                                          _model.datePicked1 =
+                                                              getCurrentTimestamp;
                                                         });
                                                       }
                                                     },
@@ -1277,14 +1288,14 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                     options: FFButtonOptions(
                                                       height: 40.0,
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   16.0,
                                                                   0.0,
                                                                   16.0,
                                                                   0.0),
                                                       iconPadding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -1364,7 +1375,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            const Color(0xFF0A014F),
+                                                            Color(0xFF0A014F),
                                                         fontSize: 16.0,
                                                         letterSpacing: 0.0,
                                                       ),
@@ -1382,15 +1393,15 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 0.0, 0.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  SizedBox(
+                                                  Container(
                                                     width: 200.0,
-                                                    child: SizedBox(
+                                                    child: Container(
                                                       width: 200.0,
                                                       child: TextFormField(
                                                         controller: _model
@@ -1444,7 +1455,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                           focusedBorder:
                                                               OutlineInputBorder(
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Color(
                                                                   0x00000000),
                                                               width: 1.0,
@@ -1529,7 +1540,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                         AutovalidateMode.always,
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
-                                                        final datePicked2Time =
+                                                        final _datePicked2Time =
                                                             await showTimePicker(
                                                           context: context,
                                                           initialTime: TimeOfDay
@@ -1586,7 +1597,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                             );
                                                           },
                                                         );
-                                                        if (datePicked2Time !=
+                                                        if (_datePicked2Time !=
                                                             null) {
                                                           safeSetState(() {
                                                             _model.datePicked2 =
@@ -1597,11 +1608,18 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                                   .month,
                                                               getCurrentTimestamp
                                                                   .day,
-                                                              datePicked2Time
+                                                              _datePicked2Time
                                                                   .hour,
-                                                              datePicked2Time
+                                                              _datePicked2Time
                                                                   .minute,
                                                             );
+                                                          });
+                                                        } else if (_model
+                                                                .datePicked2 !=
+                                                            null) {
+                                                          safeSetState(() {
+                                                            _model.datePicked2 =
+                                                                getCurrentTimestamp;
                                                           });
                                                         }
                                                       },
@@ -1609,14 +1627,14 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                       options: FFButtonOptions(
                                                         height: 40.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
                                                                     16.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1664,9 +1682,9 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                 "d/M/y", _model.datePicked1))
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 10.0),
                                               child: Text(
@@ -1688,7 +1706,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                           ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 12.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -1696,10 +1714,10 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                 MainAxisAlignment.center,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     0.0, 0.0),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
                                                   child: StreamBuilder<
@@ -1783,8 +1801,11 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                                       location:
                                                                           widget
                                                                               .expLocation,
-                                                                      oldExID: columnExperiencesRecord
-                                                                              .oldExID ?? widget
+                                                                      oldExID: columnExperiencesRecord.oldExID !=
+                                                                              null
+                                                                          ? columnExperiencesRecord
+                                                                              .oldExID
+                                                                          : widget
                                                                               .expRef,
                                                                       categoryy:
                                                                           columnExperiencesRecord
@@ -1802,7 +1823,8 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                                   });
 
                                                                   context.pushNamed(
-                                                                      'CreateExperienceConfirmation');
+                                                                      CreateExperienceConfirmationWidget
+                                                                          .routeName);
                                                                 } else {
                                                                   ScaffoldMessenger.of(
                                                                           context)
@@ -1817,7 +1839,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                                               FlutterFlowTheme.of(context).primaryText,
                                                                         ),
                                                                       ),
-                                                                      duration: const Duration(
+                                                                      duration: Duration(
                                                                           milliseconds:
                                                                               4000),
                                                                       backgroundColor:
@@ -1833,14 +1855,14 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                           width: 230.0,
                                                           height: 52.0,
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1865,7 +1887,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                                                                   ),
                                                           elevation: 3.0,
                                                           borderSide:
-                                                              const BorderSide(
+                                                              BorderSide(
                                                             color: Colors
                                                                 .transparent,
                                                             width: 1.0,
@@ -1944,7 +1966,7 @@ class _RecreateExpWidgetState extends State<RecreateExpWidget>
                   },
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 1.0),
                   child: Container(
                     height: 60.0,
                     decoration: BoxDecoration(

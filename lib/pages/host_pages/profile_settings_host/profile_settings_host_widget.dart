@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/navbar_forhost/navbar_forhost_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -12,6 +13,9 @@ export 'profile_settings_host_model.dart';
 
 class ProfileSettingsHostWidget extends StatefulWidget {
   const ProfileSettingsHostWidget({super.key});
+
+  static String routeName = 'profile_Settings_host';
+  static String routePath = '/profileSettingsHost';
 
   @override
   State<ProfileSettingsHostWidget> createState() =>
@@ -46,15 +50,15 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
       body: Align(
-        alignment: const AlignmentDirectional(0.0, -1.0),
+        alignment: AlignmentDirectional(0.0, -1.0),
         child: Container(
           width: double.infinity,
-          constraints: const BoxConstraints(
+          constraints: BoxConstraints(
             maxWidth: 570.0,
           ),
           decoration: BoxDecoration(
@@ -68,7 +72,7 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'Account Settings',
                       style: FlutterFlowTheme.of(context).displaySmall.override(
@@ -79,7 +83,7 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 12.0),
                     child: Text(
                       'Please evaluate your options below.',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -95,7 +99,7 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
@@ -117,9 +121,9 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                           },
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Padding(
-                              padding: const EdgeInsets.all(16.0),
+                              padding: EdgeInsets.all(16.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -148,20 +152,21 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
                           focusColor: Colors.transparent,
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('TermsandConditions');
+                            context
+                                .pushNamed(TermsandConditionsWidget.routeName);
                           },
                           child: Container(
                             width: double.infinity,
-                            decoration: const BoxDecoration(),
+                            decoration: BoxDecoration(),
                             child: Padding(
-                              padding: const EdgeInsets.all(16.0),
+                              padding: EdgeInsets.all(16.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment:
@@ -199,7 +204,7 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Account Details',
@@ -213,9 +218,9 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(1.0, 0.0),
+                              alignment: AlignmentDirectional(1.0, 0.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     180.0, 0.0, 0.0, 0.0),
                                 child: FlutterFlowIconButton(
                                   borderRadius: 8.0,
@@ -230,7 +235,7 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                                   ),
                                   onPressed: () async {
                                     context.pushNamed(
-                                      'accounD',
+                                      AccounDWidget.routeName,
                                       queryParameters: {
                                         'userData': serializeParam(
                                           currentUserReference,
@@ -249,7 +254,7 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 8.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 8.0),
                     child: Text(
                       'Follow us on',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -260,7 +265,7 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -313,13 +318,13 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                             await launchURL('https://www.linkedin.com/');
                           },
                         ),
-                      ].divide(const SizedBox(width: 8.0)),
+                      ].divide(SizedBox(width: 8.0)),
                     ),
                   ),
-                  const Spacer(),
+                  Spacer(),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                     child: Text(
                       'App Versions',
                       style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -330,7 +335,7 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 0.0, 0.0),
                     child: Text(
                       'v4',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -341,22 +346,23 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         GoRouter.of(context).prepareAuthEvent();
                         await authManager.signOut();
                         GoRouter.of(context).clearRedirectLocation();
 
-                        context.pushNamedAuth('AuthNew', context.mounted);
+                        context.pushNamedAuth(
+                            AuthNewWidget.routeName, context.mounted);
                       },
                       text: 'Log Out',
                       options: FFButtonOptions(
                         height: 40.0,
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         textStyle:
                             FlutterFlowTheme.of(context).labelMedium.override(
@@ -372,15 +378,15 @@ class _ProfileSettingsHostWidgetState extends State<ProfileSettingsHostWidget> {
                       ),
                     ),
                   ),
-                ].addToEnd(const SizedBox(height: 64.0)),
+                ].addToEnd(SizedBox(height: 64.0)),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: wrapWithModel(
                   model: _model.navbarForhostModel,
                   updateCallback: () => safeSetState(() {}),
                   updateOnChange: true,
-                  child: const NavbarForhostWidget(
+                  child: NavbarForhostWidget(
                     index: 2,
                   ),
                 ),

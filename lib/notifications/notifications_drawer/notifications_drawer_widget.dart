@@ -7,6 +7,9 @@ export 'notifications_drawer_model.dart';
 class NotificationsDrawerWidget extends StatefulWidget {
   const NotificationsDrawerWidget({super.key});
 
+  static String routeName = 'notificationsDrawer';
+  static String routePath = '/notificationsDrawer';
+
   @override
   State<NotificationsDrawerWidget> createState() =>
       _NotificationsDrawerWidgetState();
@@ -41,7 +44,7 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: const Color(0xFFF1F4F8),
+        backgroundColor: Color(0xFFF1F4F8),
         appBar: AppBar(
           backgroundColor: Colors.white,
           automaticallyImplyLeading: false,
@@ -49,13 +52,13 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
             'Notifications',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',
-                  color: const Color(0xFF14181B),
+                  color: Color(0xFF14181B),
                   fontSize: 24.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.normal,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -64,12 +67,12 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
           scrollDirection: Axis.vertical,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
                       blurRadius: 0.0,
                       color: Color(0xFFE0E3E7),
@@ -83,7 +86,7 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -91,20 +94,20 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                         width: 4.0,
                         height: 50.0,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF4B39EF),
+                          color: Color(0xFF4B39EF),
                           borderRadius: BorderRadius.circular(2.0),
                         ),
                       ),
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Check-in evaluated',
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: const Color(0xFF14181B),
+                                      color: Color(0xFF14181B),
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
@@ -114,13 +117,13 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Mar 8, 2022',
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xFF57636C),
+                                    color: Color(0xFF57636C),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -133,12 +136,12 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
                       blurRadius: 0.0,
                       color: Color(0xFFE0E3E7),
@@ -152,7 +155,7 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -160,20 +163,20 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                         width: 4.0,
                         height: 50.0,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF4B39EF),
+                          color: Color(0xFF4B39EF),
                           borderRadius: BorderRadius.circular(2.0),
                         ),
                       ),
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Check-in evaluated',
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: const Color(0xFF14181B),
+                                      color: Color(0xFF14181B),
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
@@ -183,13 +186,13 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Mar 8, 2022',
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xFF57636C),
+                                    color: Color(0xFF57636C),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -202,12 +205,12 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
                       blurRadius: 0.0,
                       color: Color(0xFFE0E3E7),
@@ -221,7 +224,7 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -229,20 +232,20 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                         width: 4.0,
                         height: 50.0,
                         decoration: BoxDecoration(
-                          color: const Color(0xFF4B39EF),
+                          color: Color(0xFF4B39EF),
                           borderRadius: BorderRadius.circular(2.0),
                         ),
                       ),
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Check-in evaluated',
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       fontFamily: 'Plus Jakarta Sans',
-                                      color: const Color(0xFF14181B),
+                                      color: Color(0xFF14181B),
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.normal,
@@ -252,13 +255,13 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Mar 8, 2022',
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xFF57636C),
+                                    color: Color(0xFF57636C),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -271,12 +274,12 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF1F4F8),
-                  boxShadow: const [
+                  color: Color(0xFFF1F4F8),
+                  boxShadow: [
                     BoxShadow(
                       blurRadius: 0.0,
                       color: Color(0xFFE0E3E7),
@@ -290,7 +293,7 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -298,13 +301,13 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                         width: 4.0,
                         height: 50.0,
                         decoration: BoxDecoration(
-                          color: const Color(0xFFE0E3E7),
+                          color: Color(0xFFE0E3E7),
                           borderRadius: BorderRadius.circular(2.0),
                         ),
                       ),
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'New Event added to your calendar',
@@ -312,7 +315,7 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                                 .labelLarge
                                 .override(
                                   fontFamily: 'Plus Jakarta Sans',
-                                  color: const Color(0xFF57636C),
+                                  color: Color(0xFF57636C),
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
@@ -322,13 +325,13 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Mar 8, 2022',
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xFF57636C),
+                                    color: Color(0xFF57636C),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,
@@ -341,12 +344,12 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 1.0),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: const Color(0xFFF1F4F8),
-                  boxShadow: const [
+                  color: Color(0xFFF1F4F8),
+                  boxShadow: [
                     BoxShadow(
                       blurRadius: 0.0,
                       color: Color(0xFFE0E3E7),
@@ -360,7 +363,7 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -368,13 +371,13 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                         width: 4.0,
                         height: 50.0,
                         decoration: BoxDecoration(
-                          color: const Color(0xFFE0E3E7),
+                          color: Color(0xFFE0E3E7),
                           borderRadius: BorderRadius.circular(2.0),
                         ),
                       ),
                       Expanded(
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Profile Modified',
@@ -382,7 +385,7 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                                 .labelLarge
                                 .override(
                                   fontFamily: 'Plus Jakarta Sans',
-                                  color: const Color(0xFF57636C),
+                                  color: Color(0xFF57636C),
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.normal,
@@ -392,13 +395,13 @@ class _NotificationsDrawerWidgetState extends State<NotificationsDrawerWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'Mar 8, 2022',
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xFF57636C),
+                                    color: Color(0xFF57636C),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
                                     fontWeight: FontWeight.normal,

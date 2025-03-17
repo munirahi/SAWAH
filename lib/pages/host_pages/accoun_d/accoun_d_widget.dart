@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'accoun_d_model.dart';
@@ -18,6 +19,9 @@ class AccounDWidget extends StatefulWidget {
   });
 
   final DocumentReference? userData;
+
+  static String routeName = 'accounD';
+  static String routePath = '/accounD';
 
   @override
   State<AccounDWidget> createState() => _AccounDWidgetState();
@@ -74,11 +78,11 @@ class _AccounDWidgetState extends State<AccounDWidget> {
             size: 25.0,
           ),
           onPressed: () async {
-            context.pushNamed('profile_Settings_host');
+            context.pushNamed(ProfileSettingsHostWidget.routeName);
           },
         ),
         title: Align(
-          alignment: const AlignmentDirectional(-0.33, 0.0),
+          alignment: AlignmentDirectional(-0.33, 0.0),
           child: Text(
             'Account Details',
             textAlign: TextAlign.center,
@@ -89,7 +93,7 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                 ),
           ),
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -118,7 +122,7 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -136,7 +140,7 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,7 +150,7 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => TextFormField(
@@ -227,7 +231,7 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController2,
@@ -291,7 +295,7 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Inter',
-                                        color: const Color(0xFFDBE2E7),
+                                        color: Color(0xFFDBE2E7),
                                         letterSpacing: 0.0,
                                       ),
                                   keyboardType: TextInputType.emailAddress,
@@ -308,7 +312,7 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                             if (currentUserDocument?.role == UserType.host)
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 16.0, 0.0, 0.0),
                                   child: AuthUserStreamWidget(
                                     builder: (context) => TextFormField(
@@ -388,7 +392,7 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  Container(
                     width: MediaQuery.sizeOf(context).width * 0.9,
                     height: 70.0,
                     child: custom_widgets.PhoneNumberPicker(
@@ -413,7 +417,7 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                               fontSize: 14.0,
                             ),
                           ),
-                          duration: const Duration(milliseconds: 3000),
+                          duration: Duration(milliseconds: 3000),
                           backgroundColor: FlutterFlowTheme.of(context).primary,
                         ),
                       );
@@ -423,9 +427,9 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                       width: 270.0,
                       height: 50.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -434,7 +438,7 @@ class _AccounDWidgetState extends State<AccounDWidget> {
                                 letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

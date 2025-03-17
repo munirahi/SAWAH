@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'payment2_model.dart';
@@ -12,6 +13,9 @@ export 'payment2_model.dart';
 
 class Payment2Widget extends StatefulWidget {
   const Payment2Widget({super.key});
+
+  static String routeName = 'payment2';
+  static String routePath = '/payment2';
 
   @override
   State<Payment2Widget> createState() => _Payment2WidgetState();
@@ -62,16 +66,16 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: const AlignmentDirectional(-1.0, 0.0),
+            alignment: AlignmentDirectional(-1.0, 0.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
+              padding: EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
               child: StreamBuilder<List<ExperiencesRecord>>(
                 stream: queryExperiencesRecord(
                   singleRecord: true,
@@ -113,17 +117,17 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                           Form(
                             key: _model.formKey,
                             autovalidateMode: AutovalidateMode.disabled,
-                            child: SizedBox(
+                            child: Container(
                               width: 200.0,
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 30.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller:
                                       _model.emailAddressGuestTextController,
                                   focusNode: _model.emailAddressGuestFocusNode,
                                   autofocus: true,
-                                  autofillHints: const [AutofillHints.email],
+                                  autofillHints: [AutofillHints.email],
                                   textInputAction: TextInputAction.next,
                                   obscureText: false,
                                   decoration: InputDecoration(
@@ -169,7 +173,7 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                                     filled: true,
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    contentPadding: const EdgeInsets.all(24.0),
+                                    contentPadding: EdgeInsets.all(24.0),
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -194,11 +198,11 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 20.0, 0.0, 0.0),
-                              child: SizedBox(
+                              child: Container(
                                 width: MediaQuery.sizeOf(context).width * 0.9,
                                 height: 70.0,
                                 child: custom_widgets.PhoneNumberPicker(
@@ -212,12 +216,12 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 0.0, 12.0, 0.0),
                               child: FlutterFlowCreditCardForm(
                                 formKey: _model.creditCardFormKey,
@@ -252,7 +256,7 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 8.0, 12.0, 4.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -271,7 +275,7 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 4.0, 12.0, 16.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -328,19 +332,20 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  context.pushNamed('ReservationConfirmed');
+                                  context.pushNamed(
+                                      ReservationConfirmedWidget.routeName);
                                 },
                                 text: 'Pay w/ Credit Card',
                                 options: FFButtonOptions(
                                   width: 270.0,
                                   height: 50.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -350,7 +355,7 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                                         letterSpacing: 0.0,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -358,7 +363,7 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: Text(
                                 'Or use an option below',
@@ -371,7 +376,7 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () {
@@ -387,9 +392,9 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                                 options: FFButtonOptions(
                                   width: 270.0,
                                   height: 50.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
@@ -404,7 +409,7 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                                         fontWeight: FontWeight.normal,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -412,7 +417,7 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () {
@@ -428,9 +433,9 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                                 options: FFButtonOptions(
                                   width: 270.0,
                                   height: 50.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
@@ -445,7 +450,7 @@ class _Payment2WidgetState extends State<Payment2Widget> {
                                         fontWeight: FontWeight.normal,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),

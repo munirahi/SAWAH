@@ -46,22 +46,22 @@ class _ConflictalertWidgetState extends State<ConflictalertWidget> {
         borderRadius: BorderRadius.circular(24.0),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
+              padding: EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                       child: Icon(
                         Icons.warning_outlined,
                         color: FlutterFlowTheme.of(context).error,
@@ -70,7 +70,7 @@ class _ConflictalertWidgetState extends State<ConflictalertWidget> {
                     ),
                   ),
                   Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Text(
                       'Sorry! \nYou already have a reservation on a conflicting day and time.',
                       textAlign: TextAlign.center,
@@ -84,7 +84,7 @@ class _ConflictalertWidgetState extends State<ConflictalertWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(10.0, 12.0, 10.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 12.0, 10.0, 0.0),
                     child: Text(
                       'Please select another day and time. ',
                       textAlign: TextAlign.center,
@@ -98,14 +98,14 @@ class _ConflictalertWidgetState extends State<ConflictalertWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 12.0),
+              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 12.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Flexible(
                     child: Align(
-                      alignment: const AlignmentDirectional(0.0, 1.0),
+                      alignment: AlignmentDirectional(0.0, 1.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           context.safePop();
@@ -114,9 +114,9 @@ class _ConflictalertWidgetState extends State<ConflictalertWidget> {
                         options: FFButtonOptions(
                           width: 110.0,
                           height: 45.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               20.0, 0.0, 20.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:

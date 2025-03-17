@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'auth_new_widget.dart' show AuthNewWidget;
 import 'package:flutter/material.dart';
 

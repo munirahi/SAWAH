@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'resendemail_model.dart';
 export 'resendemail_model.dart';
@@ -42,23 +43,23 @@ class _ResendemailWidgetState extends State<ResendemailWidget> {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
         child: Container(
           width: double.infinity,
-          constraints: const BoxConstraints(
+          constraints: BoxConstraints(
             maxWidth: 570.0,
           ),
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             borderRadius: BorderRadius.circular(12.0),
             border: Border.all(
-              color: const Color(0xFFE0E3E7),
+              color: Color(0xFFE0E3E7),
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(24.0),
+            padding: EdgeInsets.all(24.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,7 +70,7 @@ class _ResendemailWidgetState extends State<ResendemailWidget> {
                     Expanded(
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
                         child: Text(
                           'E-mail Verfication Reminder',
                           style: FlutterFlowTheme.of(context)
@@ -111,7 +112,7 @@ class _ResendemailWidgetState extends State<ResendemailWidget> {
                       ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -124,9 +125,9 @@ class _ResendemailWidgetState extends State<ResendemailWidget> {
                           text: 'Resend Email',
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -137,12 +138,12 @@ class _ResendemailWidgetState extends State<ResendemailWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(18.0),
-                            hoverColor: const Color(0xFF2B16ED),
+                            hoverColor: Color(0xFF2B16ED),
                             hoverTextColor: Colors.white,
                           ),
                         ),
@@ -153,23 +154,23 @@ class _ResendemailWidgetState extends State<ResendemailWidget> {
                             await authManager.refreshUser();
                             if (currentUserEmailVerified == true) {
                               if (currentUserDocument?.role == UserType.host) {
-                                context.goNamed('HostHomePage');
+                                context.goNamed(HostHomePageWidget.routeName);
                               } else {
-                                context.goNamed('userHome');
+                                context.goNamed(UserHomeWidget.routeName);
                               }
                             } else {
                               await showDialog(
                                 context: context,
                                 builder: (alertDialogContext) {
                                   return AlertDialog(
-                                    title: const Text('Email verifcation'),
-                                    content: const Text(
+                                    title: Text('Email verifcation'),
+                                    content: Text(
                                         'you need to verify your email first'),
                                     actions: [
                                       TextButton(
                                         onPressed: () =>
                                             Navigator.pop(alertDialogContext),
-                                        child: const Text('Ok'),
+                                        child: Text('Ok'),
                                       ),
                                     ],
                                   );
@@ -180,9 +181,9 @@ class _ResendemailWidgetState extends State<ResendemailWidget> {
                           text: 'continue',
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -193,17 +194,17 @@ class _ResendemailWidgetState extends State<ResendemailWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(18.0),
-                            hoverColor: const Color(0xFF2B16ED),
+                            hoverColor: Color(0xFF2B16ED),
                             hoverTextColor: Colors.white,
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(width: 50.0)),
+                    ].divide(SizedBox(width: 50.0)),
                   ),
                 ),
               ],

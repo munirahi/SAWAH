@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import '/index.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,9 @@ export 'user_home_copy2_model.dart';
 
 class UserHomeCopy2Widget extends StatefulWidget {
   const UserHomeCopy2Widget({super.key});
+
+  static String routeName = 'userHomeCopy2';
+  static String routePath = '/userHomeCopy2';
 
   @override
   State<UserHomeCopy2Widget> createState() => _UserHomeCopy2WidgetState();
@@ -33,7 +37,7 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       if (currentUserDocument?.role == UserType.host) {
-        context.pushNamed('HostHomePage');
+        context.pushNamed(HostHomePageWidget.routeName);
       }
     });
 
@@ -81,7 +85,7 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                   width: 100.0,
                   height: 170.0,
                   decoration: BoxDecoration(
-                    color: const Color(0x9A1D2428),
+                    color: Color(0x9A1D2428),
                     image: DecorationImage(
                       fit: BoxFit.cover,
                       image: Image.asset(
@@ -91,13 +95,13 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                   ),
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 16.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 64.0, 16.0, 12.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 8.0),
                           child: Text(
                             'Welcome to Sawwah!',
@@ -106,7 +110,7 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                                 .displaySmall
                                 .override(
                                   fontFamily: 'Inter Tight',
-                                  color: const Color(0xFFE4F6CE),
+                                  color: Color(0xFFE4F6CE),
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -116,21 +120,21 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
                                     fontFamily: 'Inter',
-                                    color: const Color(0xBEE5EAE2),
+                                    color: Color(0xBEE5EAE2),
                                     letterSpacing: 0.0,
                                   ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 16.0, 0.0, 0.0),
-                          child: SizedBox(
+                          child: Container(
                             width: double.infinity,
                             child: TextFormField(
                               controller: _model.textController,
                               focusNode: _model.textFieldFocusNode,
                               onChanged: (_) => EasyDebounce.debounce(
                                 '_model.textController',
-                                const Duration(milliseconds: 200),
+                                Duration(milliseconds: 200),
                                 () async {
                                   FFAppState().searchQuery =
                                       _model.textController.text;
@@ -183,7 +187,7 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                                contentPadding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 24.0, 0.0, 24.0),
                                 prefixIcon: Icon(
                                   Icons.search_rounded,
@@ -211,7 +215,7 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 16.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 0.0, 16.0),
                 child: Text(
                   'Popular Experiences',
                   style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -221,15 +225,15 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 20.0, 0.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Expanded(
                       child: Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: FlutterFlowChoiceChips(
-                          options: const [
+                          options: [
                             ChipData('Food'),
                             ChipData('Workshops'),
                             ChipData('Outdoors'),
@@ -350,14 +354,14 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                                     listViewExperiencesRecord.experiencename1,
                                     _model.textController.text),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 8.0),
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      boxShadow: const [
+                                      boxShadow: [
                                         BoxShadow(
                                           blurRadius: 3.0,
                                           color: Color(0x411D2429),
@@ -370,7 +374,7 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(4.0),
+                                      padding: EdgeInsets.all(4.0),
                                       child: SingleChildScrollView(
                                         primary: false,
                                         child: Column(
@@ -379,7 +383,7 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 1.0, 10.0),
                                               child: ClipRRect(
@@ -403,7 +407,7 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 10.0, 0.0, 10.0),
                                               child: Text(
@@ -423,7 +427,7 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 10.0, 8.0, 10.0),
                                               child: AutoSizeText(
@@ -440,13 +444,13 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color:
-                                                              const Color(0xFF244B25),
+                                                              Color(0xFF244B25),
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       16.0, 0.0, 1.0, 0.0),
                                               child: Row(
@@ -457,7 +461,7 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 10.0,
                                                                 4.0, 10.0),
                                                     child: Text(
@@ -479,7 +483,7 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                                                           .override(
                                                             fontFamily:
                                                                 'Inter Tight',
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFF244B25),
                                                             letterSpacing: 0.0,
                                                           ),
@@ -496,7 +500,8 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                        'BookExperience',
+                                                        BookExperienceWidget
+                                                            .routeName,
                                                         queryParameters: {
                                                           'experienceRef':
                                                               serializeParam(
@@ -529,7 +534,7 @@ class _UserHomeCopy2WidgetState extends State<UserHomeCopy2Widget> {
                                                         },
                                                       );
                                                     },
-                                                    child: const Icon(
+                                                    child: Icon(
                                                       Icons
                                                           .chevron_right_rounded,
                                                       color: Color(0xFF57636C),

@@ -1,5 +1,6 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'chat2_invite_users_widget.dart' show Chat2InviteUsersWidget;
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';

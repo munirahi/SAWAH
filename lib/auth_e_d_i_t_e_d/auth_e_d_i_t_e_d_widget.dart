@@ -1,3 +1,4 @@
+import '';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/resendemail_widget.dart';
@@ -5,6 +6,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +18,9 @@ export 'auth_e_d_i_t_e_d_model.dart';
 
 class AuthEDITEDWidget extends StatefulWidget {
   const AuthEDITEDWidget({super.key});
+
+  static String routeName = 'AuthEDITED';
+  static String routePath = '/authEDITED';
 
   @override
   State<AuthEDITEDWidget> createState() => _AuthEDITEDWidgetState();
@@ -69,15 +74,15 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(-0.349, 0),
-            end: const Offset(0, 0),
+            begin: Offset(-0.349, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -95,15 +100,15 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(0.0, 60.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 60.0),
+            end: Offset(0.0, 0.0),
           ),
           TiltEffect(
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 300.0.ms,
-            begin: const Offset(-0.349, 0),
-            end: const Offset(0, 0),
+            begin: Offset(-0.349, 0),
+            end: Offset(0, 0),
           ),
         ],
       ),
@@ -144,7 +149,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
                   ),
-                  alignment: const AlignmentDirectional(0.0, -1.0),
+                  alignment: AlignmentDirectional(0.0, -1.0),
                   child: SingleChildScrollView(
                     primary: false,
                     child: Column(
@@ -158,7 +163,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                             width: 421.0,
                             height: 62.0,
                             fit: BoxFit.fitWidth,
-                            alignment: const Alignment(0.0, -1.0),
+                            alignment: Alignment(0.0, -1.0),
                           ),
                         ),
                         Flexible(
@@ -178,7 +183,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                         Container(
                           width: double.infinity,
                           height: 700.0,
-                          constraints: const BoxConstraints(
+                          constraints: BoxConstraints(
                             maxWidth: 602.0,
                           ),
                           decoration: BoxDecoration(
@@ -186,12 +191,12 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                 .secondaryBackground,
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
                             child: Column(
                               children: [
                                 Align(
-                                  alignment: const Alignment(-1.0, 0),
+                                  alignment: Alignment(-1.0, 0),
                                   child: TabBar(
                                     isScrollable: true,
                                     labelColor: FlutterFlowTheme.of(context)
@@ -199,7 +204,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                     unselectedLabelColor:
                                         FlutterFlowTheme.of(context)
                                             .secondaryText,
-                                    labelPadding: const EdgeInsets.all(16.0),
+                                    labelPadding: EdgeInsets.all(16.0),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
@@ -217,9 +222,9 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                     indicatorColor:
                                         FlutterFlowTheme.of(context).primary,
                                     indicatorWeight: 4.0,
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 16.0, 12.0),
-                                    tabs: const [
+                                    tabs: [
                                       Tab(
                                         text: 'Log In',
                                       ),
@@ -239,10 +244,10 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                     children: [
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 12.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
@@ -278,7 +283,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 12.0, 0.0, 24.0),
                                                   child: Text(
@@ -293,10 +298,10 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
-                                                  child: SizedBox(
+                                                  child: Container(
                                                     width: double.infinity,
                                                     child: TextFormField(
                                                       controller: _model
@@ -306,7 +311,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                       onChanged: (_) =>
                                                           EasyDebounce.debounce(
                                                         '_model.emailAddressTextController',
-                                                        const Duration(
+                                                        Duration(
                                                             milliseconds: 200),
                                                         () =>
                                                             safeSetState(() {}),
@@ -342,7 +347,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                         }
                                                       },
                                                       autofocus: true,
-                                                      autofillHints: const [
+                                                      autofillHints: [
                                                         AutofillHints.email
                                                       ],
                                                       textInputAction:
@@ -427,7 +432,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         contentPadding:
-                                                            const EdgeInsets.all(
+                                                            EdgeInsets.all(
                                                                 24.0),
                                                       ),
                                                       style: FlutterFlowTheme
@@ -451,10 +456,10 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 16.0),
-                                                  child: SizedBox(
+                                                  child: Container(
                                                     width: double.infinity,
                                                     child: TextFormField(
                                                       controller: _model
@@ -464,13 +469,13 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                       onChanged: (_) =>
                                                           EasyDebounce.debounce(
                                                         '_model.passwordTextController',
-                                                        const Duration(
+                                                        Duration(
                                                             milliseconds: 200),
                                                         () =>
                                                             safeSetState(() {}),
                                                       ),
                                                       autofocus: false,
-                                                      autofillHints: const [
+                                                      autofillHints: [
                                                         AutofillHints.password
                                                       ],
                                                       obscureText: !_model
@@ -554,7 +559,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                 .of(context)
                                                             .secondaryBackground,
                                                         contentPadding:
-                                                            const EdgeInsets.all(
+                                                            EdgeInsets.all(
                                                                 24.0),
                                                         suffixIcon: InkWell(
                                                           onTap: () =>
@@ -599,11 +604,11 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 16.0),
                                                     child: FFButtonWidget(
@@ -634,12 +639,14 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                   .isThisAcreater ==
                                                               true) {
                                                             context.pushNamedAuth(
-                                                                'HostHomePage',
+                                                                HostHomePageWidget
+                                                                    .routeName,
                                                                 context
                                                                     .mounted);
                                                           } else {
                                                             context.goNamedAuth(
-                                                                'userHome',
+                                                                UserHomeWidget
+                                                                    .routeName,
                                                                 context
                                                                     .mounted);
                                                           }
@@ -668,7 +675,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                       .viewInsetsOf(
                                                                           context),
                                                                   child:
-                                                                      const ResendemailWidget(),
+                                                                      ResendemailWidget(),
                                                                 ),
                                                               );
                                                             },
@@ -682,14 +689,14 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                         width: 230.0,
                                                         height: 52.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -712,7 +719,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                       0.0,
                                                                 ),
                                                         elevation: 3.0,
-                                                        borderSide: const BorderSide(
+                                                        borderSide: BorderSide(
                                                           color: Colors
                                                               .transparent,
                                                           width: 1.0,
@@ -726,11 +733,11 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      const AlignmentDirectional(
+                                                      AlignmentDirectional(
                                                           0.0, 0.0),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 16.0),
                                                     child: FFButtonWidget(
@@ -742,7 +749,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                           ScaffoldMessenger.of(
                                                                   context)
                                                               .showSnackBar(
-                                                            const SnackBar(
+                                                            SnackBar(
                                                               content: Text(
                                                                 'Email required!',
                                                               ),
@@ -763,14 +770,14 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                         width: 230.0,
                                                         height: 44.0,
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
                                                                     0.0,
                                                                     0.0),
                                                         iconPadding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -812,11 +819,11 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                   children: [
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     0.0,
@@ -840,11 +847,11 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -872,7 +879,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -895,13 +902,14 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                   }
 
                                                                   context.goNamedAuth(
-                                                                      'userHome',
+                                                                      UserHomeWidget
+                                                                          .routeName,
                                                                       context
                                                                           .mounted);
                                                                 },
                                                                 text:
                                                                     'Continue with Google',
-                                                                icon: const FaIcon(
+                                                                icon: FaIcon(
                                                                   FontAwesomeIcons
                                                                       .google,
                                                                   size: 20.0,
@@ -910,13 +918,13 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                     FFButtonOptions(
                                                                   width: 230.0,
                                                                   height: 44.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -958,7 +966,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                             isAndroid
                                                                 ? Container()
                                                                 : Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -978,13 +986,13 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                         }
 
                                                                         context.goNamedAuth(
-                                                                            'userHome',
+                                                                            UserHomeWidget.routeName,
                                                                             context.mounted);
                                                                       },
                                                                       text:
                                                                           'Continue with Apple',
                                                                       icon:
-                                                                          const FaIcon(
+                                                                          FaIcon(
                                                                         FontAwesomeIcons
                                                                             .apple,
                                                                         size:
@@ -996,12 +1004,12 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                             230.0,
                                                                         height:
                                                                             44.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -1045,10 +1053,10 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                       ),
                                       Align(
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0),
+                                            AlignmentDirectional(0.0, 0.0),
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 0.0, 12.0, 12.0),
                                           child: SingleChildScrollView(
                                             child: Column(
@@ -1069,7 +1077,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 12.0, 0.0, 24.0),
                                                   child: Text(
@@ -1084,7 +1092,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 3.0),
                                                   child: Row(
@@ -1125,14 +1133,14 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                               FFButtonOptions(
                                                             height: 31.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1199,14 +1207,14 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                               FFButtonOptions(
                                                             height: 31.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -1262,13 +1270,13 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         8.0),
-                                                            child: SizedBox(
+                                                            child: Container(
                                                               width: double
                                                                   .infinity,
                                                               child:
@@ -1281,11 +1289,11 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                     EasyDebounce
                                                                         .debounce(
                                                                   '_model.emailAddressCreateTextController',
-                                                                  const Duration(
+                                                                  Duration(
                                                                       milliseconds:
                                                                           2000),
                                                                   () async {
-                                                                    var shouldSetState =
+                                                                    var _shouldSetState =
                                                                         false;
                                                                     if (_model.emailAddressCreateTextController.text !=
                                                                             '') {
@@ -1300,7 +1308,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                               .text,
                                                                         ),
                                                                       );
-                                                                      shouldSetState =
+                                                                      _shouldSetState =
                                                                           true;
                                                                       if (_model
                                                                               .firestoreResult! >=
@@ -1309,10 +1317,9 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                             false;
                                                                         safeSetState(
                                                                             () {});
-                                                                        if (shouldSetState) {
+                                                                        if (_shouldSetState)
                                                                           safeSetState(
                                                                               () {});
-                                                                        }
                                                                         return;
                                                                       } else {
                                                                         FFAppState().emailState =
@@ -1343,14 +1350,13 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                           () {});
                                                                     }
 
-                                                                    if (shouldSetState) {
+                                                                    if (_shouldSetState)
                                                                       safeSetState(
                                                                           () {});
-                                                                    }
                                                                   },
                                                                 ),
                                                                 autofocus: true,
-                                                                autofillHints: const [
+                                                                autofillHints: [
                                                                   AutofillHints
                                                                       .email
                                                                 ],
@@ -1447,7 +1453,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                           context)
                                                                       .secondaryBackground,
                                                                   contentPadding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               24.0),
                                                                   suffixIcon: _model
@@ -1458,7 +1464,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                           onTap:
                                                                               () async {
                                                                             _model.emailAddressCreateTextController?.clear();
-                                                                            var shouldSetState =
+                                                                            var _shouldSetState =
                                                                                 false;
                                                                             if (_model.emailAddressCreateTextController.text != '') {
                                                                               _model.firestoreResult = await queryUsersRecordCount(
@@ -1467,11 +1473,11 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                                   isEqualTo: _model.emailAddressCreateTextController.text,
                                                                                 ),
                                                                               );
-                                                                              shouldSetState = true;
+                                                                              _shouldSetState = true;
                                                                               if (_model.firestoreResult! >= 1) {
                                                                                 FFAppState().emailState = false;
                                                                                 safeSetState(() {});
-                                                                                if (shouldSetState) safeSetState(() {});
+                                                                                if (_shouldSetState) safeSetState(() {});
                                                                                 return;
                                                                               } else {
                                                                                 FFAppState().emailState = true;
@@ -1490,9 +1496,8 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                               safeSetState(() {});
                                                                             }
 
-                                                                            if (shouldSetState) {
+                                                                            if (_shouldSetState)
                                                                               safeSetState(() {});
-                                                                            }
                                                                             safeSetState(() {});
                                                                           },
                                                                           child:
@@ -1531,13 +1536,13 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         8.0),
-                                                            child: SizedBox(
+                                                            child: Container(
                                                               width: double
                                                                   .infinity,
                                                               child:
@@ -1548,7 +1553,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                     .passwordCreateFocusNode,
                                                                 autofocus:
                                                                     false,
-                                                                autofillHints: const [
+                                                                autofillHints: [
                                                                   AutofillHints
                                                                       .password
                                                                 ],
@@ -1634,7 +1639,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                           context)
                                                                       .secondaryBackground,
                                                                   contentPadding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               24.0),
                                                                   suffixIcon:
@@ -1685,13 +1690,13 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         8.0),
-                                                            child: SizedBox(
+                                                            child: Container(
                                                               width: double
                                                                   .infinity,
                                                               child:
@@ -1702,7 +1707,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                     .passwordConfirmFocusNode,
                                                                 autofocus:
                                                                     false,
-                                                                autofillHints: const [
+                                                                autofillHints: [
                                                                   AutofillHints
                                                                       .password
                                                                 ],
@@ -1788,7 +1793,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                           context)
                                                                       .secondaryBackground,
                                                                   contentPadding:
-                                                                      const EdgeInsets
+                                                                      EdgeInsets
                                                                           .all(
                                                                               24.0),
                                                                   suffixIcon:
@@ -1844,7 +1849,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                               _model
                                                                   .passwordConfirmTextController
                                                                   .text)
-                                                            const Row(
+                                                            Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
                                                                       .max,
@@ -1852,11 +1857,11 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                             ),
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1881,7 +1886,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                             .sendEmailVerification();
 
                                                                         context.pushNamed(
-                                                                            'auth2_profile');
+                                                                            Auth2ProfileWidget.routeName);
                                                                       },
                                                                 text:
                                                                     'Create Account',
@@ -1889,13 +1894,13 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                     FFButtonOptions(
                                                                   width: 230.0,
                                                                   height: 52.0,
-                                                                  padding: const EdgeInsetsDirectional
+                                                                  padding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                                  iconPadding: const EdgeInsetsDirectional
+                                                                  iconPadding: EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -1918,7 +1923,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                   elevation:
                                                                       3.0,
                                                                   borderSide:
-                                                                      const BorderSide(
+                                                                      BorderSide(
                                                                     color: Colors
                                                                         .transparent,
                                                                     width: 1.0,
@@ -1940,11 +1945,11 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               0.0, 0.0),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -1957,7 +1962,8 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                               ? null
                                                               : () async {
                                                                   context.pushNamedAuth(
-                                                                      'userHome',
+                                                                      UserHomeWidget
+                                                                          .routeName,
                                                                       context
                                                                           .mounted);
 
@@ -1980,14 +1986,14 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                             width: 230.0,
                                                             height: 52.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
                                                                         0.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -2016,7 +2022,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                     ),
                                                             elevation: 3.0,
                                                             borderSide:
-                                                                const BorderSide(
+                                                                BorderSide(
                                                               color: Colors
                                                                   .transparent,
                                                               width: 1.0,
@@ -2031,7 +2037,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                     ),
                                                     Align(
                                                       alignment:
-                                                          const AlignmentDirectional(
+                                                          AlignmentDirectional(
                                                               -1.0, 1.0),
                                                       child: Column(
                                                         mainAxisSize:
@@ -2039,11 +2045,11 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                         children: [
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
@@ -2068,11 +2074,11 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                           ),
                                                           Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -2099,7 +2105,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                     Clip.none,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -2119,13 +2125,13 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                         }
 
                                                                         context.goNamedAuth(
-                                                                            'userHome',
+                                                                            UserHomeWidget.routeName,
                                                                             context.mounted);
                                                                       },
                                                                       text:
                                                                           'Continue with Google',
                                                                       icon:
-                                                                          const FaIcon(
+                                                                          FaIcon(
                                                                         FontAwesomeIcons
                                                                             .google,
                                                                         size:
@@ -2137,12 +2143,12 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                             230.0,
                                                                         height:
                                                                             44.0,
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
-                                                                        iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             0.0,
@@ -2175,7 +2181,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                   isAndroid
                                                                       ? Container()
                                                                       : Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               0.0,
                                                                               0.0,
                                                                               0.0,
@@ -2190,12 +2196,12 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                                 return;
                                                                               }
 
-                                                                              context.goNamedAuth('userHome', context.mounted);
+                                                                              context.goNamedAuth(UserHomeWidget.routeName, context.mounted);
                                                                             },
                                                                             text:
                                                                                 'Continue with Apple',
                                                                             icon:
-                                                                                const FaIcon(
+                                                                                FaIcon(
                                                                               FontAwesomeIcons.apple,
                                                                               size: 20.0,
                                                                             ),
@@ -2203,8 +2209,8 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                                                                                 FFButtonOptions(
                                                                               width: 230.0,
                                                                               height: 44.0,
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              iconPadding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                                                                               color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                               textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Inter',
@@ -2260,7 +2266,7 @@ class _AuthEDITEDWidgetState extends State<AuthEDITEDWidget>
                     height: double.infinity,
                     decoration: BoxDecoration(
                       color: FlutterFlowTheme.of(context).secondaryBackground,
-                      image: const DecorationImage(
+                      image: DecorationImage(
                         fit: BoxFit.cover,
                         image: CachedNetworkImageProvider(
                           'https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80',

@@ -4,12 +4,16 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'resend_email_v_model.dart';
 export 'resend_email_v_model.dart';
 
 class ResendEmailVWidget extends StatefulWidget {
   const ResendEmailVWidget({super.key});
+
+  static String routeName = 'resendEmailV';
+  static String routePath = '/resendEmailV';
 
   @override
   State<ResendEmailVWidget> createState() => _ResendEmailVWidgetState();
@@ -58,7 +62,7 @@ class _ResendEmailVWidgetState extends State<ResendEmailVWidget> {
           ),
           actions: [
             Align(
-              alignment: const AlignmentDirectional(-1.0, 0.0),
+              alignment: AlignmentDirectional(-1.0, 0.0),
               child: FlutterFlowIconButton(
                 borderColor: FlutterFlowTheme.of(context).primary,
                 borderRadius: 30.0,
@@ -83,9 +87,9 @@ class _ResendEmailVWidgetState extends State<ResendEmailVWidget> {
           child: Stack(
             children: [
               Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                   child: Text(
                     'You can\'t go without verifying your email address.\nPlease verify your email and try again later.',
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -96,15 +100,15 @@ class _ResendEmailVWidgetState extends State<ResendEmailVWidget> {
                 ),
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 400.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 400.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             await authManager.sendEmailVerification();
@@ -113,9 +117,9 @@ class _ResendEmailVWidgetState extends State<ResendEmailVWidget> {
                           options: FFButtonOptions(
                             width: 138.0,
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -126,41 +130,41 @@ class _ResendEmailVWidgetState extends State<ResendEmailVWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(18.0),
-                            hoverColor: const Color(0xFF2B16ED),
+                            hoverColor: Color(0xFF2B16ED),
                             hoverTextColor: Colors.white,
                           ),
                         ),
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             await authManager.refreshUser();
                             if (currentUserEmailVerified == true) {
                               if (currentUserDocument?.role == UserType.host) {
-                                context.pushNamed('HostHomePage');
+                                context.pushNamed(HostHomePageWidget.routeName);
                               } else {
-                                context.pushNamed('userHome');
+                                context.pushNamed(UserHomeWidget.routeName);
                               }
                             } else {
                               await showDialog(
                                 context: context,
                                 builder: (alertDialogContext) {
                                   return AlertDialog(
-                                    title: const Text('Email verifcation'),
-                                    content: const Text(
+                                    title: Text('Email verifcation'),
+                                    content: Text(
                                         'you need to verify your email first'),
                                     actions: [
                                       TextButton(
                                         onPressed: () =>
                                             Navigator.pop(alertDialogContext),
-                                        child: const Text('Ok'),
+                                        child: Text('Ok'),
                                       ),
                                     ],
                                   );
@@ -172,9 +176,9 @@ class _ResendEmailVWidgetState extends State<ResendEmailVWidget> {
                           options: FFButtonOptions(
                             width: 138.0,
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -185,12 +189,12 @@ class _ResendEmailVWidgetState extends State<ResendEmailVWidget> {
                                   letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(18.0),
-                            hoverColor: const Color(0xFF2B16ED),
+                            hoverColor: Color(0xFF2B16ED),
                             hoverTextColor: Colors.white,
                           ),
                         ),

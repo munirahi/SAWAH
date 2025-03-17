@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,6 +17,9 @@ export 'auth2_profile_model.dart';
 
 class Auth2ProfileWidget extends StatefulWidget {
   const Auth2ProfileWidget({super.key});
+
+  static String routeName = 'auth2_profile';
+  static String routePath = '/auth2Profile';
 
   @override
   State<Auth2ProfileWidget> createState() => _Auth2ProfileWidgetState();
@@ -55,14 +59,14 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(100.0),
+        preferredSize: Size.fromHeight(100.0),
         child: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
           automaticallyImplyLeading: false,
-          actions: const [],
+          actions: [],
           flexibleSpace: FlexibleSpaceBar(
             title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +77,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                         child: Text(
                           'complete your Profile',
                           style: FlutterFlowTheme.of(context)
@@ -103,7 +107,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -184,17 +188,17 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
                         shape: BoxShape.circle,
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(2.0),
+                        padding: EdgeInsets.all(2.0),
                         child: Container(
                           width: 90.0,
                           height: 90.0,
                           clipBehavior: Clip.antiAlias,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             shape: BoxShape.circle,
                           ),
                           child: CachedNetworkImage(
-                            fadeInDuration: const Duration(milliseconds: 500),
-                            fadeOutDuration: const Duration(milliseconds: 500),
+                            fadeInDuration: Duration(milliseconds: 500),
+                            fadeOutDuration: Duration(milliseconds: 500),
                             imageUrl:
                                 'https://images.unsplash.com/photo-1536164261511-3a17e671d380?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=630&q=80',
                             fit: BoxFit.fitWidth,
@@ -212,12 +216,12 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
               scrollDirection: Axis.vertical,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
                   child: TextFormField(
                     controller: _model.nameTextController,
                     focusNode: _model.nameFocusNode,
                     autofocus: false,
-                    autofillHints: const [AutofillHints.name],
+                    autofillHints: [AutofillHints.name],
                     textInputAction: TextInputAction.next,
                     obscureText: false,
                     decoration: InputDecoration(
@@ -258,7 +262,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
                       filled: true,
                       fillColor:
                           FlutterFlowTheme.of(context).secondaryBackground,
-                      contentPadding: const EdgeInsets.all(24.0),
+                      contentPadding: EdgeInsets.all(24.0),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Inter',
@@ -273,10 +277,10 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
                   ),
                 ),
                 Align(
-                  alignment: const AlignmentDirectional(0.0, 0.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
-                    child: SizedBox(
+                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                    child: Container(
                       width: MediaQuery.sizeOf(context).width * 0.9,
                       height: 70.0,
                       child: custom_widgets.PhoneNumberPicker(
@@ -289,7 +293,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
                 if (FFAppState().isThisAcreater == true)
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 12.0),
                     child: TextFormField(
                       controller: _model.myBioTextController,
                       focusNode: _model.myBioFocusNode,
@@ -338,7 +342,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
                         filled: true,
                         fillColor:
                             FlutterFlowTheme.of(context).secondaryBackground,
-                        contentPadding: const EdgeInsetsDirectional.fromSTEB(
+                        contentPadding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 24.0, 0.0, 24.0),
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -354,9 +358,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
               ],
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.05),
+              alignment: AlignmentDirectional(0.0, 0.05),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: StreamBuilder<UsersRecord>(
                   stream: UsersRecord.getDocument(currentUserReference!),
                   builder: (context, snapshot) {
@@ -389,9 +393,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
                               : UserType.user,
                         ));
                         if (FFAppState().isThisAcreater == true) {
-                          context.pushNamed('HostHomePage');
+                          context.pushNamed(HostHomePageWidget.routeName);
                         } else {
-                          context.pushNamed('userHome');
+                          context.pushNamed(UserHomeWidget.routeName);
                         }
                       },
                       text: 'Save Changes',
@@ -399,9 +403,9 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
                         width: 270.0,
                         height: 50.0,
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleMedium.override(
@@ -410,7 +414,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 2.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

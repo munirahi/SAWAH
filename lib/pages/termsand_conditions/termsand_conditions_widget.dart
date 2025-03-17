@@ -3,12 +3,16 @@ import '/backend/schema/enums/enums.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'termsand_conditions_model.dart';
 export 'termsand_conditions_model.dart';
 
 class TermsandConditionsWidget extends StatefulWidget {
   const TermsandConditionsWidget({super.key});
+
+  static String routeName = 'TermsandConditions';
+  static String routePath = '/termsandConditions';
 
   @override
   State<TermsandConditionsWidget> createState() =>
@@ -59,14 +63,14 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
             ),
             onPressed: () async {
               if (currentUserDocument?.role == UserType.user) {
-                context.pushNamed('profile_Settings');
+                context.pushNamed(ProfileSettingsWidget.routeName);
               } else {
-                context.pushNamed('profile_Settings_host');
+                context.pushNamed(ProfileSettingsHostWidget.routeName);
               }
             },
           ),
           title: Align(
-            alignment: const AlignmentDirectional(-0.33, 0.0),
+            alignment: AlignmentDirectional(-0.33, 0.0),
             child: Text(
               'Terms and Conditions',
               textAlign: TextAlign.center,
@@ -77,7 +81,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                   ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -90,7 +94,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 24.0),
+                      EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 24.0),
                   child: Material(
                     color: Colors.transparent,
                     elevation: 2.0,
@@ -104,13 +108,13 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                         borderRadius: BorderRadius.circular(16.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: EdgeInsets.all(12.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   6.0, 6.0, 0.0, 0.0),
                               child: Text(
                                 'Welcome to SAWWAH',
@@ -126,7 +130,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   6.0, 0.0, 6.0, 0.0),
                               child: Text(
                                 'By using our app, you agree to these Terms and Conditions. Please read them carefully, as they explain your rights and responsibilities. If you do not agree to these terms, please do not use our app.',
@@ -141,7 +145,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   6.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 '1. Introduction',
@@ -157,7 +161,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   6.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'These Terms and Conditions govern your use of SAWWAH (\'we,\' \'us,\' \'our\'). By creating an account and accessing our services, you agree to comply with these terms.',
@@ -183,7 +187,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                                   ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 1.0, 0.0),
                               child: Text(
                                 'To use SAWWAH, you must be at least 18 years old. By creating an account, you confirm that you meet this age requirement. You are responsible for all activities on your account and for providing accurate information.',
@@ -483,7 +487,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                          ].divide(const SizedBox(height: 16.0)),
+                          ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
                     ),
@@ -491,7 +495,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
+                      EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
                   child: Material(
                     color: Colors.transparent,
                     elevation: 2.0,
@@ -505,7 +509,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                         borderRadius: BorderRadius.circular(16.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: EdgeInsets.all(12.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -532,7 +536,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                          ].divide(const SizedBox(height: 16.0)),
+                          ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
                     ),
@@ -540,7 +544,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
+                      EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
                   child: Material(
                     color: Colors.transparent,
                     elevation: 2.0,
@@ -554,7 +558,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                         borderRadius: BorderRadius.circular(16.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: EdgeInsets.all(12.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -581,7 +585,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                          ].divide(const SizedBox(height: 16.0)),
+                          ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
                     ),
@@ -589,7 +593,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
+                      EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
                   child: Material(
                     color: Colors.transparent,
                     elevation: 2.0,
@@ -603,7 +607,7 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                         borderRadius: BorderRadius.circular(16.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding: EdgeInsets.all(12.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -630,13 +634,13 @@ class _TermsandConditionsWidgetState extends State<TermsandConditionsWidget> {
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                          ].divide(const SizedBox(height: 16.0)),
+                          ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ].divide(const SizedBox(height: 24.0)),
+              ].divide(SizedBox(height: 24.0)),
             ),
           ),
         ),

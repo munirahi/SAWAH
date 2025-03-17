@@ -1,4 +1,5 @@
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'payment2_copy_widget.dart' show Payment2CopyWidget;
 import 'package:flutter/material.dart';
 

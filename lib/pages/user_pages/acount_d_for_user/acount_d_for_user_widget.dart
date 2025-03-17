@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/host_pages/update_phone_num/update_phone_num_widget.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/index.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,6 +21,9 @@ class AcountDForUserWidget extends StatefulWidget {
   });
 
   final DocumentReference? userData;
+
+  static String routeName = 'acountD_for_user';
+  static String routePath = '/acountDForUser';
 
   @override
   State<AcountDForUserWidget> createState() => _AcountDForUserWidgetState();
@@ -76,11 +80,11 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
             size: 25.0,
           ),
           onPressed: () async {
-            context.pushNamed('profile_Settings');
+            context.pushNamed(ProfileSettingsWidget.routeName);
           },
         ),
         title: Align(
-          alignment: const AlignmentDirectional(-0.33, 0.0),
+          alignment: AlignmentDirectional(-0.33, 0.0),
           child: Text(
             'Account Details',
             textAlign: TextAlign.center,
@@ -91,7 +95,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                 ),
           ),
         ),
-        actions: const [],
+        actions: [],
         centerTitle: false,
         elevation: 0.0,
       ),
@@ -120,7 +124,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -138,7 +142,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -148,7 +152,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: AuthUserStreamWidget(
                                   builder: (context) => TextFormField(
@@ -229,7 +233,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 16.0, 0.0, 0.0),
                                 child: TextFormField(
                                   controller: _model.textController2,
@@ -324,7 +328,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                       child: Stack(
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.98, -0.5),
+                            alignment: AlignmentDirectional(0.98, -0.5),
                             child: Builder(
                               builder: (context) => FlutterFlowIconButton(
                                 borderRadius: 8.0,
@@ -345,7 +349,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                                         insetPadding: EdgeInsets.zero,
                                         backgroundColor: Colors.transparent,
                                         alignment:
-                                            const AlignmentDirectional(0.0, 0.0)
+                                            AlignmentDirectional(0.0, 0.0)
                                                 .resolve(
                                                     Directionality.of(context)),
                                         child: UpdatePhoneNumWidget(
@@ -373,7 +377,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                               child: Stack(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 8.0),
                                     child: AuthUserStreamWidget(
                                       builder: (context) => TextFormField(
@@ -381,7 +385,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                                         focusNode: _model.numberFocusNode,
                                         onChanged: (_) => EasyDebounce.debounce(
                                           '_model.numberTextController',
-                                          const Duration(milliseconds: 2000),
+                                          Duration(milliseconds: 2000),
                                           () async {
                                             FFAppState().phoneNumber = _model
                                                 .numberTextController.text;
@@ -389,7 +393,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                                           },
                                         ),
                                         autofocus: false,
-                                        autofillHints: const [
+                                        autofillHints: [
                                           AutofillHints
                                               .telephoneNumberCountryCode
                                         ],
@@ -458,7 +462,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                                           fillColor:
                                               FlutterFlowTheme.of(context)
                                                   .secondaryBackground,
-                                          contentPadding: const EdgeInsets.all(12.0),
+                                          contentPadding: EdgeInsets.all(12.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
@@ -482,7 +486,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                                   ),
                                   Align(
                                     alignment:
-                                        const AlignmentDirectional(0.92, -0.02),
+                                        AlignmentDirectional(0.92, -0.02),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -506,7 +510,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                     ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                     child: AuthUserStreamWidget(
                       builder: (context) => custom_widgets.PhoneNumberPicker(
                         width: double.infinity,
@@ -517,7 +521,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         await currentUserReference!
@@ -535,7 +539,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                                 fontSize: 14.0,
                               ),
                             ),
-                            duration: const Duration(milliseconds: 3000),
+                            duration: Duration(milliseconds: 3000),
                             backgroundColor:
                                 FlutterFlowTheme.of(context).primary,
                           ),
@@ -546,9 +550,9 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                         width: 270.0,
                         height: 50.0,
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -557,7 +561,7 @@ class _AcountDForUserWidgetState extends State<AcountDForUserWidget> {
                                   letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 1.0,
                         ),

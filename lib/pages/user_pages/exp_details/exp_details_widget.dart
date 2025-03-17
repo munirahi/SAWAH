@@ -17,6 +17,9 @@ class ExpDetailsWidget extends StatefulWidget {
 
   final DocumentReference? experienceDetails;
 
+  static String routeName = 'Exp_Details';
+  static String routePath = '/expDetails';
+
   @override
   State<ExpDetailsWidget> createState() => _ExpDetailsWidgetState();
 }
@@ -50,8 +53,8 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 400.0.ms,
-            begin: const Offset(0.0, 40.0),
-            end: const Offset(0.0, 0.0),
+            begin: Offset(0.0, 40.0),
+            end: Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -125,7 +128,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                     letterSpacing: 0.0,
                   ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 0.0,
           ),
@@ -140,7 +143,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -148,8 +151,8 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                             ClipRRect(
                               borderRadius: BorderRadius.circular(16.0),
                               child: CachedNetworkImage(
-                                fadeInDuration: const Duration(milliseconds: 500),
-                                fadeOutDuration: const Duration(milliseconds: 500),
+                                fadeInDuration: Duration(milliseconds: 500),
+                                fadeOutDuration: Duration(milliseconds: 500),
                                 imageUrl: expDetailsExperiencesRecord.image,
                                 width: MediaQuery.sizeOf(context).width * 0.9,
                                 height: 250.0,
@@ -161,21 +164,21 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
                         child: Text(
                           expDetailsExperiencesRecord.experiencename1,
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
                                 fontFamily: 'Inter Tight',
-                                color: const Color(0xFF176490),
+                                color: Color(0xFF176490),
                                 letterSpacing: 0.0,
                               ),
                         ),
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 0.0, 0.0),
                         child: Text(
                           expDetailsExperiencesRecord.experienceAbout1,
                           style:
@@ -190,7 +193,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 8.0, 0.0, 0.0),
                               child: Text(
                                 valueOrDefault<String>(
@@ -236,7 +239,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 8.0, 0.0, 0.0),
                             child: Text(
                               valueOrDefault<String>(
@@ -253,7 +256,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 8.0, 0.0, 0.0),
                             child: Text(
                               valueOrDefault<String>(
@@ -275,7 +278,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 8.0, 0.0, 0.0),
                             child: Text(
                               valueOrDefault<String>(
@@ -291,7 +294,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 8.0, 0.0, 0.0),
                             child: Text(
                               valueOrDefault<String>(
@@ -309,14 +312,14 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 12.0, 24.0, 12.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 16.0, 16.0),
                                 child: StreamBuilder<UsersRecord>(
                                   stream: UsersRecord.getDocument(
@@ -347,7 +350,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
                                             blurRadius: 5.0,
                                             color: Color(0x28000000),
@@ -361,7 +364,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                                             BorderRadius.circular(12.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             8.0, 0.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -369,7 +372,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                                               CrossAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Column(
@@ -381,7 +384,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 8.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -440,7 +443,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                         color: FlutterFlowTheme.of(context).alternate,
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 12.0, 24.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -480,7 +483,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                 width: MediaQuery.sizeOf(context).width * 1.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).primary,
-                  boxShadow: const [
+                  boxShadow: [
                     BoxShadow(
                       blurRadius: 4.0,
                       color: Color(0x55000000),
@@ -490,7 +493,7 @@ class _ExpDetailsWidgetState extends State<ExpDetailsWidget>
                       ),
                     )
                   ],
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(16.0),

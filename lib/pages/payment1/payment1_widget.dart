@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'payment1_model.dart';
@@ -19,6 +20,9 @@ class Payment1Widget extends StatefulWidget {
 
   final DocumentReference? experienceRef;
   final int? numberOfSeats;
+
+  static String routeName = 'payment1';
+  static String routePath = '/payment1';
 
   @override
   State<Payment1Widget> createState() => _Payment1WidgetState();
@@ -88,7 +92,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -98,10 +102,10 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 16.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -114,7 +118,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                 FlutterFlowTheme.of(context).primaryBackground,
                           ),
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 12.0),
                             child: StreamBuilder<List<ExperiencesRecord>>(
                               stream: queryExperiencesRecord(
@@ -153,7 +157,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 0.0),
                                       child: FlutterFlowCreditCardForm(
                                         formKey: _model.creditCardFormKey,
@@ -192,7 +196,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 8.0, 12.0, 4.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -211,7 +215,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 4.0, 12.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -256,7 +260,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     12.0, 4.0, 12.0, 0.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -288,7 +292,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
@@ -311,17 +315,18 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                               ));
 
                                           context.pushNamed(
-                                              'ReservationConfirmed');
+                                              ReservationConfirmedWidget
+                                                  .routeName);
                                         },
                                         text: 'Pay w/ Credit Card',
                                         options: FFButtonOptions(
                                           width: 270.0,
                                           height: 50.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
@@ -333,7 +338,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 2.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -341,7 +346,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: Text(
                                         'Or use an option below',
@@ -354,7 +359,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () {
@@ -371,10 +376,10 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                           width: 270.0,
                                           height: 50.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
@@ -391,7 +396,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                                 fontWeight: FontWeight.normal,
                                               ),
                                           elevation: 2.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -399,7 +404,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () {
@@ -416,10 +421,10 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                           width: 270.0,
                                           height: 50.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           iconPadding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primaryText,
@@ -436,7 +441,7 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                                                 fontWeight: FontWeight.normal,
                                               ),
                                           elevation: 2.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.transparent,
                                             width: 1.0,
                                           ),
@@ -454,15 +459,15 @@ class _Payment1WidgetState extends State<Payment1Widget> {
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 120.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 120.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
-                      constraints: const BoxConstraints(
+                      constraints: BoxConstraints(
                         maxWidth: 570.0,
                       ),
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        boxShadow: const [
+                        boxShadow: [
                           BoxShadow(
                             blurRadius: 4.0,
                             color: Color(0x25090F13),

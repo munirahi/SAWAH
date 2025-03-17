@@ -61,9 +61,9 @@ class _UpdatePhoneNumWidgetState extends State<UpdatePhoneNumWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 0.0, 0.0),
                   child: Text(
                     'Update Phone Number',
                     textAlign: TextAlign.center,
@@ -80,7 +80,7 @@ class _UpdatePhoneNumWidgetState extends State<UpdatePhoneNumWidget> {
             ],
           ),
           Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: InkWell(
               splashColor: Colors.transparent,
               focusColor: Colors.transparent,
@@ -90,7 +90,7 @@ class _UpdatePhoneNumWidgetState extends State<UpdatePhoneNumWidget> {
                 FFAppState().phoneNumber = '';
                 safeSetState(() {});
               },
-              child: SizedBox(
+              child: Container(
                 width: MediaQuery.sizeOf(context).width * 0.9,
                 height: 70.0,
                 child: custom_widgets.PhoneNumberPicker(
@@ -104,9 +104,9 @@ class _UpdatePhoneNumWidgetState extends State<UpdatePhoneNumWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Align(
-                alignment: const AlignmentDirectional(0.0, 0.0),
+                alignment: AlignmentDirectional(0.0, 0.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(110.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(110.0, 0.0, 0.0, 0.0),
                   child: StreamBuilder<List<UsersRecord>>(
                     stream: queryUsersRecord(
                       queryBuilder: (usersRecord) => usersRecord.where(
@@ -170,9 +170,9 @@ class _UpdatePhoneNumWidgetState extends State<UpdatePhoneNumWidget> {
                         text: 'Save Changes',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:

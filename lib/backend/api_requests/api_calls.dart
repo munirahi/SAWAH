@@ -26,14 +26,14 @@ class EmailCall {
   }) async {
     final baseUrl = BFEmailGroup.getBaseUrl();
 
-    const ffApiRequestBody = '''
+    final ffApiRequestBody = '''
 {
   "sk-bf-ee0e8525-8239-4ddb-a726-2ec9f69ea15d": ""
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'email',
       apiUrl:
-          '$baseUrl/email?templateId=gljgcRL1EGCzq6JTaAP7&to=$to&subject=$subject&attachmentLink=$attachmentLink&attachmentName=$attachmentName',
+          '${baseUrl}/email?templateId=gljgcRL1EGCzq6JTaAP7&to=${to}&subject=${subject}&attachmentLink=${attachmentLink}&attachmentName=${attachmentName}',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -84,7 +84,7 @@ class GeocodeCall {
     return ApiManager.instance.makeApiCall(
       callName: 'geocode',
       apiUrl:
-          'https://maps.googleapis.com/maps/api/geocode/json?latlng=$latlong&key=AIzaSyCvg7tptaoj20DqcEcmZrf46dmwMq3yG9s',
+          'https://maps.googleapis.com/maps/api/geocode/json?latlng=${latlong}&key=AIzaSyCvg7tptaoj20DqcEcmZrf46dmwMq3yG9s',
       callType: ApiCallType.POST,
       headers: {},
       params: {},
@@ -118,7 +118,7 @@ class MapsStringCall {
   }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'mapsString',
-      apiUrl: 'https://geocode.maps.co/reverse?lat=$lat&lon=$long',
+      apiUrl: 'https://geocode.maps.co/reverse?lat=${lat}&lon=${long}',
       callType: ApiCallType.GET,
       headers: {},
       params: {},

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'serialization_util.dart';
-import '../backend.dart';
+import '/backend/backend.dart';
 import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,8 @@ import 'package:flutter/scheduler.dart';
 final _handledMessageIds = <String?>{};
 
 class PushNotificationsHandler extends StatefulWidget {
-  const PushNotificationsHandler({super.key, required this.child});
+  const PushNotificationsHandler({Key? key, required this.child})
+      : super(key: key);
 
   final Widget child;
 
@@ -48,11 +49,19 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
       final parametersBuilder = parametersBuilderMap[initialPageName];
       if (parametersBuilder != null) {
         final parameterData = await parametersBuilder(initialParameterData);
-        context.pushNamed(
-          initialPageName,
-          pathParameters: parameterData.pathParameters,
-          extra: parameterData.extra,
-        );
+        if (mounted) {
+          context.pushNamed(
+            initialPageName,
+            pathParameters: parameterData.pathParameters,
+            extra: parameterData.extra,
+          );
+        } else {
+          appNavigatorKey.currentContext?.pushNamed(
+            initialPageName,
+            pathParameters: parameterData.pathParameters,
+            extra: parameterData.extra,
+          );
+        }
       }
     } catch (e) {
       print('Error: $e');
@@ -97,7 +106,7 @@ class ParameterData {
       );
 
   static Future<ParameterData> Function(Map<String, dynamic>) none() =>
-      (data) async => const ParameterData();
+      (data) async => ParameterData();
 }
 
 final parametersBuilderMap =
@@ -189,7 +198,7 @@ final parametersBuilderMap =
           'userData': getParameter<DocumentReference>(data, 'userData'),
         },
       ),
-  'User_ReservedExperiences': (data) async => const ParameterData(
+  'User_ReservedExperiences': (data) async => ParameterData(
         allParams: {},
       ),
   'review_for_user': (data) async => ParameterData(

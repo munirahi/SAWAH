@@ -2,6 +2,7 @@ import '/backend/api_requests/api_calls.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/pages/navbar_forhost/navbar_forhost_widget.dart';
+import '/index.dart';
 import 'create_new_experience_widget.dart' show CreateNewExperienceWidget;
 import 'package:flutter/material.dart';
 
@@ -81,7 +82,7 @@ class CreateNewExperienceModel
       return 'This field is required ';
     }
 
-    if (val.isEmpty) {
+    if (val.length < 1) {
       return 'Enter at least 1 character';
     }
     if (val.length > 8) {

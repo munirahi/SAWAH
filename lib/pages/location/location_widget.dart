@@ -21,6 +21,9 @@ class LocationWidget extends StatefulWidget {
   final double? userLong;
   final double? userlat;
 
+  static String routeName = 'Location';
+  static String routePath = '/location';
+
   @override
   State<LocationWidget> createState() => _LocationWidgetState();
 }
@@ -36,7 +39,7 @@ class _LocationWidgetState extends State<LocationWidget> {
     super.initState();
     _model = createModel(context, () => LocationModel());
 
-    getCurrentUserLocation(defaultLocation: const LatLng(0.0, 0.0), cached: true)
+    getCurrentUserLocation(defaultLocation: LatLng(0.0, 0.0), cached: true)
         .then((loc) => safeSetState(() => currentUserLocationValue = loc));
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
@@ -110,7 +113,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 2.0,
             ),
@@ -119,7 +122,7 @@ class _LocationWidgetState extends State<LocationWidget> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  const Row(
+                  Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [],
@@ -135,9 +138,9 @@ class _LocationWidgetState extends State<LocationWidget> {
                         text: 'back test',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -190,9 +193,9 @@ class _LocationWidgetState extends State<LocationWidget> {
                             text: 'save location test',
                             options: FFButtonOptions(
                               height: 40.0,
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 16.0, 0.0),
-                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -241,7 +244,7 @@ class _LocationWidgetState extends State<LocationWidget> {
                                     letterSpacing: 0.0,
                                   ),
                           elevation: 0.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),

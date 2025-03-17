@@ -20,7 +20,9 @@ Future<ChatsRecord?> createOrUpdateChatDoc(
   if (charRecord != null) {
     if (charRecord.users
             .where((e) => e == currentUserReference)
-            .toList().isEmpty) {
+            .toList()
+            .length <=
+        0) {
       await charRecord.reference.update({
         ...mapToFirestore(
           {

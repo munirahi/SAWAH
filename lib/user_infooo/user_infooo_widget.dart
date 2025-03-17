@@ -15,6 +15,9 @@ class UserInfoooWidget extends StatefulWidget {
 
   final DocumentReference? nameee;
 
+  static String routeName = 'UserInfooo';
+  static String routePath = '/userInfooo';
+
   @override
   State<UserInfoooWidget> createState() => _UserInfoooWidgetState();
 }
@@ -74,7 +77,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -84,7 +87,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 0.0, 0.0),
                 child: Text(
                   'Members in Experience',
                   style: FlutterFlowTheme.of(context).labelMedium.override(
@@ -94,7 +97,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 44.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 44.0),
                 child: ListView(
                   padding: EdgeInsets.zero,
                   primary: false,
@@ -103,14 +106,14 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 8.0),
                       child: Container(
                         width: double.infinity,
                         height: 60.0,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 4.0,
                               color: Color(0x32000000),
@@ -123,7 +126,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -140,7 +143,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -162,7 +165,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 0.0),
                                             child: Text(
                                               'Email, Phone number',
@@ -189,9 +192,9 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                 options: FFButtonOptions(
                                   width: 70.0,
                                   height: 36.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -204,7 +207,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                         fontWeight: FontWeight.normal,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -218,14 +221,14 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 8.0),
                       child: Container(
                         width: double.infinity,
                         height: 60.0,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 4.0,
                               color: Color(0x32000000),
@@ -238,7 +241,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -255,7 +258,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -277,7 +280,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 0.0),
                                             child: Text(
                                               'Email, Phone number',
@@ -304,9 +307,9 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                 options: FFButtonOptions(
                                   width: 70.0,
                                   height: 36.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -319,7 +322,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                         fontWeight: FontWeight.normal,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -333,14 +336,14 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 8.0),
                       child: Container(
                         width: double.infinity,
                         height: 60.0,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 4.0,
                               color: Color(0x32000000),
@@ -353,7 +356,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -370,7 +373,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -392,7 +395,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 0.0),
                                             child: Text(
                                               'Email, Phone number',
@@ -419,9 +422,9 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                 options: FFButtonOptions(
                                   width: 70.0,
                                   height: 36.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -434,7 +437,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                         fontWeight: FontWeight.normal,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -448,14 +451,14 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 8.0),
                       child: Container(
                         width: double.infinity,
                         height: 60.0,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 4.0,
                               color: Color(0x32000000),
@@ -468,7 +471,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -485,7 +488,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -507,7 +510,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 0.0),
                                             child: Text(
                                               'Email, Phone number',
@@ -534,9 +537,9 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                 options: FFButtonOptions(
                                   width: 70.0,
                                   height: 36.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -549,7 +552,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                         fontWeight: FontWeight.normal,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),
@@ -563,14 +566,14 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 8.0),
                       child: Container(
                         width: double.infinity,
                         height: 60.0,
                         decoration: BoxDecoration(
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
-                          boxShadow: const [
+                          boxShadow: [
                             BoxShadow(
                               blurRadius: 4.0,
                               color: Color(0x32000000),
@@ -583,7 +586,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                           borderRadius: BorderRadius.circular(8.0),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               8.0, 0.0, 8.0, 0.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
@@ -600,7 +603,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                               ),
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -622,7 +625,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 0.0),
                                             child: Text(
                                               'Email, Phone number',
@@ -649,9 +652,9 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                 options: FFButtonOptions(
                                   width: 70.0,
                                   height: 36.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
@@ -664,7 +667,7 @@ class _UserInfoooWidgetState extends State<UserInfoooWidget> {
                                         fontWeight: FontWeight.normal,
                                       ),
                                   elevation: 2.0,
-                                  borderSide: const BorderSide(
+                                  borderSide: BorderSide(
                                     color: Colors.transparent,
                                     width: 1.0,
                                   ),

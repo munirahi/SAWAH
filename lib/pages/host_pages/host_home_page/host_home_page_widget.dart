@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/delete_exp_alert/delete_exp_alert_widget.dart';
 import '/pages/navbar_forhost/navbar_forhost_widget.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'host_home_page_model.dart';
@@ -12,6 +13,9 @@ export 'host_home_page_model.dart';
 
 class HostHomePageWidget extends StatefulWidget {
   const HostHomePageWidget({super.key});
+
+  static String routeName = 'HostHomePage';
+  static String routePath = '/hostHomePage';
 
   @override
   State<HostHomePageWidget> createState() => _HostHomePageWidgetState();
@@ -56,12 +60,12 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(70.0),
+          preferredSize: Size.fromHeight(70.0),
           child: AppBar(
             backgroundColor: FlutterFlowTheme.of(context).primary,
             automaticallyImplyLeading: false,
             title: Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Text(
                 'My Experiences',
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -72,7 +76,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                     ),
               ),
             ),
-            actions: const [],
+            actions: [],
             centerTitle: false,
             elevation: 2.0,
           ),
@@ -82,7 +86,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
             Column(
               children: [
                 Align(
-                  alignment: const Alignment(0.0, 0),
+                  alignment: Alignment(0.0, 0),
                   child: TabBar(
                     labelColor: FlutterFlowTheme.of(context).primaryText,
                     unselectedLabelColor:
@@ -99,7 +103,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                               letterSpacing: 0.0,
                             ),
                     indicatorColor: FlutterFlowTheme.of(context).primary,
-                    tabs: const [
+                    tabs: [
                       Tab(
                         text: 'Future ',
                       ),
@@ -121,28 +125,29 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 12.0, 0.0, 12.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
+                                  alignment: AlignmentDirectional(0.0, -1.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      context.pushNamed('CreateNewExperience');
+                                      context.pushNamed(
+                                          CreateNewExperienceWidget.routeName);
                                     },
                                     text: ' Create New Experience',
-                                    icon: const Icon(
+                                    icon: Icon(
                                       Icons.add_rounded,
                                       size: 36.0,
                                     ),
                                     options: FFButtonOptions(
                                       height: 53.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 16.0, 16.0, 16.0),
-                                      iconPadding: const EdgeInsets.all(0.0),
+                                      iconPadding: EdgeInsets.all(0.0),
                                       color:
                                           FlutterFlowTheme.of(context).primary,
                                       textStyle: FlutterFlowTheme.of(context)
@@ -154,7 +159,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                             letterSpacing: 0.0,
                                           ),
                                       elevation: 0.0,
-                                      borderSide: const BorderSide(
+                                      borderSide: BorderSide(
                                         color: Colors.black,
                                       ),
                                       borderRadius: BorderRadius.circular(24.0),
@@ -217,7 +222,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 0.0, 16.0, 8.0),
                                           child: Container(
                                             width: double.infinity,
@@ -225,7 +230,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
-                                              boxShadow: const [
+                                              boxShadow: [
                                                 BoxShadow(
                                                   blurRadius: 3.0,
                                                   color: Color(0x411D2429),
@@ -239,7 +244,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                   BorderRadius.circular(8.0),
                                             ),
                                             child: Padding(
-                                              padding: const EdgeInsets.all(4.0),
+                                              padding: EdgeInsets.all(4.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -247,7 +252,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 1.0,
                                                                 1.0, 1.0),
                                                     child: ClipRRect(
@@ -265,7 +270,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(
                                                                 16.0,
                                                                 10.0,
@@ -280,7 +285,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                           .override(
                                                             fontFamily:
                                                                 'Inter Tight',
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFF176490),
                                                             letterSpacing: 0.0,
                                                           ),
@@ -288,7 +293,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
                                                                 16.0, 0.0),
                                                     child: Row(
@@ -300,7 +305,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -310,7 +315,8 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                             onPressed:
                                                                 () async {
                                                               context.pushNamed(
-                                                                'Exp_DetailsFor_Creator',
+                                                                ExpDetailsForCreatorWidget
+                                                                    .routeName,
                                                                 queryParameters:
                                                                     {
                                                                   'experienceDetails':
@@ -328,14 +334,14 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                                 FFButtonOptions(
                                                               height: 40.0,
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -367,7 +373,8 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                         FFButtonWidget(
                                                           onPressed: () async {
                                                             context.pushNamed(
-                                                              'RecreateExp',
+                                                              RecreateExpWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'expName':
                                                                     serializeParam(
@@ -440,14 +447,14 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                               FFButtonOptions(
                                                             height: 40.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -536,14 +543,14 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                                 FFButtonOptions(
                                                               height: 40.0,
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           16.0,
                                                                           0.0,
                                                                           16.0,
                                                                           0.0),
                                                               iconPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           0.0,
@@ -600,7 +607,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -608,23 +615,24 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(0.0, -1.0),
+                                          AlignmentDirectional(0.0, -1.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
-                                          context
-                                              .pushNamed('CreateNewExperience');
+                                          context.pushNamed(
+                                              CreateNewExperienceWidget
+                                                  .routeName);
                                         },
                                         text: ' Create New Experience',
-                                        icon: const Icon(
+                                        icon: Icon(
                                           Icons.add_rounded,
                                           size: 36.0,
                                         ),
                                         options: FFButtonOptions(
                                           height: 53.0,
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   16.0, 16.0, 16.0, 16.0),
-                                          iconPadding: const EdgeInsets.all(0.0),
+                                          iconPadding: EdgeInsets.all(0.0),
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           textStyle:
@@ -637,7 +645,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                     letterSpacing: 0.0,
                                                   ),
                                           elevation: 0.0,
-                                          borderSide: const BorderSide(
+                                          borderSide: BorderSide(
                                             color: Colors.black,
                                           ),
                                           borderRadius:
@@ -694,14 +702,14 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                           listViewExperiencesRecordList[
                                               listViewIndex];
                                       return Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 0.0, 16.0, 8.0),
                                         child: Container(
                                           width: double.infinity,
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            boxShadow: const [
+                                            boxShadow: [
                                               BoxShadow(
                                                 blurRadius: 3.0,
                                                 color: Color(0x411D2429),
@@ -715,14 +723,14 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                 BorderRadius.circular(8.0),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(4.0),
+                                            padding: EdgeInsets.all(4.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 1.0, 1.0, 1.0),
                                                   child: ClipRRect(
@@ -739,7 +747,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 8.0, 0.0, 0.0),
                                                   child: Text(
@@ -752,13 +760,13 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                           fontFamily:
                                                               'Inter Tight',
                                                           color:
-                                                              const Color(0xFF176490),
+                                                              Color(0xFF176490),
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 5.0, 16.0, 5.0),
                                                   child: Row(
@@ -770,7 +778,7 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                     children: [
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     0.0,
@@ -779,7 +787,8 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                         child: FFButtonWidget(
                                                           onPressed: () async {
                                                             context.pushNamed(
-                                                              'Exp_DetailsFor_Creator',
+                                                              ExpDetailsForCreatorWidget
+                                                                  .routeName,
                                                               queryParameters: {
                                                                 'experienceDetails':
                                                                     serializeParam(
@@ -796,14 +805,14 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                               FFButtonOptions(
                                                             height: 40.0,
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         0.0,
                                                                         16.0,
                                                                         0.0),
                                                             iconPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -835,7 +844,8 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                       FFButtonWidget(
                                                         onPressed: () async {
                                                           context.pushNamed(
-                                                            'reviews1',
+                                                            Reviews1Widget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'experID':
                                                                   serializeParam(
@@ -852,14 +862,14 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                             FFButtonOptions(
                                                           height: 40.0,
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
                                                                       16.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -890,7 +900,8 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                       FFButtonWidget(
                                                         onPressed: () async {
                                                           context.pushNamed(
-                                                            'RecreateExp',
+                                                            RecreateExpWidget
+                                                                .routeName,
                                                             queryParameters: {
                                                               'expName':
                                                                   serializeParam(
@@ -963,14 +974,14 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
                                                             FFButtonOptions(
                                                           height: 40.0,
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       0.0,
                                                                       16.0,
                                                                       0.0),
                                                           iconPadding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1020,12 +1031,12 @@ class _HostHomePageWidgetState extends State<HostHomePageWidget>
               ],
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: wrapWithModel(
                 model: _model.navbarForhostModel,
                 updateCallback: () => safeSetState(() {}),
                 updateOnChange: true,
-                child: const NavbarForhostWidget(
+                child: NavbarForhostWidget(
                   index: 0,
                 ),
               ),

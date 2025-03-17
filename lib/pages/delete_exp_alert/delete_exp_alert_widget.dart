@@ -3,6 +3,7 @@ import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'delete_exp_alert_model.dart';
 export 'delete_exp_alert_model.dart';
@@ -79,22 +80,22 @@ class _DeleteExpAlertWidgetState extends State<DeleteExpAlertWidget> {
             borderRadius: BorderRadius.circular(24.0),
           ),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 12.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
+                      EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 24.0, 16.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
                           child: Icon(
                             Icons.warning_outlined,
@@ -104,7 +105,7 @@ class _DeleteExpAlertWidgetState extends State<DeleteExpAlertWidget> {
                         ),
                       ),
                       Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Text(
                           'Are you sure you want to cancel this experience?',
                           textAlign: TextAlign.center,
@@ -121,7 +122,7 @@ class _DeleteExpAlertWidgetState extends State<DeleteExpAlertWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(75.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(75.0, 0.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -132,9 +133,9 @@ class _DeleteExpAlertWidgetState extends State<DeleteExpAlertWidget> {
                         text: 'Back',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -179,7 +180,7 @@ class _DeleteExpAlertWidgetState extends State<DeleteExpAlertWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(40.0, 0.0, 0.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             await widget.experiencedetails!.delete();
@@ -193,14 +194,14 @@ class _DeleteExpAlertWidgetState extends State<DeleteExpAlertWidget> {
                               parameterData: {},
                             );
 
-                            context.pushNamed('HostHomePage');
+                            context.pushNamed(HostHomePageWidget.routeName);
                           },
                           text: 'Cancel',
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).error,
                             textStyle: FlutterFlowTheme.of(context)
